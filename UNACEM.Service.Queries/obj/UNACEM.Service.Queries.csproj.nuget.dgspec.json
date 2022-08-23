@@ -1,0 +1,393 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Proyectos Externos\\Code\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj": {}
+  },
+  "projects": {
+    "D:\\Proyectos Externos\\Code\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Proyectos Externos\\Code\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj",
+        "projectName": "UNACEM.Common.Collection",
+        "projectPath": "D:\\Proyectos Externos\\Code\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj",
+        "packagesPath": "C:\\Users\\Scott.perez\\.nuget\\packages\\",
+        "outputPath": "D:\\Proyectos Externos\\Code\\UNACEM.Common.Collection\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Scott.perez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Proyectos Externos\\Code\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Proyectos Externos\\Code\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj",
+        "projectName": "UNACEM.Common.Mapping",
+        "projectPath": "D:\\Proyectos Externos\\Code\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj",
+        "packagesPath": "C:\\Users\\Scott.perez\\.nuget\\packages\\",
+        "outputPath": "D:\\Proyectos Externos\\Code\\UNACEM.Common.Mapping\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Scott.perez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Proyectos Externos\\Code\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Proyectos Externos\\Code\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj",
+        "projectName": "UNACEM.Common.Paging",
+        "projectPath": "D:\\Proyectos Externos\\Code\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj",
+        "packagesPath": "C:\\Users\\Scott.perez\\.nuget\\packages\\",
+        "outputPath": "D:\\Proyectos Externos\\Code\\UNACEM.Common.Paging\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Scott.perez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "D:\\Proyectos Externos\\Code\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj": {
+                "projectPath": "D:\\Proyectos Externos\\Code\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Proyectos Externos\\Code\\UNACEM.Domain\\UNACEM.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Proyectos Externos\\Code\\UNACEM.Domain\\UNACEM.Domain.csproj",
+        "projectName": "UNACEM.Domain",
+        "projectPath": "D:\\Proyectos Externos\\Code\\UNACEM.Domain\\UNACEM.Domain.csproj",
+        "packagesPath": "C:\\Users\\Scott.perez\\.nuget\\packages\\",
+        "outputPath": "D:\\Proyectos Externos\\Code\\UNACEM.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Scott.perez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Proyectos Externos\\Code\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Proyectos Externos\\Code\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj",
+        "projectName": "UNACEM.Persistence.Database",
+        "projectPath": "D:\\Proyectos Externos\\Code\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj",
+        "packagesPath": "C:\\Users\\Scott.perez\\.nuget\\packages\\",
+        "outputPath": "D:\\Proyectos Externos\\Code\\UNACEM.Persistence.Database\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Scott.perez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "D:\\Proyectos Externos\\Code\\UNACEM.Domain\\UNACEM.Domain.csproj": {
+                "projectPath": "D:\\Proyectos Externos\\Code\\UNACEM.Domain\\UNACEM.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Proyectos Externos\\Code\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Proyectos Externos\\Code\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj",
+        "projectName": "UNACEM.Service.Queries",
+        "projectPath": "D:\\Proyectos Externos\\Code\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj",
+        "packagesPath": "C:\\Users\\Scott.perez\\.nuget\\packages\\",
+        "outputPath": "D:\\Proyectos Externos\\Code\\UNACEM.Service.Queries\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Scott.perez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "D:\\Proyectos Externos\\Code\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj": {
+                "projectPath": "D:\\Proyectos Externos\\Code\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj"
+              },
+              "D:\\Proyectos Externos\\Code\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj": {
+                "projectPath": "D:\\Proyectos Externos\\Code\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj"
+              },
+              "D:\\Proyectos Externos\\Code\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj": {
+                "projectPath": "D:\\Proyectos Externos\\Code\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj"
+              },
+              "D:\\Proyectos Externos\\Code\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj": {
+                "projectPath": "D:\\Proyectos Externos\\Code\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "EPPlus": {
+              "target": "Package",
+              "version": "[5.3.0, )"
+            },
+            "ExcelDataReader": {
+              "target": "Package",
+              "version": "[3.6.0, )"
+            },
+            "ExcelDataReader.DataSet": {
+              "target": "Package",
+              "version": "[3.6.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.408\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
