@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "UNACEM.Common.Collection/1.0.0": {
+        "runtime": {
+          "UNACEM.Common.Collection.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "UNACEM.Common.Collection/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

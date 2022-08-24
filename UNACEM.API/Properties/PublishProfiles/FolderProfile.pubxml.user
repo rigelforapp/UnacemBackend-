@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\Proyectos Externos\Backend\UNACEM.API\bin\Release\net6.0\publish\</_PublishTargetUrl>
+    <History>True|2022-08-24T14:44:41.9516579Z;True|2022-08-23T17:42:53.5314382-05:00;True|2022-08-23T17:42:22.0331782-05:00;True|2022-08-23T17:35:42.7906246-05:00;True|2022-08-23T17:25:24.3513576-05:00;True|2022-08-23T15:38:48.9217992-05:00;True|2022-08-23T15:25:43.3642698-05:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

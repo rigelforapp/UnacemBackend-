@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "rNTodShznxobnP+t0r9ESQxP/axX86GjsbkccN89A77lPv56KAzs6TS5ZddELl2+m2TcoyLcaK36m+f7aFwTPA==",
+  "success": true,
+  "projectFilePath": "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Scott.perez\\.nuget\\packages\\system.text.json\\5.0.1\\system.text.json.5.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

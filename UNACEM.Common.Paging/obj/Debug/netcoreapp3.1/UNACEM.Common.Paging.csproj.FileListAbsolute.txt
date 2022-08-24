@@ -1,0 +1,26 @@
+C:\proyectos\UNACEM\Code\UNACEM.Common.Paging\bin\Debug\netcoreapp3.1\UNACEM.Common.Paging.deps.json
+C:\proyectos\UNACEM\Code\UNACEM.Common.Paging\bin\Debug\netcoreapp3.1\UNACEM.Common.Paging.dll
+C:\proyectos\UNACEM\Code\UNACEM.Common.Paging\bin\Debug\netcoreapp3.1\UNACEM.Common.Paging.pdb
+C:\proyectos\UNACEM\Code\UNACEM.Common.Paging\bin\Debug\netcoreapp3.1\UNACEM.Common.Collection.dll
+C:\proyectos\UNACEM\Code\UNACEM.Common.Paging\bin\Debug\netcoreapp3.1\UNACEM.Common.Collection.pdb
+C:\proyectos\UNACEM\Code\UNACEM.Common.Paging\obj\Debug\netcoreapp3.1\UNACEM.Common.Paging.csproj.AssemblyReference.cache
+C:\proyectos\UNACEM\Code\UNACEM.Common.Paging\obj\Debug\netcoreapp3.1\UNACEM.Common.Paging.GeneratedMSBuildEditorConfig.editorconfig
+C:\proyectos\UNACEM\Code\UNACEM.Common.Paging\obj\Debug\netcoreapp3.1\UNACEM.Common.Paging.AssemblyInfoInputs.cache
+C:\proyectos\UNACEM\Code\UNACEM.Common.Paging\obj\Debug\netcoreapp3.1\UNACEM.Common.Paging.AssemblyInfo.cs
+C:\proyectos\UNACEM\Code\UNACEM.Common.Paging\obj\Debug\netcoreapp3.1\UNACEM.Common.Paging.csproj.CoreCompileInputs.cache
+C:\proyectos\UNACEM\Code\UNACEM.Common.Paging\obj\Debug\netcoreapp3.1\UNACEM.Common.Paging.csproj.CopyComplete
+C:\proyectos\UNACEM\Code\UNACEM.Common.Paging\obj\Debug\netcoreapp3.1\UNACEM.Common.Paging.dll
+C:\proyectos\UNACEM\Code\UNACEM.Common.Paging\obj\Debug\netcoreapp3.1\UNACEM.Common.Paging.pdb
+D:\Proyectos Externos\BackEnd\UNACEM.Common.Paging\bin\Debug\netcoreapp3.1\UNACEM.Common.Paging.deps.json
+D:\Proyectos Externos\BackEnd\UNACEM.Common.Paging\bin\Debug\netcoreapp3.1\UNACEM.Common.Paging.dll
+D:\Proyectos Externos\BackEnd\UNACEM.Common.Paging\bin\Debug\netcoreapp3.1\UNACEM.Common.Paging.pdb
+D:\Proyectos Externos\BackEnd\UNACEM.Common.Paging\bin\Debug\netcoreapp3.1\UNACEM.Common.Collection.dll
+D:\Proyectos Externos\BackEnd\UNACEM.Common.Paging\bin\Debug\netcoreapp3.1\UNACEM.Common.Collection.pdb
+D:\Proyectos Externos\BackEnd\UNACEM.Common.Paging\obj\Debug\netcoreapp3.1\UNACEM.Common.Paging.csproj.AssemblyReference.cache
+D:\Proyectos Externos\BackEnd\UNACEM.Common.Paging\obj\Debug\netcoreapp3.1\UNACEM.Common.Paging.GeneratedMSBuildEditorConfig.editorconfig
+D:\Proyectos Externos\BackEnd\UNACEM.Common.Paging\obj\Debug\netcoreapp3.1\UNACEM.Common.Paging.AssemblyInfoInputs.cache
+D:\Proyectos Externos\BackEnd\UNACEM.Common.Paging\obj\Debug\netcoreapp3.1\UNACEM.Common.Paging.AssemblyInfo.cs
+D:\Proyectos Externos\BackEnd\UNACEM.Common.Paging\obj\Debug\netcoreapp3.1\UNACEM.Common.Paging.csproj.CoreCompileInputs.cache
+D:\Proyectos Externos\BackEnd\UNACEM.Common.Paging\obj\Debug\netcoreapp3.1\UNACEM.Common.Paging.csproj.CopyComplete
+D:\Proyectos Externos\BackEnd\UNACEM.Common.Paging\obj\Debug\netcoreapp3.1\UNACEM.Common.Paging.dll
+D:\Proyectos Externos\BackEnd\UNACEM.Common.Paging\obj\Debug\netcoreapp3.1\UNACEM.Common.Paging.pdb

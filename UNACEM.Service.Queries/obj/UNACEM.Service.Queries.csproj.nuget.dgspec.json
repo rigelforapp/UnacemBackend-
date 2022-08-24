@@ -1,0 +1,399 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Proyectos Externos\\Backend\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj": {}
+  },
+  "projects": {
+    "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj",
+        "projectName": "UNACEM.Common.Collection",
+        "projectPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj",
+        "packagesPath": "C:\\Users\\Scott.perez\\.nuget\\packages\\",
+        "outputPath": "D:\\Proyectos Externos\\BackEnd\\UNACEM.Common.Collection\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Scott.perez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj",
+        "projectName": "UNACEM.Common.Mapping",
+        "projectPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj",
+        "packagesPath": "C:\\Users\\Scott.perez\\.nuget\\packages\\",
+        "outputPath": "D:\\Proyectos Externos\\BackEnd\\UNACEM.Common.Mapping\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Scott.perez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj",
+        "projectName": "UNACEM.Common.Paging",
+        "projectPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj",
+        "packagesPath": "C:\\Users\\Scott.perez\\.nuget\\packages\\",
+        "outputPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Paging\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Scott.perez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj": {
+                "projectPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Proyectos Externos\\Backend\\UNACEM.Domain\\UNACEM.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Proyectos Externos\\Backend\\UNACEM.Domain\\UNACEM.Domain.csproj",
+        "projectName": "UNACEM.Domain",
+        "projectPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Domain\\UNACEM.Domain.csproj",
+        "packagesPath": "C:\\Users\\Scott.perez\\.nuget\\packages\\",
+        "outputPath": "D:\\Proyectos Externos\\BackEnd\\UNACEM.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Scott.perez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Proyectos Externos\\Backend\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Proyectos Externos\\Backend\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj",
+        "projectName": "UNACEM.Persistence.Database",
+        "projectPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj",
+        "packagesPath": "C:\\Users\\Scott.perez\\.nuget\\packages\\",
+        "outputPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Persistence.Database\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Scott.perez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Proyectos Externos\\Backend\\UNACEM.Domain\\UNACEM.Domain.csproj": {
+                "projectPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Domain\\UNACEM.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Proyectos Externos\\Backend\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Proyectos Externos\\Backend\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj",
+        "projectName": "UNACEM.Service.Queries",
+        "projectPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj",
+        "packagesPath": "C:\\Users\\Scott.perez\\.nuget\\packages\\",
+        "outputPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Service.Queries\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Scott.perez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj": {
+                "projectPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj"
+              },
+              "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj": {
+                "projectPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj"
+              },
+              "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj": {
+                "projectPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj"
+              },
+              "D:\\Proyectos Externos\\Backend\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj": {
+                "projectPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "EPPlus": {
+              "target": "Package",
+              "version": "[5.3.0, )"
+            },
+            "ExcelDataReader": {
+              "target": "Package",
+              "version": "[3.6.0, )"
+            },
+            "ExcelDataReader.DataSet": {
+              "target": "Package",
+              "version": "[3.6.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
