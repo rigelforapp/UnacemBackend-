@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Proyectos Externos\\Backend\\UNACEM.API\\UNACEM.API.csproj": {}
+    "D:\\Proyectos Externos\\BackeEnd\\UNACEM.API\\UNACEM.API.csproj": {}
   },
   "projects": {
-    "D:\\Proyectos Externos\\Backend\\UNACEM.API\\UNACEM.API.csproj": {
+    "D:\\Proyectos Externos\\BackeEnd\\UNACEM.API\\UNACEM.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Proyectos Externos\\Backend\\UNACEM.API\\UNACEM.API.csproj",
+        "projectUniqueName": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.API\\UNACEM.API.csproj",
         "projectName": "UNACEM.API",
-        "projectPath": "D:\\Proyectos Externos\\Backend\\UNACEM.API\\UNACEM.API.csproj",
+        "projectPath": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.API\\UNACEM.API.csproj",
         "packagesPath": "C:\\Users\\Scott.perez\\.nuget\\packages\\",
-        "outputPath": "D:\\Proyectos Externos\\Backend\\UNACEM.API\\obj\\",
+        "outputPath": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Scott.perez\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,11 +28,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Proyectos Externos\\Backend\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj": {
-                "projectPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj"
+              "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj": {
+                "projectPath": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj"
               },
-              "D:\\Proyectos Externos\\Backend\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj": {
-                "projectPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj"
+              "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj": {
+                "projectPath": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj"
               }
             }
           }
@@ -81,14 +81,14 @@
         }
       }
     },
-    "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj": {
+    "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj",
+        "projectUniqueName": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj",
         "projectName": "UNACEM.Common.Collection",
-        "projectPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj",
+        "projectPath": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj",
         "packagesPath": "C:\\Users\\Scott.perez\\.nuget\\packages\\",
-        "outputPath": "D:\\Proyectos Externos\\BackEnd\\UNACEM.Common.Collection\\obj\\",
+        "outputPath": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Collection\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Scott.perez\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -136,14 +136,14 @@
         }
       }
     },
-    "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj": {
+    "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj",
+        "projectUniqueName": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj",
         "projectName": "UNACEM.Common.Mapping",
-        "projectPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj",
+        "projectPath": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj",
         "packagesPath": "C:\\Users\\Scott.perez\\.nuget\\packages\\",
-        "outputPath": "D:\\Proyectos Externos\\BackEnd\\UNACEM.Common.Mapping\\obj\\",
+        "outputPath": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Mapping\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Scott.perez\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -197,14 +197,14 @@
         }
       }
     },
-    "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj": {
+    "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj",
+        "projectUniqueName": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj",
         "projectName": "UNACEM.Common.Paging",
-        "projectPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj",
+        "projectPath": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj",
         "packagesPath": "C:\\Users\\Scott.perez\\.nuget\\packages\\",
-        "outputPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Paging\\obj\\",
+        "outputPath": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Paging\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Scott.perez\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -221,8 +221,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj": {
-                "projectPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj"
+              "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj": {
+                "projectPath": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj"
               }
             }
           }
@@ -262,14 +262,14 @@
         }
       }
     },
-    "D:\\Proyectos Externos\\Backend\\UNACEM.Domain\\UNACEM.Domain.csproj": {
+    "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Domain\\UNACEM.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Proyectos Externos\\Backend\\UNACEM.Domain\\UNACEM.Domain.csproj",
+        "projectUniqueName": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Domain\\UNACEM.Domain.csproj",
         "projectName": "UNACEM.Domain",
-        "projectPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Domain\\UNACEM.Domain.csproj",
+        "projectPath": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Domain\\UNACEM.Domain.csproj",
         "packagesPath": "C:\\Users\\Scott.perez\\.nuget\\packages\\",
-        "outputPath": "D:\\Proyectos Externos\\BackEnd\\UNACEM.Domain\\obj\\",
+        "outputPath": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Scott.perez\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -317,14 +317,14 @@
         }
       }
     },
-    "D:\\Proyectos Externos\\Backend\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj": {
+    "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Proyectos Externos\\Backend\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj",
+        "projectUniqueName": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj",
         "projectName": "UNACEM.Persistence.Database",
-        "projectPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj",
+        "projectPath": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj",
         "packagesPath": "C:\\Users\\Scott.perez\\.nuget\\packages\\",
-        "outputPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Persistence.Database\\obj\\",
+        "outputPath": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Persistence.Database\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Scott.perez\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -341,8 +341,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Proyectos Externos\\Backend\\UNACEM.Domain\\UNACEM.Domain.csproj": {
-                "projectPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Domain\\UNACEM.Domain.csproj"
+              "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Domain\\UNACEM.Domain.csproj": {
+                "projectPath": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Domain\\UNACEM.Domain.csproj"
               }
             }
           }
@@ -390,14 +390,14 @@
         }
       }
     },
-    "D:\\Proyectos Externos\\Backend\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj": {
+    "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Proyectos Externos\\Backend\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj",
+        "projectUniqueName": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj",
         "projectName": "UNACEM.Service.Queries",
-        "projectPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj",
+        "projectPath": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj",
         "packagesPath": "C:\\Users\\Scott.perez\\.nuget\\packages\\",
-        "outputPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Service.Queries\\obj\\",
+        "outputPath": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Service.Queries\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Scott.perez\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -414,17 +414,17 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj": {
-                "projectPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj"
+              "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj": {
+                "projectPath": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj"
               },
-              "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj": {
-                "projectPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj"
+              "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj": {
+                "projectPath": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj"
               },
-              "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj": {
-                "projectPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj"
+              "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj": {
+                "projectPath": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj"
               },
-              "D:\\Proyectos Externos\\Backend\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj": {
-                "projectPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj"
+              "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj": {
+                "projectPath": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj"
               }
             }
           }

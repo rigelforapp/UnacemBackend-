@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj": {}
+    "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj": {}
   },
   "projects": {
-    "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj": {
+    "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj",
+        "projectUniqueName": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj",
         "projectName": "UNACEM.Common.Collection",
-        "projectPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj",
+        "projectPath": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj",
         "packagesPath": "C:\\Users\\Scott.perez\\.nuget\\packages\\",
-        "outputPath": "D:\\Proyectos Externos\\BackEnd\\UNACEM.Common.Collection\\obj\\",
+        "outputPath": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Collection\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Scott.perez\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -59,14 +59,14 @@
         }
       }
     },
-    "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj": {
+    "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj",
+        "projectUniqueName": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj",
         "projectName": "UNACEM.Common.Paging",
-        "projectPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj",
+        "projectPath": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj",
         "packagesPath": "C:\\Users\\Scott.perez\\.nuget\\packages\\",
-        "outputPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Paging\\obj\\",
+        "outputPath": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Paging\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Scott.perez\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -83,8 +83,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj": {
-                "projectPath": "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj"
+              "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj": {
+                "projectPath": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj"
               }
             }
           }

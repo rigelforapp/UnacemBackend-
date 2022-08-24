@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Proyectos Externos\\BackEnd\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj",
+      "projectUniqueName": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj",
       "projectName": "UNACEM.Common.Collection",
-      "projectPath": "D:\\Proyectos Externos\\BackEnd\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj",
+      "projectPath": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj",
       "packagesPath": "C:\\Users\\Scott.perez\\.nuget\\packages\\",
-      "outputPath": "D:\\Proyectos Externos\\BackEnd\\UNACEM.Common.Collection\\obj\\",
+      "outputPath": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Collection\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Scott.perez\\AppData\\Roaming\\NuGet\\NuGet.Config",

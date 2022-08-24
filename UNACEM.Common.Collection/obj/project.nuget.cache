@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AcSvxmsVvVseqNuy5r9cmhKaK21i2Dgv6/gWjI0JEahBE6n5Oe9ooReRKipK/ticToWgVvEQy+3t7kagUno8KQ==",
+  "dgSpecHash": "6yNl+XOlFEd2MNsiCzS8ZSgDNI8b3Gr5OdZ/h6z1yETdFB/LbwogY5KOiZGNRq+bsikZsI64GwvxVR/EakhODg==",
   "success": true,
-  "projectFilePath": "D:\\Proyectos Externos\\Backend\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj",
+  "projectFilePath": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

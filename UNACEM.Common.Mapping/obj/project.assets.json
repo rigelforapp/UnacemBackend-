@@ -52,11 +52,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Proyectos Externos\\BackEnd\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj",
+      "projectUniqueName": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj",
       "projectName": "UNACEM.Common.Mapping",
-      "projectPath": "D:\\Proyectos Externos\\BackEnd\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj",
+      "projectPath": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj",
       "packagesPath": "C:\\Users\\Scott.perez\\.nuget\\packages\\",
-      "outputPath": "D:\\Proyectos Externos\\BackEnd\\UNACEM.Common.Mapping\\obj\\",
+      "outputPath": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Common.Mapping\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Scott.perez\\AppData\\Roaming\\NuGet\\NuGet.Config",

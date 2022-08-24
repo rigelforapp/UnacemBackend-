@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IE5iVlj45P27sZGbD1PZZ8eAUA1HM1QfOEEMCzc5pVe/c4tyTChwK6IMw6XkcUUmhRUd51LyBwvXMSm4vdFM0A==",
+  "dgSpecHash": "HNgDJEE1CunffroN8i4tlB3Y8Sq5mWG6gGhPrQbBS3qml1vhv5w9mcTn+4qmXaOa6NUROlxTa/w31++4bHiFHg==",
   "success": true,
-  "projectFilePath": "D:\\Proyectos Externos\\Backend\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj",
+  "projectFilePath": "D:\\Proyectos Externos\\BackeEnd\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Scott.perez\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Scott.perez\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
