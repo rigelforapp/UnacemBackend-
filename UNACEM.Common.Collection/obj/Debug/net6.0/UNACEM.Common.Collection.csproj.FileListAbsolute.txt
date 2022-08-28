@@ -1,0 +1,24 @@
+D:\Proyectos Externos\BackEnd\UNACEM.Common.Collection\bin\Debug\net6.0\UNACEM.Common.Collection.deps.json
+D:\Proyectos Externos\BackEnd\UNACEM.Common.Collection\bin\Debug\net6.0\UNACEM.Common.Collection.dll
+D:\Proyectos Externos\BackEnd\UNACEM.Common.Collection\bin\Debug\net6.0\UNACEM.Common.Collection.pdb
+D:\Proyectos Externos\BackEnd\UNACEM.Common.Collection\obj\Debug\net6.0\UNACEM.Common.Collection.csproj.AssemblyReference.cache
+D:\Proyectos Externos\BackEnd\UNACEM.Common.Collection\obj\Debug\net6.0\UNACEM.Common.Collection.GeneratedMSBuildEditorConfig.editorconfig
+D:\Proyectos Externos\BackEnd\UNACEM.Common.Collection\obj\Debug\net6.0\UNACEM.Common.Collection.AssemblyInfoInputs.cache
+D:\Proyectos Externos\BackEnd\UNACEM.Common.Collection\obj\Debug\net6.0\UNACEM.Common.Collection.AssemblyInfo.cs
+D:\Proyectos Externos\BackEnd\UNACEM.Common.Collection\obj\Debug\net6.0\UNACEM.Common.Collection.csproj.CoreCompileInputs.cache
+D:\Proyectos Externos\BackEnd\UNACEM.Common.Collection\obj\Debug\net6.0\UNACEM.Common.Collection.dll
+D:\Proyectos Externos\BackEnd\UNACEM.Common.Collection\obj\Debug\net6.0\refint\UNACEM.Common.Collection.dll
+D:\Proyectos Externos\BackEnd\UNACEM.Common.Collection\obj\Debug\net6.0\UNACEM.Common.Collection.pdb
+D:\Proyectos Externos\BackEnd\UNACEM.Common.Collection\obj\Debug\net6.0\ref\UNACEM.Common.Collection.dll
+C:\proyectos\UNACEM\Backend\UNACEM.Common.Collection\bin\Debug\net6.0\UNACEM.Common.Collection.deps.json
+C:\proyectos\UNACEM\Backend\UNACEM.Common.Collection\bin\Debug\net6.0\UNACEM.Common.Collection.dll
+C:\proyectos\UNACEM\Backend\UNACEM.Common.Collection\bin\Debug\net6.0\UNACEM.Common.Collection.pdb
+C:\proyectos\UNACEM\Backend\UNACEM.Common.Collection\obj\Debug\net6.0\UNACEM.Common.Collection.csproj.AssemblyReference.cache
+C:\proyectos\UNACEM\Backend\UNACEM.Common.Collection\obj\Debug\net6.0\UNACEM.Common.Collection.GeneratedMSBuildEditorConfig.editorconfig
+C:\proyectos\UNACEM\Backend\UNACEM.Common.Collection\obj\Debug\net6.0\UNACEM.Common.Collection.AssemblyInfoInputs.cache
+C:\proyectos\UNACEM\Backend\UNACEM.Common.Collection\obj\Debug\net6.0\UNACEM.Common.Collection.AssemblyInfo.cs
+C:\proyectos\UNACEM\Backend\UNACEM.Common.Collection\obj\Debug\net6.0\UNACEM.Common.Collection.csproj.CoreCompileInputs.cache
+C:\proyectos\UNACEM\Backend\UNACEM.Common.Collection\obj\Debug\net6.0\UNACEM.Common.Collection.dll
+C:\proyectos\UNACEM\Backend\UNACEM.Common.Collection\obj\Debug\net6.0\refint\UNACEM.Common.Collection.dll
+C:\proyectos\UNACEM\Backend\UNACEM.Common.Collection\obj\Debug\net6.0\UNACEM.Common.Collection.pdb
+C:\proyectos\UNACEM\Backend\UNACEM.Common.Collection\obj\Debug\net6.0\ref\UNACEM.Common.Collection.dll

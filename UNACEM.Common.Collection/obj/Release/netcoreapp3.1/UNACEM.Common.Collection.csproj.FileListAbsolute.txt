@@ -1,0 +1,10 @@
+D:\Proyectos Externos\BackEnd\UNACEM.Common.Collection\bin\Release\netcoreapp3.1\UNACEM.Common.Collection.deps.json
+D:\Proyectos Externos\BackEnd\UNACEM.Common.Collection\bin\Release\netcoreapp3.1\UNACEM.Common.Collection.dll
+D:\Proyectos Externos\BackEnd\UNACEM.Common.Collection\bin\Release\netcoreapp3.1\UNACEM.Common.Collection.pdb
+D:\Proyectos Externos\BackEnd\UNACEM.Common.Collection\obj\Release\netcoreapp3.1\UNACEM.Common.Collection.csproj.AssemblyReference.cache
+D:\Proyectos Externos\BackEnd\UNACEM.Common.Collection\obj\Release\netcoreapp3.1\UNACEM.Common.Collection.GeneratedMSBuildEditorConfig.editorconfig
+D:\Proyectos Externos\BackEnd\UNACEM.Common.Collection\obj\Release\netcoreapp3.1\UNACEM.Common.Collection.AssemblyInfoInputs.cache
+D:\Proyectos Externos\BackEnd\UNACEM.Common.Collection\obj\Release\netcoreapp3.1\UNACEM.Common.Collection.AssemblyInfo.cs
+D:\Proyectos Externos\BackEnd\UNACEM.Common.Collection\obj\Release\netcoreapp3.1\UNACEM.Common.Collection.csproj.CoreCompileInputs.cache
+D:\Proyectos Externos\BackEnd\UNACEM.Common.Collection\obj\Release\netcoreapp3.1\UNACEM.Common.Collection.dll
+D:\Proyectos Externos\BackEnd\UNACEM.Common.Collection\obj\Release\netcoreapp3.1\UNACEM.Common.Collection.pdb

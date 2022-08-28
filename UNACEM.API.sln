@@ -1,0 +1,121 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32510.428
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{9B5CE7BB-8054-44E3-B182-F01B21BA9032}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UNACEM.API", "UNACEM.API\UNACEM.API.csproj", "{775C20FF-4FC2-4442-8616-3FD8E1492E42}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. API", "01. API", "{14AE9A1D-6BF9-4DAE-8602-6411EC524360}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03. Persistence", "03. Persistence", "{7FB7574E-F6BE-4BF5-9CAD-0CC0E60F5908}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UNACEM.Persistence.Database", "UNACEM.Persistence.Database\UNACEM.Persistence.Database.csproj", "{E9712445-1DE7-4B76-9559-5F566B9D0B91}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04. Models", "04. Models", "{7D758075-B4FA-41F8-8351-647ADFC45F94}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UNACEM.Domain", "UNACEM.Domain\UNACEM.Domain.csproj", "{73517D5B-6E39-49C9-8394-23C47816ADF9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. Services", "02. Services", "{15E9E501-8535-48BC-9388-549BB25430D2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UNACEM.Service.Queries", "UNACEM.Service.Queries\UNACEM.Service.Queries.csproj", "{37B30C00-6C87-43F3-9392-07FFDEC6141F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05. Common", "05. Common", "{8D707837-9E62-424A-95E2-FF6B9D6C2C29}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UNACEM.Common.Mapping", "UNACEM.Common.Mapping\UNACEM.Common.Mapping.csproj", "{57B7C2F6-ACA8-4DD0-89B8-CA4A73794029}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UNACEM.Common.Collection", "UNACEM.Common.Collection\UNACEM.Common.Collection.csproj", "{D070286D-2099-4049-948A-C10821E76C7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UNACEM.Common.Paging", "UNACEM.Common.Paging\UNACEM.Common.Paging.csproj", "{8212C8D9-6480-496A-B25F-3B97A840DBF9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{775C20FF-4FC2-4442-8616-3FD8E1492E42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{775C20FF-4FC2-4442-8616-3FD8E1492E42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{775C20FF-4FC2-4442-8616-3FD8E1492E42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{775C20FF-4FC2-4442-8616-3FD8E1492E42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9712445-1DE7-4B76-9559-5F566B9D0B91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9712445-1DE7-4B76-9559-5F566B9D0B91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9712445-1DE7-4B76-9559-5F566B9D0B91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9712445-1DE7-4B76-9559-5F566B9D0B91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73517D5B-6E39-49C9-8394-23C47816ADF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73517D5B-6E39-49C9-8394-23C47816ADF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73517D5B-6E39-49C9-8394-23C47816ADF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73517D5B-6E39-49C9-8394-23C47816ADF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37B30C00-6C87-43F3-9392-07FFDEC6141F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37B30C00-6C87-43F3-9392-07FFDEC6141F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37B30C00-6C87-43F3-9392-07FFDEC6141F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37B30C00-6C87-43F3-9392-07FFDEC6141F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57B7C2F6-ACA8-4DD0-89B8-CA4A73794029}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57B7C2F6-ACA8-4DD0-89B8-CA4A73794029}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57B7C2F6-ACA8-4DD0-89B8-CA4A73794029}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57B7C2F6-ACA8-4DD0-89B8-CA4A73794029}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D070286D-2099-4049-948A-C10821E76C7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D070286D-2099-4049-948A-C10821E76C7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D070286D-2099-4049-948A-C10821E76C7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D070286D-2099-4049-948A-C10821E76C7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8212C8D9-6480-496A-B25F-3B97A840DBF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8212C8D9-6480-496A-B25F-3B97A840DBF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8212C8D9-6480-496A-B25F-3B97A840DBF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8212C8D9-6480-496A-B25F-3B97A840DBF9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{775C20FF-4FC2-4442-8616-3FD8E1492E42} = {14AE9A1D-6BF9-4DAE-8602-6411EC524360}
+		{14AE9A1D-6BF9-4DAE-8602-6411EC524360} = {9B5CE7BB-8054-44E3-B182-F01B21BA9032}
+		{7FB7574E-F6BE-4BF5-9CAD-0CC0E60F5908} = {9B5CE7BB-8054-44E3-B182-F01B21BA9032}
+		{E9712445-1DE7-4B76-9559-5F566B9D0B91} = {7FB7574E-F6BE-4BF5-9CAD-0CC0E60F5908}
+		{7D758075-B4FA-41F8-8351-647ADFC45F94} = {9B5CE7BB-8054-44E3-B182-F01B21BA9032}
+		{73517D5B-6E39-49C9-8394-23C47816ADF9} = {7D758075-B4FA-41F8-8351-647ADFC45F94}
+		{15E9E501-8535-48BC-9388-549BB25430D2} = {9B5CE7BB-8054-44E3-B182-F01B21BA9032}
+		{37B30C00-6C87-43F3-9392-07FFDEC6141F} = {15E9E501-8535-48BC-9388-549BB25430D2}
+		{8D707837-9E62-424A-95E2-FF6B9D6C2C29} = {9B5CE7BB-8054-44E3-B182-F01B21BA9032}
+		{57B7C2F6-ACA8-4DD0-89B8-CA4A73794029} = {8D707837-9E62-424A-95E2-FF6B9D6C2C29}
+		{D070286D-2099-4049-948A-C10821E76C7C} = {8D707837-9E62-424A-95E2-FF6B9D6C2C29}
+		{8212C8D9-6480-496A-B25F-3B97A840DBF9} = {8D707837-9E62-424A-95E2-FF6B9D6C2C29}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1FA37F2D-B4F5-40AA-B10F-96ADEE5A7B86}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dev.azure.com/acarhuamaca
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = UNACEM.API\\UNACEM.API.csproj
+		SccProjectTopLevelParentUniqueName1 = UNACEM.API.sln
+		SccProjectName1 = UNACEM.API
+		SccLocalPath1 = UNACEM.API
+		SccProjectUniqueName2 = UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj
+		SccProjectTopLevelParentUniqueName2 = UNACEM.API.sln
+		SccProjectName2 = UNACEM.Persistence.Database
+		SccLocalPath2 = UNACEM.Persistence.Database
+		SccProjectUniqueName3 = UNACEM.Domain\\UNACEM.Domain.csproj
+		SccProjectTopLevelParentUniqueName3 = UNACEM.API.sln
+		SccProjectName3 = UNACEM.Domain
+		SccLocalPath3 = UNACEM.Domain
+		SccProjectUniqueName4 = UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj
+		SccProjectTopLevelParentUniqueName4 = UNACEM.API.sln
+		SccProjectName4 = UNACEM.Service.Queries
+		SccLocalPath4 = UNACEM.Service.Queries
+		SccProjectUniqueName5 = UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj
+		SccProjectTopLevelParentUniqueName5 = UNACEM.API.sln
+		SccProjectName5 = UNACEM.Common.Mapping
+		SccLocalPath5 = UNACEM.Common.Mapping
+		SccProjectUniqueName6 = UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj
+		SccProjectTopLevelParentUniqueName6 = UNACEM.API.sln
+		SccProjectName6 = UNACEM.Common.Collection
+		SccLocalPath6 = UNACEM.Common.Collection
+		SccProjectUniqueName7 = UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj
+		SccProjectTopLevelParentUniqueName7 = UNACEM.API.sln
+		SccProjectName7 = UNACEM.Common.Paging
+		SccLocalPath7 = UNACEM.Common.Paging
+	EndGlobalSection
+EndGlobal
