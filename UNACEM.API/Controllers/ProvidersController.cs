@@ -13,7 +13,7 @@ using UNACEM.Service.Queries.ViewModel.Response;
 namespace UNACEM.API.Controllers
 {
     [ApiController]
-    [Route("Providers")]
+    [Route("{entity}")]
     public class ProvidersController : ControllerBase
     {
         private readonly IProvidersQueryService _providersQueryService;
@@ -33,7 +33,7 @@ namespace UNACEM.API.Controllers
             return await _providersQueryService.Update(providersRequest);
         }
 
-        [HttpGet("GetAll")]
+        [HttpGet]
         public async Task<ProvidersResponse> GetAll(int Start, int Limit)
         {
             return await _providersQueryService.GetAll(Start, Limit);

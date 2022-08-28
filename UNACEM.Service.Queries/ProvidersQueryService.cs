@@ -96,7 +96,7 @@ namespace UNACEM.Service.Queries
             ProvidersResponse result = new ProvidersResponse();
             try
             {
-                var collection = await _context.Providers.AsNoTracking().OrderByDescending(x => x.ProviderId).GetPagedAsync(Start, Limit);
+                var collection = await _context.Providers.AsNoTracking().OrderBy(x => x.ProviderId).GetPagedAsync(Start, Limit);
                 var providersresult = collection.MapTo<DataCollection<ProvidersDto>>();
 
                 result.Success = true;

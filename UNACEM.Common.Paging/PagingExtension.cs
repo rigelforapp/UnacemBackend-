@@ -18,8 +18,8 @@ namespace UNACEM.Common.Paging
             var originalPages = page;
 
             page--;
-            if (page > 0)
-                page = page * take;
+            //if (page > 0)
+            //    page = page * take;
 
             var result = new DataCollection<T>
             {
