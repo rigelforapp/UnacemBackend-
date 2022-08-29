@@ -1,26 +1,3 @@
-D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\bin\Release\net6.0\UNACEM.Service.Queries.deps.json
-D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\bin\Release\net6.0\UNACEM.Service.Queries.dll
-D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\bin\Release\net6.0\UNACEM.Service.Queries.pdb
-D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\bin\Release\net6.0\UNACEM.Common.Collection.dll
-D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\bin\Release\net6.0\UNACEM.Common.Mapping.dll
-D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\bin\Release\net6.0\UNACEM.Common.Paging.dll
-D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\bin\Release\net6.0\UNACEM.Domain.dll
-D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\bin\Release\net6.0\UNACEM.Persistence.Database.dll
-D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\bin\Release\net6.0\UNACEM.Common.Collection.pdb
-D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\bin\Release\net6.0\UNACEM.Common.Mapping.pdb
-D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\bin\Release\net6.0\UNACEM.Common.Paging.pdb
-D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\bin\Release\net6.0\UNACEM.Persistence.Database.pdb
-D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\bin\Release\net6.0\UNACEM.Domain.pdb
-D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\obj\Release\net6.0\UNACEM.Service.Queries.csproj.AssemblyReference.cache
-D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\obj\Release\net6.0\UNACEM.Service.Queries.GeneratedMSBuildEditorConfig.editorconfig
-D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\obj\Release\net6.0\UNACEM.Service.Queries.AssemblyInfoInputs.cache
-D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\obj\Release\net6.0\UNACEM.Service.Queries.AssemblyInfo.cs
-D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\obj\Release\net6.0\UNACEM.Service.Queries.csproj.CoreCompileInputs.cache
-D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\obj\Release\net6.0\UNACEM.Service.Queries.csproj.CopyComplete
-D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\obj\Release\net6.0\UNACEM.Service.Queries.dll
-D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\obj\Release\net6.0\refint\UNACEM.Service.Queries.dll
-D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\obj\Release\net6.0\UNACEM.Service.Queries.pdb
-D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\obj\Release\net6.0\ref\UNACEM.Service.Queries.dll
 C:\proyectos\UNACEM\Backend\UNACEM.Service.Queries\bin\Release\net6.0\UNACEM.Service.Queries.deps.json
 C:\proyectos\UNACEM\Backend\UNACEM.Service.Queries\bin\Release\net6.0\UNACEM.Service.Queries.dll
 C:\proyectos\UNACEM\Backend\UNACEM.Service.Queries\bin\Release\net6.0\UNACEM.Service.Queries.pdb
@@ -44,3 +21,26 @@ C:\proyectos\UNACEM\Backend\UNACEM.Service.Queries\obj\Release\net6.0\UNACEM.Ser
 C:\proyectos\UNACEM\Backend\UNACEM.Service.Queries\obj\Release\net6.0\refint\UNACEM.Service.Queries.dll
 C:\proyectos\UNACEM\Backend\UNACEM.Service.Queries\obj\Release\net6.0\UNACEM.Service.Queries.pdb
 C:\proyectos\UNACEM\Backend\UNACEM.Service.Queries\obj\Release\net6.0\ref\UNACEM.Service.Queries.dll
+D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\bin\Release\net6.0\UNACEM.Service.Queries.deps.json
+D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\bin\Release\net6.0\UNACEM.Service.Queries.dll
+D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\bin\Release\net6.0\UNACEM.Service.Queries.pdb
+D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\bin\Release\net6.0\UNACEM.Common.Collection.dll
+D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\bin\Release\net6.0\UNACEM.Common.Mapping.dll
+D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\bin\Release\net6.0\UNACEM.Common.Paging.dll
+D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\bin\Release\net6.0\UNACEM.Domain.dll
+D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\bin\Release\net6.0\UNACEM.Persistence.Database.dll
+D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\bin\Release\net6.0\UNACEM.Common.Collection.pdb
+D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\bin\Release\net6.0\UNACEM.Common.Mapping.pdb
+D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\bin\Release\net6.0\UNACEM.Common.Paging.pdb
+D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\bin\Release\net6.0\UNACEM.Persistence.Database.pdb
+D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\bin\Release\net6.0\UNACEM.Domain.pdb
+D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\obj\Release\net6.0\UNACEM.Service.Queries.csproj.AssemblyReference.cache
+D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\obj\Release\net6.0\UNACEM.Service.Queries.GeneratedMSBuildEditorConfig.editorconfig
+D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\obj\Release\net6.0\UNACEM.Service.Queries.AssemblyInfoInputs.cache
+D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\obj\Release\net6.0\UNACEM.Service.Queries.AssemblyInfo.cs
+D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\obj\Release\net6.0\UNACEM.Service.Queries.csproj.CoreCompileInputs.cache
+D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\obj\Release\net6.0\UNACEM.Service.Queries.csproj.CopyComplete
+D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\obj\Release\net6.0\UNACEM.Service.Queries.dll
+D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\obj\Release\net6.0\refint\UNACEM.Service.Queries.dll
+D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\obj\Release\net6.0\UNACEM.Service.Queries.pdb
+D:\Proyectos Externos\BackEnd\UNACEM.Service.Queries\obj\Release\net6.0\ref\UNACEM.Service.Queries.dll

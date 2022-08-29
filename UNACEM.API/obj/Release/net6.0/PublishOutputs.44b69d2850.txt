@@ -20,7 +20,6 @@ D:\Proyectos Externos\BackEnd\UNACEM.API\obj\Release\net6.0\PubTmp\Out\Microsoft
 D:\Proyectos Externos\BackEnd\UNACEM.API\obj\Release\net6.0\PubTmp\Out\Microsoft.IdentityModel.Tokens.dll
 D:\Proyectos Externos\BackEnd\UNACEM.API\obj\Release\net6.0\PubTmp\Out\Microsoft.OpenApi.dll
 D:\Proyectos Externos\BackEnd\UNACEM.API\obj\Release\net6.0\PubTmp\Out\Microsoft.Win32.SystemEvents.dll
-D:\Proyectos Externos\BackEnd\UNACEM.API\obj\Release\net6.0\PubTmp\Out\Newtonsoft.Json.dll
 D:\Proyectos Externos\BackEnd\UNACEM.API\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
 D:\Proyectos Externos\BackEnd\UNACEM.API\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Proyectos Externos\BackEnd\UNACEM.API\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -35,13 +34,9 @@ D:\Proyectos Externos\BackEnd\UNACEM.API\obj\Release\net6.0\PubTmp\Out\System.Xm
 D:\Proyectos Externos\BackEnd\UNACEM.API\obj\Release\net6.0\PubTmp\Out\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 D:\Proyectos Externos\BackEnd\UNACEM.API\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 D:\Proyectos Externos\BackEnd\UNACEM.API\obj\Release\net6.0\PubTmp\Out\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-D:\Proyectos Externos\BackEnd\UNACEM.API\obj\Release\net6.0\PubTmp\Out\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
 D:\Proyectos Externos\BackEnd\UNACEM.API\obj\Release\net6.0\PubTmp\Out\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\Proyectos Externos\BackEnd\UNACEM.API\obj\Release\net6.0\PubTmp\Out\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
 D:\Proyectos Externos\BackEnd\UNACEM.API\obj\Release\net6.0\PubTmp\Out\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\Proyectos Externos\BackEnd\UNACEM.API\obj\Release\net6.0\PubTmp\Out\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
 D:\Proyectos Externos\BackEnd\UNACEM.API\obj\Release\net6.0\PubTmp\Out\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-D:\Proyectos Externos\BackEnd\UNACEM.API\obj\Release\net6.0\PubTmp\Out\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 D:\Proyectos Externos\BackEnd\UNACEM.API\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
 D:\Proyectos Externos\BackEnd\UNACEM.API\obj\Release\net6.0\PubTmp\Out\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 D:\Proyectos Externos\BackEnd\UNACEM.API\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll

@@ -8,24 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\ASUS\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Scott.perez\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\proyectos\\UNACEM\\Backend\\UNACEM.Domain\\UNACEM.Domain.csproj",
+      "projectUniqueName": "D:\\Proyectos Externos\\BackEnd\\UNACEM.Domain\\UNACEM.Domain.csproj",
       "projectName": "UNACEM.Domain",
-      "projectPath": "C:\\proyectos\\UNACEM\\Backend\\UNACEM.Domain\\UNACEM.Domain.csproj",
-      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "C:\\proyectos\\UNACEM\\Backend\\UNACEM.Domain\\obj\\",
+      "projectPath": "D:\\Proyectos Externos\\BackEnd\\UNACEM.Domain\\UNACEM.Domain.csproj",
+      "packagesPath": "C:\\Users\\Scott.perez\\.nuget\\packages\\",
+      "outputPath": "D:\\Proyectos Externos\\BackEnd\\UNACEM.Domain\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Scott.perez\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

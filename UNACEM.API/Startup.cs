@@ -19,7 +19,7 @@ namespace UNACEM.API
 {
     public class Startup
     {
-        readonly string allowSpecificOrigins = "_allowSpecificOrigins";
+        readonly string allowSpecificOrigins = "_myAllowSpecificOrigins";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -47,15 +47,19 @@ namespace UNACEM.API
             services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "UNACEM.API", Version = "v1" });
 
-                services.AddCors(options =>
-                {
-                    options.AddPolicy(name: allowSpecificOrigins, builder =>
-                    {
-                        builder.WithOrigins(
-                            "http://127.0.0.1:4400"
-                            ).AllowAnyMethod().AllowAnyHeader();
-                    });
-                });
+
+                services.AddCors();
+                services.AddControllers();
+                //services.AddCors(options =>
+                //{
+                //    options.AddPolicy(allowSpecificOrigins,
+                //                          policy =>
+                //                          {
+                //                              policy.WithOrigins("http://localhost:5674")
+                //                                                  .AllowAnyHeader()
+                //                                                  .AllowAnyMethod();
+                //                          });
+                //});
 
                 //var securitySchema = new OpenApiSecurityScheme
                 //{
@@ -87,6 +91,8 @@ namespace UNACEM.API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env , ApplicationDbContext dataContext)
         {
+        
+
             dataContext.Database.Migrate();
             if (env.IsDevelopment())
             {
@@ -97,14 +103,19 @@ namespace UNACEM.API
 
             app.UseAuthorization();
 
+            app.UseCors(x => x
+                   .AllowAnyMethod()
+                   .AllowAnyHeader()
+                   .SetIsOriginAllowed(origin => true) // allow any origin
+                   .AllowCredentials()); //
+          //  app.UseCors(allowSpecificOrigins);
+            //app.UseCors();
+            app.UseSwagger();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint(Configuration.GetSection("VirtualDirectory").Value + "/swagger/v1/swagger.json", "ClientesExtranet.Api v1"));
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
-           
-            app.UseSwagger();
-            app.UseSwaggerUI(c => c.SwaggerEndpoint(Configuration.GetSection("VirtualDirectory").Value + "/swagger/v1/swagger.json", "ClientesExtranet.Api v1"));
-
         }
     }
 }
