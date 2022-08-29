@@ -95,7 +95,7 @@ namespace UNACEM.Service.Queries
 
                 result.Success = true;
                 result.Message = "Se realizo correctamente";
-                result.ListOvens = (List<OvensDto>)ovensresult.Items;
+                result.Data = (List<OvensDto>)ovensresult.Items;
             }
             catch (Exception ex)
             {

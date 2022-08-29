@@ -7,6 +7,6 @@ namespace UNACEM.Service.Queries.ViewModel.Response
 {
     public class ProvidersResponse : ResponseBase
     {
-        public List<ProvidersDto> ListProviders { get; set; }
+        public List<ProvidersDto> Data { get; set; }
     }
 }

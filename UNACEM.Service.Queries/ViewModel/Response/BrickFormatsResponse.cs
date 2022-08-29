@@ -7,6 +7,6 @@ namespace UNACEM.Service.Queries.ViewModel.Response
 {
     public class BrickFormatsResponse: ResponseBase
     {
-        public List<BrickFormatsDto> ListaBrickFormats { get; set; }
+        public List<BrickFormatsDto> Data { get; set; }
     }
 }

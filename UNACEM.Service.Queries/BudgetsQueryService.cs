@@ -89,7 +89,7 @@ namespace UNACEM.Service.Queries
 
                 result.Success = true;
                 result.Message = "Se realizo satisfactoriamente";
-                result.ListaBudgetFormats = (List<BudgetsDto>)budgetsresult.Items;
+                result.Data = (List<BudgetsDto>)budgetsresult.Items;
 
             }
             catch (Exception ex)

@@ -73,7 +73,7 @@ namespace UNACEM.Service.Queries
 
                 result.Success = true;
                 result.Message = "Se realizo correctamente";
-                result.ListaStrech = (List<StretchsDto>)versionresult.Items;
+                result.Data = (List<StretchsDto>)versionresult.Items;
             }
             catch (Exception ex)
             {

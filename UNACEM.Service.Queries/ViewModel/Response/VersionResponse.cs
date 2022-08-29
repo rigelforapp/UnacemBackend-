@@ -7,6 +7,6 @@ namespace UNACEM.Service.Queries.ViewModel.Response
 {
     public class VersionResponse : ResponseBase
     {
-        public List<VersionDto> ListVersion{ get; set; }
+        public List<VersionDto> Data { get; set; }
     }
 }

@@ -34,7 +34,7 @@ namespace UNACEM.Service.Queries
 
                 result.Success = true;
                 result.Message = "Se realizo satisfactoriamente";
-                result.ListaBrickFormats = (List<BrickFormatsDto>)providersresult.Items;
+                result.Data = (List<BrickFormatsDto>)providersresult.Items;
 
             }
             catch (Exception ex)

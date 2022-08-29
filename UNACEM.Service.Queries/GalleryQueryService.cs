@@ -72,7 +72,7 @@ namespace UNACEM.Service.Queries
 
                 result.Success = true;
                 result.Message = "Se realizo satisfactoriamente";
-                result.ListaGallery = (List<GalleryDto>)galleryresult.Items;
+                result.Data = (List<GalleryDto>)galleryresult.Items;
             }
             catch (Exception ex)
             {

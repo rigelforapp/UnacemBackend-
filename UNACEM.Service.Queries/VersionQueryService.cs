@@ -72,9 +72,9 @@ namespace UNACEM.Service.Queries
 
                 result.Success = true;
                 result.Message = "Se realizo correctamente";
-                result.ListVersion = (List<VersionDto>)versionresult.Items;
+                result.Data = (List<VersionDto>)versionresult.Items;
 
-                foreach (var item in result.ListVersion)
+                foreach (var item in result.Data)
                 {
                     item.DateIni = item.Date_Ini.ToString("dd/MM/yyyy");
                     item.DateEnd = item.Date_End.ToString("dd/MM/yyyy");

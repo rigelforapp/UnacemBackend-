@@ -7,6 +7,6 @@ namespace UNACEM.Service.Queries.ViewModel.Response
 {
     public class StretchsResponse : ResponseBase
     {
-        public List<StretchsDto> ListaStrech { get; set; }
+        public List<StretchsDto> Data { get; set; }
     }
 }

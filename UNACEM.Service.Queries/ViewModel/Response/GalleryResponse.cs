@@ -7,6 +7,6 @@ namespace UNACEM.Service.Queries.ViewModel.Response
 {
     public class GalleryResponse : ResponseBase
     {
-        public List<GalleryDto> ListaGallery { get; set; }
+        public List<GalleryDto> Data { get; set; }
     }
 }

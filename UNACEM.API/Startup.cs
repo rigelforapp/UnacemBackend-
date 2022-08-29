@@ -19,6 +19,7 @@ namespace UNACEM.API
 {
     public class Startup
     {
+        readonly string allowSpecificOrigins = "_allowSpecificOrigins";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -45,6 +46,16 @@ namespace UNACEM.API
 
             services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "UNACEM.API", Version = "v1" });
+
+                services.AddCors(options =>
+                {
+                    options.AddPolicy(name: allowSpecificOrigins, builder =>
+                    {
+                        builder.WithOrigins(
+                            "http://127.0.0.1:4400"
+                            ).AllowAnyMethod().AllowAnyHeader();
+                    });
+                });
 
                 //var securitySchema = new OpenApiSecurityScheme
                 //{

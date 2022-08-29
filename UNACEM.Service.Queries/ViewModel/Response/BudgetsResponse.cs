@@ -9,6 +9,6 @@ namespace UNACEM.Service.Queries.ViewModel.Response
 {
     public class BudgetsResponse : ResponseBase
     {
-        public List<BudgetsDto> ListaBudgetFormats { get; set; }
+        public List<BudgetsDto> Data { get; set; }
     }
 }

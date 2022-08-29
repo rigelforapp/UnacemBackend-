@@ -101,7 +101,7 @@ namespace UNACEM.Service.Queries
 
                 result.Success = true;
                 result.Message = "Se realizo satisfactoriamente";
-                result.ListProviders = (List<ProvidersDto>)providersresult.Items;
+                result.Data = (List<ProvidersDto>)providersresult.Items;
 
             }
             catch (Exception ex)
