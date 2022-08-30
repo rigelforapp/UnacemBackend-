@@ -1,0 +1,13 @@
+D:\Proyectos Externos\BackEnd\UNACEM.Persistence.Database\bin\Release\netcoreapp3.1\UNACEM.Persistence.Database.deps.json
+D:\Proyectos Externos\BackEnd\UNACEM.Persistence.Database\bin\Release\netcoreapp3.1\UNACEM.Persistence.Database.dll
+D:\Proyectos Externos\BackEnd\UNACEM.Persistence.Database\bin\Release\netcoreapp3.1\UNACEM.Persistence.Database.pdb
+D:\Proyectos Externos\BackEnd\UNACEM.Persistence.Database\bin\Release\netcoreapp3.1\UNACEM.Domain.dll
+D:\Proyectos Externos\BackEnd\UNACEM.Persistence.Database\bin\Release\netcoreapp3.1\UNACEM.Domain.pdb
+D:\Proyectos Externos\BackEnd\UNACEM.Persistence.Database\obj\Release\netcoreapp3.1\UNACEM.Persistence.Database.csproj.AssemblyReference.cache
+D:\Proyectos Externos\BackEnd\UNACEM.Persistence.Database\obj\Release\netcoreapp3.1\UNACEM.Persistence.Database.GeneratedMSBuildEditorConfig.editorconfig
+D:\Proyectos Externos\BackEnd\UNACEM.Persistence.Database\obj\Release\netcoreapp3.1\UNACEM.Persistence.Database.AssemblyInfoInputs.cache
+D:\Proyectos Externos\BackEnd\UNACEM.Persistence.Database\obj\Release\netcoreapp3.1\UNACEM.Persistence.Database.AssemblyInfo.cs
+D:\Proyectos Externos\BackEnd\UNACEM.Persistence.Database\obj\Release\netcoreapp3.1\UNACEM.Persistence.Database.csproj.CoreCompileInputs.cache
+D:\Proyectos Externos\BackEnd\UNACEM.Persistence.Database\obj\Release\netcoreapp3.1\UNACEM.Persistence.Database.csproj.CopyComplete
+D:\Proyectos Externos\BackEnd\UNACEM.Persistence.Database\obj\Release\netcoreapp3.1\UNACEM.Persistence.Database.dll
+D:\Proyectos Externos\BackEnd\UNACEM.Persistence.Database\obj\Release\netcoreapp3.1\UNACEM.Persistence.Database.pdb
