@@ -9,7 +9,7 @@ namespace UNACEM.API.Controllers
 {
     //[Route("api/[controller]")]
     [ApiController]
-    [Route("Budgets")]
+    [Route("Ovens/Budgets")]
     public class BudgetsController : ControllerBase
     {
         private readonly IBudgetsQueryService _budgetsQueryService;
