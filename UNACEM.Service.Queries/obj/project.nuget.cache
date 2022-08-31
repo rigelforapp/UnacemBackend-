@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7TLh7hiY4l1e3wtSX/CI5ejtzn+mWYz3nfWoRZl9h5q+qTCTtM6Lz1lTk47UG0CdSu0uWfDh3trI3oH0HM3J1A==",
+  "dgSpecHash": "xJHv7y1QNsBhV8zrkbiLDC4sL48+xA6q+sDGFy6ax3mPIa4iU/+0FT9eqG3liiafO5Leod0DBEYY4xvr9ABOuw==",
   "success": true,
-  "projectFilePath": "C:\\proyectos\\UNACEM\\Backend\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj",
+  "projectFilePath": "C:\\proyectos\\UNACEM\\Code\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ASUS\\.nuget\\packages\\epplus\\5.3.0\\epplus.5.3.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\exceldatareader\\3.6.0\\exceldatareader.3.6.0.nupkg.sha512",

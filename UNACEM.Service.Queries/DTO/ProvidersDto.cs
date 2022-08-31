@@ -8,5 +8,6 @@ namespace UNACEM.Service.Queries.DTO
     {
         public int ProviderId { get; set; }
         public string Name { get; set; }
+        public string Last_importation_date { get; set; }
     }
 }

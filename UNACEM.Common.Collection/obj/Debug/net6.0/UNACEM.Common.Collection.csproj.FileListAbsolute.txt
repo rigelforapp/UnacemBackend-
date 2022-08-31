@@ -22,3 +22,15 @@ C:\proyectos\UNACEM\Backend\UNACEM.Common.Collection\obj\Debug\net6.0\UNACEM.Com
 C:\proyectos\UNACEM\Backend\UNACEM.Common.Collection\obj\Debug\net6.0\refint\UNACEM.Common.Collection.dll
 C:\proyectos\UNACEM\Backend\UNACEM.Common.Collection\obj\Debug\net6.0\UNACEM.Common.Collection.pdb
 C:\proyectos\UNACEM\Backend\UNACEM.Common.Collection\obj\Debug\net6.0\ref\UNACEM.Common.Collection.dll
+C:\proyectos\UNACEM\Code\UNACEM.Common.Collection\bin\Debug\net6.0\UNACEM.Common.Collection.deps.json
+C:\proyectos\UNACEM\Code\UNACEM.Common.Collection\bin\Debug\net6.0\UNACEM.Common.Collection.dll
+C:\proyectos\UNACEM\Code\UNACEM.Common.Collection\bin\Debug\net6.0\UNACEM.Common.Collection.pdb
+C:\proyectos\UNACEM\Code\UNACEM.Common.Collection\obj\Debug\net6.0\UNACEM.Common.Collection.csproj.AssemblyReference.cache
+C:\proyectos\UNACEM\Code\UNACEM.Common.Collection\obj\Debug\net6.0\UNACEM.Common.Collection.GeneratedMSBuildEditorConfig.editorconfig
+C:\proyectos\UNACEM\Code\UNACEM.Common.Collection\obj\Debug\net6.0\UNACEM.Common.Collection.AssemblyInfoInputs.cache
+C:\proyectos\UNACEM\Code\UNACEM.Common.Collection\obj\Debug\net6.0\UNACEM.Common.Collection.AssemblyInfo.cs
+C:\proyectos\UNACEM\Code\UNACEM.Common.Collection\obj\Debug\net6.0\UNACEM.Common.Collection.csproj.CoreCompileInputs.cache
+C:\proyectos\UNACEM\Code\UNACEM.Common.Collection\obj\Debug\net6.0\UNACEM.Common.Collection.dll
+C:\proyectos\UNACEM\Code\UNACEM.Common.Collection\obj\Debug\net6.0\refint\UNACEM.Common.Collection.dll
+C:\proyectos\UNACEM\Code\UNACEM.Common.Collection\obj\Debug\net6.0\UNACEM.Common.Collection.pdb
+C:\proyectos\UNACEM\Code\UNACEM.Common.Collection\obj\Debug\net6.0\ref\UNACEM.Common.Collection.dll

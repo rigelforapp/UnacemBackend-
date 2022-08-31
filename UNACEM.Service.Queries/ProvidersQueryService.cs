@@ -12,11 +12,12 @@ using Microsoft.EntityFrameworkCore;
 using UNACEM.Service.Queries.DTO;
 using System.Collections.Generic;
 using System.IO;
-using OfficeOpenXml;
+
 using System.Data;
 using ExcelDataReader;
 using Microsoft.Data.SqlClient;
 using System.Transactions;
+using System.Xml.Linq;
 
 namespace UNACEM.Service.Queries
 {
@@ -93,12 +94,35 @@ namespace UNACEM.Service.Queries
         }
         public async Task<ProvidersResponse> GetAll(int Start, int Limit)
         {
+
             ProvidersResponse result = new ProvidersResponse();
             try
             {
+
+                //var q = (from d in _context.Providers
+                //         join c in _context.ProviderImportations on d.ProviderId equals c.ProviderId
+                //         select new ProvidersDto
+                //         {
+                //             ProviderId = d.ProviderId,
+                //             Name = d.Name,
+                //             CreatedAt = c.CreatedAt
+                //         })
+
+                //         .OrderByDescending(d => d.ProviderId).GroupBy(x=> x.CreatedAt).ToList();
+
+
                 var collection = await _context.Providers.AsNoTracking().OrderBy(x => x.ProviderId).GetPagedAsync(Start, Limit);
                 var providersresult = collection.MapTo<DataCollection<ProvidersDto>>();
 
+                foreach (var item in providersresult.Items)
+                {
+                    item.Last_importation_date = string.Empty;
+                    var ProviderImportations= _context.ProviderImportations.Where(x => x.ProviderId == item.ProviderId).OrderByDescending(c => c.CreatedAt).FirstOrDefault();
+                    if (ProviderImportations!=null)
+                    {
+                        item.Last_importation_date = Convert.ToDateTime(ProviderImportations.CreatedAt).ToString("dd/MM/yyyy HH:mm");
+                    }
+                }
                 result.Success = true;
                 result.Message = "Se realizo satisfactoriamente";
                 result.Data = (List<ProvidersDto>)providersresult.Items;
@@ -307,6 +331,15 @@ namespace UNACEM.Service.Queries
             return Lista;
         }
 
+        public class ArticuloSaldo
+        {
+            public int Id { get; set; }
+            public string NombreProducto { get; set; }
+            public decimal Precio { get; set; }
+            public int Cantidad { get; set; }
+        }
+
+
     }
-    
+
 }

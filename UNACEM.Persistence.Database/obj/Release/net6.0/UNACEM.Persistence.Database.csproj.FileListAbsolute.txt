@@ -28,3 +28,18 @@ D:\Proyectos Externos\BackEnd\UNACEM.Persistence.Database\obj\Release\net6.0\UNA
 D:\Proyectos Externos\BackEnd\UNACEM.Persistence.Database\obj\Release\net6.0\refint\UNACEM.Persistence.Database.dll
 D:\Proyectos Externos\BackEnd\UNACEM.Persistence.Database\obj\Release\net6.0\UNACEM.Persistence.Database.pdb
 D:\Proyectos Externos\BackEnd\UNACEM.Persistence.Database\obj\Release\net6.0\ref\UNACEM.Persistence.Database.dll
+C:\proyectos\UNACEM\Code\UNACEM.Persistence.Database\bin\Release\net6.0\UNACEM.Persistence.Database.deps.json
+C:\proyectos\UNACEM\Code\UNACEM.Persistence.Database\bin\Release\net6.0\UNACEM.Persistence.Database.dll
+C:\proyectos\UNACEM\Code\UNACEM.Persistence.Database\bin\Release\net6.0\UNACEM.Persistence.Database.pdb
+C:\proyectos\UNACEM\Code\UNACEM.Persistence.Database\bin\Release\net6.0\UNACEM.Domain.dll
+C:\proyectos\UNACEM\Code\UNACEM.Persistence.Database\bin\Release\net6.0\UNACEM.Domain.pdb
+C:\proyectos\UNACEM\Code\UNACEM.Persistence.Database\obj\Release\net6.0\UNACEM.Persistence.Database.csproj.AssemblyReference.cache
+C:\proyectos\UNACEM\Code\UNACEM.Persistence.Database\obj\Release\net6.0\UNACEM.Persistence.Database.GeneratedMSBuildEditorConfig.editorconfig
+C:\proyectos\UNACEM\Code\UNACEM.Persistence.Database\obj\Release\net6.0\UNACEM.Persistence.Database.AssemblyInfoInputs.cache
+C:\proyectos\UNACEM\Code\UNACEM.Persistence.Database\obj\Release\net6.0\UNACEM.Persistence.Database.AssemblyInfo.cs
+C:\proyectos\UNACEM\Code\UNACEM.Persistence.Database\obj\Release\net6.0\UNACEM.Persistence.Database.csproj.CoreCompileInputs.cache
+C:\proyectos\UNACEM\Code\UNACEM.Persistence.Database\obj\Release\net6.0\UNACEM.Persistence.Database.csproj.CopyComplete
+C:\proyectos\UNACEM\Code\UNACEM.Persistence.Database\obj\Release\net6.0\UNACEM.Persistence.Database.dll
+C:\proyectos\UNACEM\Code\UNACEM.Persistence.Database\obj\Release\net6.0\refint\UNACEM.Persistence.Database.dll
+C:\proyectos\UNACEM\Code\UNACEM.Persistence.Database\obj\Release\net6.0\UNACEM.Persistence.Database.pdb
+C:\proyectos\UNACEM\Code\UNACEM.Persistence.Database\obj\Release\net6.0\ref\UNACEM.Persistence.Database.dll

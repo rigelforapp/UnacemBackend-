@@ -12,5 +12,8 @@ namespace UNACEM.Service.Queries.DTO
         public string Name { get; set; }
         public int Large { get; set; }
         public int Diameter { get; set; }
+        public int QuantityVersions { get; set; }
+        public int QuantityBudgets { get; set; }
+        public string Last_date_end{ get; set; }
     }
 }

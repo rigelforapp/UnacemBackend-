@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\proyectos\\UNACEM\\Backend\\UNACEM.Domain\\UNACEM.Domain.csproj",
+      "projectUniqueName": "C:\\proyectos\\UNACEM\\Code\\UNACEM.Domain\\UNACEM.Domain.csproj",
       "projectName": "UNACEM.Domain",
-      "projectPath": "C:\\proyectos\\UNACEM\\Backend\\UNACEM.Domain\\UNACEM.Domain.csproj",
+      "projectPath": "C:\\proyectos\\UNACEM\\Code\\UNACEM.Domain\\UNACEM.Domain.csproj",
       "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "C:\\proyectos\\UNACEM\\Backend\\UNACEM.Domain\\obj\\",
+      "outputPath": "C:\\proyectos\\UNACEM\\Code\\UNACEM.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\proyectos\\UNACEM\\Backend\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj": {}
+    "C:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj": {}
   },
   "projects": {
-    "C:\\proyectos\\UNACEM\\Backend\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj": {
+    "C:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\proyectos\\UNACEM\\Backend\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj",
+        "projectUniqueName": "C:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj",
         "projectName": "UNACEM.Common.Collection",
-        "projectPath": "C:\\proyectos\\UNACEM\\Backend\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj",
+        "projectPath": "C:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\proyectos\\UNACEM\\Backend\\UNACEM.Common.Collection\\obj\\",
+        "outputPath": "C:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Collection\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

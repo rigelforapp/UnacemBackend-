@@ -1930,11 +1930,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\proyectos\\UNACEM\\Backend\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj",
+      "projectUniqueName": "C:\\proyectos\\UNACEM\\Code\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj",
       "projectName": "UNACEM.Persistence.Database",
-      "projectPath": "C:\\proyectos\\UNACEM\\Backend\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj",
+      "projectPath": "C:\\proyectos\\UNACEM\\Code\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj",
       "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "C:\\proyectos\\UNACEM\\Backend\\UNACEM.Persistence.Database\\obj\\",
+      "outputPath": "C:\\proyectos\\UNACEM\\Code\\UNACEM.Persistence.Database\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1955,8 +1955,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\proyectos\\UNACEM\\Backend\\UNACEM.Domain\\UNACEM.Domain.csproj": {
-              "projectPath": "C:\\proyectos\\UNACEM\\Backend\\UNACEM.Domain\\UNACEM.Domain.csproj"
+            "C:\\proyectos\\UNACEM\\Code\\UNACEM.Domain\\UNACEM.Domain.csproj": {
+              "projectPath": "C:\\proyectos\\UNACEM\\Code\\UNACEM.Domain\\UNACEM.Domain.csproj"
             }
           }
         }

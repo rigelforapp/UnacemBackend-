@@ -19,9 +19,12 @@ namespace UNACEM.Service.Queries
 {
     public interface IOvensQueryService
     {
+        #region Interfaces
         Task<OvensResponse> Create(OvensRequest ovensRequest);
         Task<OvensResponse> Update(OvensRequest ovensRequest);
         Task<OvensResponse> GetAll(int Start, int Limit);
+        #endregion
+
     }
 
     public class OvensQueryService : IOvensQueryService
@@ -87,11 +90,42 @@ namespace UNACEM.Service.Queries
         public async Task<OvensResponse> GetAll(int Start, int Limit)
         {
             OvensResponse result = new OvensResponse();
-
+            
             try
             {
                 var collection = await _context.Ovens.AsNoTracking().OrderBy(x => x.OvenId).GetPagedAsync(Start, Limit);
                 var ovensresult = collection.MapTo<DataCollection<OvensDto>>();
+
+                #region Calculamos la cantidad de versiones
+
+                foreach (var ovens in ovensresult.Items)
+                {
+                  
+                    var ovenstemporal = _context.Versions.Where(x => x.OvenId == ovens.OvenId).OrderByDescending(c => c.Date_End).FirstOrDefault();
+                    if (ovenstemporal != null)
+                    {
+                        var QuantityVersions = _context.Versions.Where(a => a.OvenId == ovens.OvenId).ToList().Count();
+                        ovens.QuantityVersions = QuantityVersions;
+                        ovens.Last_date_end = Convert.ToDateTime(ovenstemporal.Date_End).ToString("dd/MM/yyyy");
+
+                        #region Calculamos la cantidad de presupuestos
+                        int cantidad = 0;
+              
+                        foreach (var version in _context.Versions.Where(a => a.OvenId == ovens.OvenId).ToList())
+                        {
+                            var QuantityBudgets = _context.Budgets.Where(a => a.VersionId == version.VersionId).ToList().Count();
+                            cantidad = QuantityBudgets+cantidad;
+                            ovens.QuantityBudgets = cantidad;
+                        }
+                        #endregion
+
+                    }
+
+
+                }
+
+
+                #endregion
 
                 result.Success = true;
                 result.Message = "Se realizo correctamente";
