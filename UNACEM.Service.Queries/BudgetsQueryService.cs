@@ -37,21 +37,21 @@ namespace UNACEM.Service.Queries
             {
                 Budgets budgets = new Budgets();
 
-                budgets.Version_Id = budgetsRequest.Version_Id;
+                budgets.VersionId = budgetsRequest.Version_Id;
                 budgets.Total_Amount = budgetsRequest.Total_Amount;
 
                 await _context.AddAsync(budgets);
                 await _context.SaveChangesAsync();
 
-                int TyresImportationId = budgets.Id;
+                int TyresImportationId = budgets.BudgetId;
 
                 foreach (var item in budgetsRequest.BudgetStretches)
                 {
                     BudgetStretch budgetStretch = new BudgetStretch();
 
-                    budgetStretch.Budget_Id = TyresImportationId;
-                    budgetStretch.Stretch_Id = item.Stretch_Id;
-                    budgetStretch.BrickFormat_Id = item.BrickFormat_Id;
+                    budgetStretch.BudgetId = TyresImportationId;
+                    budgetStretch.StretchId = item.Stretch_Id;
+                    budgetStretch.BrickFormatId = item.BrickFormat_Id;
                     budgetStretch.Brick_a_Cost = item.Brick_a_Cost;
                     budgetStretch.Brick_b_Cost = item.Brick_b_Cost;
                     budgetStretch.Wedge_a_Quantity = item.Wedge_a_Quantity;
@@ -84,7 +84,7 @@ namespace UNACEM.Service.Queries
 
             try
             {
-                var collection = await _context.Budgets.AsNoTracking().Where(b => b.Version_Id == VersionId).OrderBy(x => x.Version_Id).GetPagedAsync(Start, Limit);
+                var collection = await _context.Budgets.AsNoTracking().Where(b => b.VersionId == VersionId).OrderBy(x => x.VersionId).GetPagedAsync(Start, Limit);
                 var budgetsresult = collection.MapTo<DataCollection<BudgetsDto>>();
 
                 result.Success = true;

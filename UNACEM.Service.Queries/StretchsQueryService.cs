@@ -38,13 +38,13 @@ namespace UNACEM.Service.Queries
                 await _context.AddAsync(new Stretchs()
                 {
 
-                    Version_Id = stretchsRequest.Version_Id,
+                    VersionId = stretchsRequest.Version_Id,
                     Position_Ini = stretchsRequest.Position_Ini,
                     Position_End = stretchsRequest.Position_End,
                     Color_Id = stretchsRequest.Color_Id,
                     Texture_Id = stretchsRequest.Texture_Id,
-                    ProviderBrick_Id = stretchsRequest.ProviderBrick_Id,
-                    BrickFormat_Id = stretchsRequest.BrickFormat_Id,
+                    ProviderBrickId = stretchsRequest.ProviderBrick_Id,
+                    BrickFormatId = stretchsRequest.BrickFormat_Id,
                 });
 
                 await _context.SaveChangesAsync();
@@ -68,7 +68,7 @@ namespace UNACEM.Service.Queries
 
             try
             {
-                var collection = await _context.Stretchs.AsNoTracking().Where(a => a.Version_Id == VersionId).OrderBy(x => x.Version_Id).GetPagedAsync(Start, Limit);
+                var collection = await _context.Stretchs.AsNoTracking().Where(a => a.VersionId == VersionId).OrderBy(x => x.VersionId).GetPagedAsync(Start, Limit);
                 var versionresult = collection.MapTo<DataCollection<StretchsDto>>();
 
                 result.Success = true;
@@ -91,17 +91,17 @@ namespace UNACEM.Service.Queries
 
             try
             {
-                var versions = _context.Stretchs.Where(s => s.Id == stretchsRequest.Id).FirstOrDefault();
+                var versions = _context.Stretchs.Where(s => s.StretchId == stretchsRequest.Id).FirstOrDefault();
 
                 if (versions != null)
                 {
-                    versions.Version_Id = stretchsRequest.Version_Id;
+                    versions.VersionId = stretchsRequest.Version_Id;
                     versions.Position_Ini = stretchsRequest.Position_Ini;
                     versions.Position_End = stretchsRequest.Position_End;
                     versions.Color_Id = stretchsRequest.Color_Id;
                     versions.Texture_Id = stretchsRequest.Texture_Id;
-                    versions.ProviderBrick_Id = stretchsRequest.ProviderBrick_Id;
-                    versions.BrickFormat_Id = stretchsRequest.BrickFormat_Id;
+                    versions.ProviderBrickId = stretchsRequest.ProviderBrick_Id;
+                    versions.BrickFormatId = stretchsRequest.BrickFormat_Id;
 
                     await _context.SaveChangesAsync();
                     result.Success = true;

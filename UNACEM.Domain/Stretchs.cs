@@ -5,17 +5,17 @@ namespace UNACEM.Domain
 {
     public class Stretchs : AuditFields, IAuditFields
     {
-        public int Id { get; set; }
-        public int Version_Id { get; set; }
-        [ForeignKey("Version_Id")]
+        public int StretchId { get; set; }
+        public int VersionId { get; set; }
+        [ForeignKey("VersionId")]
         public virtual Versions Versions { get; set; }
-        public int ProviderBrick_Id { get; set; }
+        public int ProviderBrickId { get; set; }
 
-        [ForeignKey("ProviderBrick_Id")]
+        [ForeignKey("ProviderBrickId")]
         public virtual ProviderBricks ProviderBricks { get; set; }
-        public int BrickFormat_Id { get; set; }
+        public int BrickFormatId { get; set; }
 
-        [ForeignKey("BrickFormat_Id")]
+        [ForeignKey("BrickFormatId")]
         public virtual BrickFormats BrickFormats { get; set; }
 
         public double Position_Ini { get; set; }

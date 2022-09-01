@@ -38,7 +38,7 @@ namespace UNACEM.Service.Queries
             {
                 await _context.AddAsync(new Gallery() 
                 {
-                    Version_Id = galleryRequest.Version_Id,
+                    VersionId = galleryRequest.Version_Id,
                     Type = galleryRequest.Type,
                     Name = galleryRequest.Name,
                     Title = galleryRequest.Title,
@@ -67,7 +67,7 @@ namespace UNACEM.Service.Queries
 
             try
             {
-                var collection = await _context.Gallery.AsNoTracking().Where(g => g.Version_Id == VersionId).OrderBy(x => x.Version_Id).GetPagedAsync(Start, Limit);
+                var collection = await _context.Gallery.AsNoTracking().Where(g => g.VersionId == VersionId).OrderBy(x => x.VersionId).GetPagedAsync(Start, Limit);
                 var galleryresult = collection.MapTo<DataCollection<GalleryDto>>();
 
                 result.Success = true;
@@ -90,11 +90,11 @@ namespace UNACEM.Service.Queries
 
             try
             {
-                var gallery = _context.Gallery.Where(g => g.Id == galleryRequest.Id).FirstOrDefault();
+                var gallery = _context.Gallery.Where(g => g.GalleryId == galleryRequest.Id).FirstOrDefault();
 
                 if(gallery != null)
                 {
-                    gallery.Version_Id = galleryRequest.Version_Id;
+                    gallery.VersionId = galleryRequest.Version_Id;
                     gallery.Type = galleryRequest.Type;
                     gallery.Name = galleryRequest.Name;
                     gallery.Title = galleryRequest.Title;

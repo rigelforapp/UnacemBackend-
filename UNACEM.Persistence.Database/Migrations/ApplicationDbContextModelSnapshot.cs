@@ -24,11 +24,11 @@ namespace UNACEM.Persistence.Database.Migrations
 
             modelBuilder.Entity("UNACEM.Domain.BrickFormats", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("BrickFormatId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BrickFormatId"), 1L, 1);
 
                     b.Property<string>("Brick_a")
                         .HasMaxLength(50)
@@ -61,20 +61,20 @@ namespace UNACEM.Persistence.Database.Migrations
                     b.Property<DateTime?>("Updated_At")
                         .HasColumnType("DateTime");
 
-                    b.HasKey("Id");
+                    b.HasKey("BrickFormatId");
 
                     b.ToTable("BrickFormats");
                 });
 
             modelBuilder.Entity("UNACEM.Domain.BudgetCurrency", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("BudgetCurrencyId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BudgetCurrencyId"), 1L, 1);
 
-                    b.Property<int>("Budget_Id")
+                    b.Property<int>("BudgetId")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("Created_At")
@@ -100,20 +100,20 @@ namespace UNACEM.Persistence.Database.Migrations
                     b.Property<DateTime?>("Updated_At")
                         .HasColumnType("DateTime");
 
-                    b.HasKey("Id");
+                    b.HasKey("BudgetCurrencyId");
 
-                    b.HasIndex("Budget_Id");
+                    b.HasIndex("BudgetId");
 
                     b.ToTable("BudgetCurrency");
                 });
 
             modelBuilder.Entity("UNACEM.Domain.Budgets", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("BudgetId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BudgetId"), 1L, 1);
 
                     b.Property<DateTime?>("Created_At")
                         .HasColumnType("DateTime");
@@ -127,25 +127,25 @@ namespace UNACEM.Persistence.Database.Migrations
                     b.Property<DateTime?>("Updated_At")
                         .HasColumnType("DateTime");
 
-                    b.Property<int>("Version_Id")
+                    b.Property<int>("VersionId")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.HasKey("BudgetId");
 
-                    b.HasIndex("Version_Id");
+                    b.HasIndex("VersionId");
 
                     b.ToTable("Budgets");
                 });
 
             modelBuilder.Entity("UNACEM.Domain.BudgetStretch", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("BudgetStretchId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BudgetStretchId"), 1L, 1);
 
-                    b.Property<int?>("BrickFormat_Id")
+                    b.Property<int?>("BrickFormatId")
                         .HasColumnType("int");
 
                     b.Property<double>("Brick_a_Cost")
@@ -154,7 +154,7 @@ namespace UNACEM.Persistence.Database.Migrations
                     b.Property<double>("Brick_b_Cost")
                         .HasColumnType("float");
 
-                    b.Property<int>("Budget_Id")
+                    b.Property<int>("BudgetId")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("Created_At")
@@ -164,7 +164,7 @@ namespace UNACEM.Persistence.Database.Migrations
                     b.Property<DateTime?>("Deleted_At")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("Stretch_Id")
+                    b.Property<int?>("StretchId")
                         .HasColumnType("int");
 
                     b.Property<double>("Total_Amount")
@@ -185,40 +185,40 @@ namespace UNACEM.Persistence.Database.Migrations
                     b.Property<double>("Wedge_b_Quantity")
                         .HasColumnType("float");
 
-                    b.HasKey("Id");
+                    b.HasKey("BudgetStretchId");
 
-                    b.HasIndex("BrickFormat_Id");
+                    b.HasIndex("BrickFormatId");
 
-                    b.HasIndex("Budget_Id");
+                    b.HasIndex("BudgetId");
 
-                    b.HasIndex("Stretch_Id");
+                    b.HasIndex("StretchId");
 
                     b.ToTable("BudgetStretch");
                 });
 
             modelBuilder.Entity("UNACEM.Domain.Color", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ColorId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ColorId"), 1L, 1);
 
                     b.Property<int>("Hex")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.HasKey("ColorId");
 
                     b.ToTable("Color");
                 });
 
             modelBuilder.Entity("UNACEM.Domain.Gallery", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("GalleryId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GalleryId"), 1L, 1);
 
                     b.Property<DateTime?>("Created_At")
                         .HasColumnType("datetime2");
@@ -252,23 +252,23 @@ namespace UNACEM.Persistence.Database.Migrations
                     b.Property<DateTime?>("Updated_At")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Version_Id")
+                    b.Property<int>("VersionId")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.HasKey("GalleryId");
 
-                    b.HasIndex("Version_Id");
+                    b.HasIndex("VersionId");
 
                     b.ToTable("Gallery");
                 });
 
             modelBuilder.Entity("UNACEM.Domain.Headquarters", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("HeadquarterId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("HeadquarterId"), 1L, 1);
 
                     b.Property<DateTime?>("Created_At")
                         .IsRequired()
@@ -283,18 +283,18 @@ namespace UNACEM.Persistence.Database.Migrations
                     b.Property<DateTime?>("Updated_At")
                         .HasColumnType("DateTime");
 
-                    b.HasKey("Id");
+                    b.HasKey("HeadquarterId");
 
                     b.ToTable("Headquarters");
                 });
 
             modelBuilder.Entity("UNACEM.Domain.Ovens", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("OvenId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OvenId"), 1L, 1);
 
                     b.Property<DateTime?>("Created_At")
                         .IsRequired()
@@ -306,7 +306,7 @@ namespace UNACEM.Persistence.Database.Migrations
                     b.Property<int>("Diameter")
                         .HasColumnType("int");
 
-                    b.Property<int>("Headquarter_Id")
+                    b.Property<int>("HeadquarterId")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Large")
@@ -320,25 +320,25 @@ namespace UNACEM.Persistence.Database.Migrations
                     b.Property<DateTime?>("Updated_At")
                         .HasColumnType("DateTime");
 
-                    b.Property<int>("User_Id")
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.HasKey("OvenId");
 
-                    b.HasIndex("Headquarter_Id");
+                    b.HasIndex("HeadquarterId");
 
-                    b.HasIndex("User_Id");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Ovens");
                 });
 
             modelBuilder.Entity("UNACEM.Domain.ProviderBricks", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ProviderBrickId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProviderBrickId"), 1L, 1);
 
                     b.Property<string>("Ccs")
                         .IsRequired()
@@ -371,7 +371,7 @@ namespace UNACEM.Persistence.Database.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int>("ProviderImportation_Id")
+                    b.Property<int>("ProviderImportationId")
                         .HasColumnType("int");
 
                     b.Property<string>("Recommended_Zone")
@@ -391,20 +391,20 @@ namespace UNACEM.Persistence.Database.Migrations
                     b.Property<DateTime?>("Updated_At")
                         .HasColumnType("datetime2");
 
-                    b.HasKey("Id");
+                    b.HasKey("ProviderBrickId");
 
-                    b.HasIndex("ProviderImportation_Id");
+                    b.HasIndex("ProviderImportationId");
 
                     b.ToTable("ProviderBricks");
                 });
 
             modelBuilder.Entity("UNACEM.Domain.ProviderImportations", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ProviderImportationId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProviderImportationId"), 1L, 1);
 
                     b.Property<DateTime?>("Created_At")
                         .IsRequired()
@@ -421,7 +421,7 @@ namespace UNACEM.Persistence.Database.Migrations
                     b.Property<string>("Deleted_By")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Provider_Id")
+                    b.Property<int>("ProviderId")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("Updated_At")
@@ -431,20 +431,20 @@ namespace UNACEM.Persistence.Database.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.HasKey("Id");
+                    b.HasKey("ProviderImportationId");
 
-                    b.HasIndex("Provider_Id");
+                    b.HasIndex("ProviderId");
 
                     b.ToTable("ProviderImportations");
                 });
 
             modelBuilder.Entity("UNACEM.Domain.Providers", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ProviderId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProviderId"), 1L, 1);
 
                     b.Property<DateTime?>("Created_At")
                         .IsRequired()
@@ -473,20 +473,20 @@ namespace UNACEM.Persistence.Database.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.HasKey("Id");
+                    b.HasKey("ProviderId");
 
                     b.ToTable("Providers");
                 });
 
             modelBuilder.Entity("UNACEM.Domain.Stretchs", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("StretchId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StretchId"), 1L, 1);
 
-                    b.Property<int>("BrickFormat_Id")
+                    b.Property<int>("BrickFormatId")
                         .HasColumnType("int");
 
                     b.Property<int>("Color_Id")
@@ -505,7 +505,7 @@ namespace UNACEM.Persistence.Database.Migrations
                     b.Property<double>("Position_Ini")
                         .HasColumnType("float");
 
-                    b.Property<int>("ProviderBrick_Id")
+                    b.Property<int>("ProviderBrickId")
                         .HasColumnType("int");
 
                     b.Property<int>("Texture_Id")
@@ -514,29 +514,29 @@ namespace UNACEM.Persistence.Database.Migrations
                     b.Property<DateTime?>("Updated_At")
                         .HasColumnType("DateTime");
 
-                    b.Property<int>("Version_Id")
+                    b.Property<int>("VersionId")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.HasKey("StretchId");
 
-                    b.HasIndex("BrickFormat_Id");
+                    b.HasIndex("BrickFormatId");
 
-                    b.HasIndex("ProviderBrick_Id");
+                    b.HasIndex("ProviderBrickId");
 
-                    b.HasIndex("Version_Id");
+                    b.HasIndex("VersionId");
 
                     b.ToTable("Stretchs");
                 });
 
             modelBuilder.Entity("UNACEM.Domain.Tyres", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("TyreId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TyreId"), 1L, 1);
 
-                    b.Property<int>("Color_Id")
+                    b.Property<int>("ColorId")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("Created_At")
@@ -546,7 +546,7 @@ namespace UNACEM.Persistence.Database.Migrations
                     b.Property<DateTime?>("Deleted_At")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Oven_Id")
+                    b.Property<int>("OvenId")
                         .HasColumnType("int");
 
                     b.Property<double>("Position")
@@ -558,22 +558,22 @@ namespace UNACEM.Persistence.Database.Migrations
                     b.Property<DateTime?>("Updated_At")
                         .HasColumnType("DateTime");
 
-                    b.HasKey("Id");
+                    b.HasKey("TyreId");
 
-                    b.HasIndex("Color_Id");
+                    b.HasIndex("ColorId");
 
-                    b.HasIndex("Oven_Id");
+                    b.HasIndex("OvenId");
 
                     b.ToTable("Tyres");
                 });
 
             modelBuilder.Entity("UNACEM.Domain.Users", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("UserId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"), 1L, 1);
 
                     b.Property<DateTime?>("Created_At")
                         .IsRequired()
@@ -594,18 +594,18 @@ namespace UNACEM.Persistence.Database.Migrations
                     b.Property<DateTime?>("Updated_At")
                         .HasColumnType("DateTime");
 
-                    b.HasKey("Id");
+                    b.HasKey("UserId");
 
                     b.ToTable("Users");
                 });
 
             modelBuilder.Entity("UNACEM.Domain.Versions", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("VersionId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("VersionId"), 1L, 1);
 
                     b.Property<DateTime?>("Created_At")
                         .IsRequired()
@@ -625,15 +625,15 @@ namespace UNACEM.Persistence.Database.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int>("Oven_Id")
+                    b.Property<int>("OvenId")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("Updated_At")
                         .HasColumnType("DateTime");
 
-                    b.HasKey("Id");
+                    b.HasKey("VersionId");
 
-                    b.HasIndex("Oven_Id");
+                    b.HasIndex("OvenId");
 
                     b.ToTable("Versions");
                 });
@@ -642,7 +642,7 @@ namespace UNACEM.Persistence.Database.Migrations
                 {
                     b.HasOne("UNACEM.Domain.Budgets", "Budgets")
                         .WithMany()
-                        .HasForeignKey("Budget_Id")
+                        .HasForeignKey("BudgetId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -653,7 +653,7 @@ namespace UNACEM.Persistence.Database.Migrations
                 {
                     b.HasOne("UNACEM.Domain.Versions", "Versions")
                         .WithMany()
-                        .HasForeignKey("Version_Id")
+                        .HasForeignKey("VersionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -664,17 +664,17 @@ namespace UNACEM.Persistence.Database.Migrations
                 {
                     b.HasOne("UNACEM.Domain.BrickFormats", "BrickFormats")
                         .WithMany()
-                        .HasForeignKey("BrickFormat_Id");
+                        .HasForeignKey("BrickFormatId");
 
                     b.HasOne("UNACEM.Domain.Budgets", "Budgets")
                         .WithMany()
-                        .HasForeignKey("Budget_Id")
+                        .HasForeignKey("BudgetId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("UNACEM.Domain.Stretchs", "Stretchs")
                         .WithMany()
-                        .HasForeignKey("Stretch_Id");
+                        .HasForeignKey("StretchId");
 
                     b.Navigation("BrickFormats");
 
@@ -687,7 +687,7 @@ namespace UNACEM.Persistence.Database.Migrations
                 {
                     b.HasOne("UNACEM.Domain.Versions", "Versions")
                         .WithMany()
-                        .HasForeignKey("Version_Id")
+                        .HasForeignKey("VersionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -698,13 +698,13 @@ namespace UNACEM.Persistence.Database.Migrations
                 {
                     b.HasOne("UNACEM.Domain.Headquarters", "Headquarters")
                         .WithMany()
-                        .HasForeignKey("Headquarter_Id")
+                        .HasForeignKey("HeadquarterId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("UNACEM.Domain.Users", "Users")
                         .WithMany()
-                        .HasForeignKey("User_Id")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -717,7 +717,7 @@ namespace UNACEM.Persistence.Database.Migrations
                 {
                     b.HasOne("UNACEM.Domain.ProviderImportations", "ProviderImportations")
                         .WithMany()
-                        .HasForeignKey("ProviderImportation_Id")
+                        .HasForeignKey("ProviderImportationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -728,7 +728,7 @@ namespace UNACEM.Persistence.Database.Migrations
                 {
                     b.HasOne("UNACEM.Domain.Providers", "Providers")
                         .WithMany()
-                        .HasForeignKey("Provider_Id")
+                        .HasForeignKey("ProviderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -739,19 +739,19 @@ namespace UNACEM.Persistence.Database.Migrations
                 {
                     b.HasOne("UNACEM.Domain.BrickFormats", "BrickFormats")
                         .WithMany()
-                        .HasForeignKey("BrickFormat_Id")
+                        .HasForeignKey("BrickFormatId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("UNACEM.Domain.ProviderBricks", "ProviderBricks")
                         .WithMany()
-                        .HasForeignKey("ProviderBrick_Id")
+                        .HasForeignKey("ProviderBrickId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("UNACEM.Domain.Versions", "Versions")
                         .WithMany()
-                        .HasForeignKey("Version_Id")
+                        .HasForeignKey("VersionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -766,13 +766,13 @@ namespace UNACEM.Persistence.Database.Migrations
                 {
                     b.HasOne("UNACEM.Domain.Color", "Color")
                         .WithMany()
-                        .HasForeignKey("Color_Id")
+                        .HasForeignKey("ColorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("UNACEM.Domain.Ovens", "Ovens")
                         .WithMany()
-                        .HasForeignKey("Oven_Id")
+                        .HasForeignKey("OvenId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -785,7 +785,7 @@ namespace UNACEM.Persistence.Database.Migrations
                 {
                     b.HasOne("UNACEM.Domain.Ovens", "Ovens")
                         .WithMany()
-                        .HasForeignKey("Oven_Id")
+                        .HasForeignKey("OvenId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

@@ -10,7 +10,7 @@ namespace UNACEM.Persistence.Database.Configuration
     {
         public TyresConfiguration(EntityTypeBuilder<UNACEM.Domain.Tyres> entityBuilder)
         {
-            entityBuilder.HasKey(x => x.Id);
+            entityBuilder.HasKey(x => x.TyreId);
 
             entityBuilder.Property(x => x.Created_At).IsRequired().HasColumnType("DateTime");
             entityBuilder.Property(x => x.Updated_At).HasColumnType("DateTime");

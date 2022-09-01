@@ -10,7 +10,7 @@ namespace UNACEM.Persistence.Database.Configuration
     {
         public BudgetsConfiguration(EntityTypeBuilder<UNACEM.Domain.Budgets> entityBuilder)
         {
-            entityBuilder.HasKey(x => x.Id);                      
+            entityBuilder.HasKey(x => x.BudgetId);                      
             entityBuilder.Property(x => x.Created_At).HasColumnType("DateTime");
             entityBuilder.Property(x => x.Updated_At).HasColumnType("DateTime");
         }

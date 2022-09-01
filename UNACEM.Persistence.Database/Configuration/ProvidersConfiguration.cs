@@ -10,7 +10,7 @@ namespace UNACEM.Persistence.Database.Configuration
     {
         public ProvidersConfiguration(EntityTypeBuilder<UNACEM.Domain.Providers> entityBuilder)
         {
-            entityBuilder.HasKey(x => x.Id);
+            entityBuilder.HasKey(x => x.ProviderId);
             entityBuilder.Property(x => x.Name).IsRequired().HasMaxLength(200);
          
             entityBuilder.Property(x => x.Created_By).IsRequired().HasMaxLength(50);

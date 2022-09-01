@@ -7,7 +7,7 @@ namespace UNACEM.Domain
 {
     public class BrickFormats : AuditFields, IAuditFields
     {
-        public int Id { get; set; }
+        public int BrickFormatId { get; set; }
         public string Group { get; set; }
         public string Brick_a { get; set; }
         public string Brick_b { get; set; }

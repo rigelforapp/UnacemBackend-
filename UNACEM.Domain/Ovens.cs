@@ -5,14 +5,14 @@ namespace UNACEM.Domain
 {
     public class Ovens : AuditFields, IAuditFields
     {
-        public int Id { get; set; }
+        public int OvenId { get; set; }
 
-        public int Headquarter_Id { get; set; }
-        [ForeignKey("Headquarter_Id")]
+        public int HeadquarterId { get; set; }
+        [ForeignKey("HeadquarterId")]
         public virtual Headquarters Headquarters { get; set; }
 
-        public int User_Id { get; set; }
-        [ForeignKey("User_Id")]
+        public int UserId { get; set; }
+        [ForeignKey("UserId")]
         public virtual Users Users { get; set; }
         public string Name { get; set; }
         [Column(TypeName = "decimal(5, 2)")]

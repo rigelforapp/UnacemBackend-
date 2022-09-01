@@ -10,7 +10,7 @@ namespace UNACEM.Persistence.Database.Configuration
     {
         public ProviderBricksConfiguration(EntityTypeBuilder<UNACEM.Domain.ProviderBricks> entityBuilder)
         {
-            entityBuilder.HasKey(x => x.Id);
+            entityBuilder.HasKey(x => x.ProviderBrickId);
 
             entityBuilder.Property(x => x.Name).IsRequired().HasMaxLength(50);
             entityBuilder.Property(x => x.Recommended_Zone).IsRequired().HasMaxLength(1000);

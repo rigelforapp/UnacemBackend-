@@ -10,7 +10,7 @@ namespace UNACEM.Persistence.Database.Configuration
     {
         public BudgetStretchConfiguration(EntityTypeBuilder<UNACEM.Domain.BudgetStretch> entityBuilder)
         {
-            entityBuilder.HasKey(x => x.Id);
+            entityBuilder.HasKey(x => x.BudgetStretchId);
             entityBuilder.Property(x => x.Created_At).IsRequired().HasColumnType("DateTime");
             entityBuilder.Property(x => x.Updated_At).HasColumnType("DateTime");
         }

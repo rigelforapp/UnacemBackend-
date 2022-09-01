@@ -8,14 +8,14 @@ namespace UNACEM.Domain
 {
     public class Tyres : AuditFields, IAuditFields
     {
-        public int Id { get; set; }
+        public int TyreId { get; set; }
 
-        public int Oven_Id { get; set; }
-        [ForeignKey("Oven_Id")]
+        public int OvenId { get; set; }
+        [ForeignKey("OvenId")]
         public virtual Ovens Ovens { get; set; }
 
-        public int Color_Id { get; set; }
-        [ForeignKey("Color_Id")] 
+        public int ColorId { get; set; }
+        [ForeignKey("ColorId")] 
         public virtual Color Color { get; set; }
 
         public int Texture_Id { get; set; }

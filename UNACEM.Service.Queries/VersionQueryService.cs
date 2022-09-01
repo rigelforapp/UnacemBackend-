@@ -40,7 +40,7 @@ namespace UNACEM.Service.Queries
             {
                 Versions version = new Versions();
 
-                version.Oven_Id = versionRequest.Oven_Id;
+                version.OvenId = versionRequest.Oven_Id;
                 version.Name = versionRequest.Name;
                 version.Date_Ini = versionRequest.Date_Ini;
                 version.Date_End = versionRequest.Date_End;
@@ -67,7 +67,7 @@ namespace UNACEM.Service.Queries
 
             try
             {
-                var collection = await _context.Versions.AsNoTracking().Where(a => a.Oven_Id == OvenId).OrderBy(x => x.Oven_Id).GetPagedAsync(Start, Limit);
+                var collection = await _context.Versions.AsNoTracking().Where(a => a.OvenId == OvenId).OrderBy(x => x.OvenId).GetPagedAsync(Start, Limit);
                 var versionresult = collection.MapTo<DataCollection<VersionDto>>();
 
                 result.Success = true;
@@ -96,11 +96,11 @@ namespace UNACEM.Service.Queries
 
             try
             {
-                var versions = _context.Versions.Where(v => v.Id == versionRequest.Id).FirstOrDefault();
+                var versions = _context.Versions.Where(v => v.VersionId == versionRequest.Id).FirstOrDefault();
 
                 if (versions != null)
                 {
-                    versions.Oven_Id = versionRequest.Oven_Id;
+                    versions.OvenId = versionRequest.Oven_Id;
                     versions.Name = versionRequest.Name;
                     versions.Date_Ini = versionRequest.Date_Ini;
                     versions.Date_End = versionRequest.Date_End;

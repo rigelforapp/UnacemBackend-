@@ -8,10 +8,10 @@ namespace UNACEM.Domain
 {
     public class BudgetCurrency : AuditFields, IAuditFields
     {
-        public int Id { get; set; }
-        public int Budget_Id { get; set; }
+        public int BudgetCurrencyId { get; set; }
+        public int BudgetId { get; set; }
 
-        [ForeignKey("Budget_Id")]
+        [ForeignKey("BudgetId")]
         public virtual Budgets Budgets { get; set; }
         public string Name { get; set; }
         public string Symbol { get; set; }

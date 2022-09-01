@@ -10,7 +10,7 @@ namespace UNACEM.Persistence.Database.Configuration
     {
         public ColorConfiguration(EntityTypeBuilder<UNACEM.Domain.Color> entityBuilder)
         {
-            entityBuilder.HasKey(x => x.Id);
+            entityBuilder.HasKey(x => x.ColorId);
 
         }
     }
