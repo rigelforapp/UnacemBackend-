@@ -13,7 +13,7 @@ namespace UNACEM.API.Controllers
 {
     //[Route("api/[controller]")]
     [ApiController]
-    [Route("Stretchs")]
+    [Route("Ovens/Versions/Stretchs")]
     public class StretchsController : ControllerBase
     {
         private readonly IStretchsQueryService _stretchsQueryService;

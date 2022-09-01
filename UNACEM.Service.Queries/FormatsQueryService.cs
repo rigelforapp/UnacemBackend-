@@ -29,7 +29,7 @@ namespace UNACEM.Service.Queries
             var result = new BrickFormatsResponse();
             try
             {
-                var collection = await _context.BrickFormats.AsNoTracking().Where(a=>a.Diameter== Diameter).OrderByDescending(x => x.BrickFormatId).GetPagedAsync(Start, Limit);
+                var collection = await _context.BrickFormats.AsNoTracking().Where(a=>a.Diameter== Diameter).OrderByDescending(x => x.Id).GetPagedAsync(Start, Limit);
                 var providersresult = collection.MapTo<DataCollection<BrickFormatsDto>>();
 
                 result.Success = true;

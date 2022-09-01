@@ -6,7 +6,7 @@ namespace UNACEM.Service.Queries.DTO
 {
     public class OvensDto
     {
-        public int OvenId { get; set; }
+        public int Id { get; set; }
         public int HeadquarterId { get; set; }
         public int UserId { get; set; }
         public string Name { get; set; }

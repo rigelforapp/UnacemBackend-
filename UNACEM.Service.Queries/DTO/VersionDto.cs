@@ -6,7 +6,7 @@ namespace UNACEM.Service.Queries.DTO
 {
     public class VersionDto
     {
-        public int VersionId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public DateTime Date_Ini { get; set; }
         public DateTime Date_End { get; set; }

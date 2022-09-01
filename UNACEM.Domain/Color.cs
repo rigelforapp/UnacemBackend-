@@ -8,7 +8,7 @@ namespace UNACEM.Domain
 {
     public class Color
     {
-        public int ColorId { get; set; }
+        public int Id { get; set; }
         public int Hex { get; set; }
 
     }

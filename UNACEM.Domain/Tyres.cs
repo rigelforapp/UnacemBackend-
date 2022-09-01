@@ -8,7 +8,7 @@ namespace UNACEM.Domain
 {
     public class Tyres : AuditFields, IAuditFields
     {
-        public int TyreId { get; set; }
+        public int Id { get; set; }
 
         public int OvenId { get; set; }
         [ForeignKey("OvenId")]

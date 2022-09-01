@@ -90,7 +90,7 @@ namespace UNACEM.Service.Queries
 
             try
             {
-                var gallery = _context.Gallery.Where(g => g.GalleryId == galleryRequest.GalleryId).FirstOrDefault();
+                var gallery = _context.Gallery.Where(g => g.Id == galleryRequest.GalleryId).FirstOrDefault();
 
                 if(gallery != null)
                 {

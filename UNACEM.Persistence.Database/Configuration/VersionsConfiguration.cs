@@ -10,7 +10,7 @@ namespace UNACEM.Persistence.Database.Configuration
     {
         public VersionsConfiguration(EntityTypeBuilder<UNACEM.Domain.Versions> entityBuilder)
         {
-            entityBuilder.HasKey(x => x.VersionId);
+            entityBuilder.HasKey(x => x.Id);
             entityBuilder.Property(x => x.Name).IsRequired().HasMaxLength(100);
             entityBuilder.Property(x => x.Date_Ini).IsRequired().HasColumnType("Date");
             entityBuilder.Property(x => x.Date_End).IsRequired().HasColumnType("Date");

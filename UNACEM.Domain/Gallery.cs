@@ -8,7 +8,7 @@ namespace UNACEM.Domain
 {
     public class Gallery : AuditFields, IAuditFields
     {
-        public int GalleryId { get; set; }
+        public int Id { get; set; }
         public int VersionId { get; set; }
         [ForeignKey("VersionId")]
         public virtual Versions Versions { get; set; }

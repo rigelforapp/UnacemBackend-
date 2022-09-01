@@ -12,7 +12,7 @@ namespace UNACEM.API.Controllers
 {
     //[Route("api/[controller]")]
     [ApiController]
-    [Route("Versions")]
+    [Route("Ovens/Versions")]
     public class VersionsController : ControllerBase
     {
         private readonly IVersionQueryService _versionQueryService;

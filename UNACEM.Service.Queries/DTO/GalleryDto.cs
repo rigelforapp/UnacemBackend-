@@ -6,7 +6,7 @@ namespace UNACEM.Service.Queries.DTO
 {
     public class GalleryDto
     {
-        public int GalleryId { get; set; }
+        public int Id { get; set; }
         public int VersionId { get; set; }
         public string Type { get; set; }
         public string Name { get; set; }

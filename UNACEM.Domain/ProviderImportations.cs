@@ -8,7 +8,7 @@ namespace UNACEM.Domain
 {
     public class ProviderImportations : AuditFields, IAuditFields
     {
-        public int ProviderImportationId { get; set; }
+        public int Id { get; set; }
         public int ProviderId { get; set; }
         [ForeignKey("ProviderId")]
         public virtual Providers Providers { get; set; }

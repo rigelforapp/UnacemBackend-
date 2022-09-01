@@ -66,7 +66,7 @@ namespace UNACEM.Service.Queries
             ProvidersResponse result = new ProvidersResponse();
             try
             {
-                var providers = _context.Providers.Where(a => a.ProviderId == providersRequest.ProviderId).FirstOrDefault();
+                var providers = _context.Providers.Where(a => a.Id == providersRequest.ProviderId).FirstOrDefault();
                 if (providers != null)
                 {
                     providers.Name = providersRequest.Name;
@@ -111,13 +111,13 @@ namespace UNACEM.Service.Queries
                 //         .OrderByDescending(d => d.ProviderId).GroupBy(x=> x.CreatedAt).ToList();
 
 
-                var collection = await _context.Providers.AsNoTracking().OrderBy(x => x.ProviderId).GetPagedAsync(Start, Limit);
+                var collection = await _context.Providers.AsNoTracking().OrderBy(x => x.Id).GetPagedAsync(Start, Limit);
                 var providersresult = collection.MapTo<DataCollection<ProvidersDto>>();
 
                 foreach (var item in providersresult.Items)
                 {
                     item.Last_importation_date = string.Empty;
-                    var ProviderImportations= _context.ProviderImportations.Where(x => x.ProviderId == item.ProviderId).OrderByDescending(c => c.CreatedAt).FirstOrDefault();
+                    var ProviderImportations= _context.ProviderImportations.Where(x => x.ProviderId == item.Id).OrderByDescending(c => c.CreatedAt).FirstOrDefault();
                     if (ProviderImportations!=null)
                     {
                         item.Last_importation_date = Convert.ToDateTime(ProviderImportations.CreatedAt).ToString("dd/MM/yyyy HH:mm");
@@ -154,7 +154,7 @@ namespace UNACEM.Service.Queries
                         await _context.AddAsync(ProviderImportations);
                         await _context.SaveChangesAsync();
 
-                        int ProviderImportationId = ProviderImportations.ProviderImportationId;
+                        int ProviderImportationId = ProviderImportations.Id;
 
                         for (int i = 0; i < hojas_excel.Count; i++)
                         {

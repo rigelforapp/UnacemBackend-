@@ -10,7 +10,7 @@ namespace UNACEM.Persistence.Database.Configuration
     {
         public BudgetCurrencyConfiguration(EntityTypeBuilder<UNACEM.Domain.BudgetCurrency> entityBuilder)
         {
-            entityBuilder.HasKey(x => x.BudgetCurrencyID);
+            entityBuilder.HasKey(x => x.Id);
           
             entityBuilder.Property(x => x.Name).IsRequired().HasMaxLength(50);
             entityBuilder.Property(x => x.Symbol).IsRequired().HasMaxLength(50);

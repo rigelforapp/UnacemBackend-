@@ -10,7 +10,7 @@ namespace UNACEM.Persistence.Database.Configuration
     {
         public BrickFormatsConfiguration(EntityTypeBuilder<UNACEM.Domain.BrickFormats> entityBuilder)
         {
-            entityBuilder.HasKey(x => x.BrickFormatId);
+            entityBuilder.HasKey(x => x.Id);
             entityBuilder.Property(x => x.Group).HasColumnType("varchar").HasMaxLength(50);
             entityBuilder.Property(x => x.Brick_a).HasColumnType("varchar").HasMaxLength(50);
             entityBuilder.Property(x => x.Brick_b).HasColumnType("varchar").HasMaxLength(50);

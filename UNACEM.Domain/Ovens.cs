@@ -5,7 +5,7 @@ namespace UNACEM.Domain
 {
     public class Ovens : AuditFields, IAuditFields
     {
-        public int OvenId { get; set; }
+        public int Id { get; set; }
 
         public int HeadquarterId { get; set; }
         [ForeignKey("HeadquarterId")]
@@ -15,7 +15,8 @@ namespace UNACEM.Domain
         [ForeignKey("UserId")]
         public virtual Users Users { get; set; }
         public string Name { get; set; }
-        public int Large { get; set; }
+        [Column(TypeName = "decimal(5, 2)")]
+        public decimal Large { get; set; }
         public int Diameter { get; set; }
     }
 }

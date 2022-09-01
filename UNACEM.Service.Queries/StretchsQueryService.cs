@@ -91,7 +91,7 @@ namespace UNACEM.Service.Queries
 
             try
             {
-                var versions = _context.Stretchs.Where(s => s.StretchId == stretchsRequest.StretchId).FirstOrDefault();
+                var versions = _context.Stretchs.Where(s => s.Id == stretchsRequest.StretchId).FirstOrDefault();
 
                 if (versions != null)
                 {

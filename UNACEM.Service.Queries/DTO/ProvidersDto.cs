@@ -6,7 +6,7 @@ namespace UNACEM.Service.Queries.DTO
 {
     public class ProvidersDto
     {
-        public int ProviderId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Last_importation_date { get; set; }
     }

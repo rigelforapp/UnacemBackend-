@@ -7,8 +7,7 @@ namespace UNACEM.Domain
 {
     public class Versions : AuditFields, IAuditFields
     {
-        public int VersionId { get; set; }
-
+        public int Id { get; set; }
         public int OvenId { get; set; }
         [ForeignKey("OvenId")]
         public virtual Ovens Ovens { get; set; }

@@ -6,7 +6,7 @@ namespace UNACEM.Service.Queries.DTO
 {
     public class StretchsDto
     {
-        public int StretchId { get; set; }
+        public int Id { get; set; }
         public double Position_Ini { get; set; }
         public double Position_End { get; set; }
         public int Color_Id { get; set; }

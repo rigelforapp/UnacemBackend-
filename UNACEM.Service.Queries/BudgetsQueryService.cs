@@ -43,7 +43,7 @@ namespace UNACEM.Service.Queries
                 await _context.AddAsync(budgets);
                 await _context.SaveChangesAsync();
 
-                int TyresImportationId = budgets.BudgetId;
+                int TyresImportationId = budgets.Id;
 
                 foreach (var item in budgetsRequest.BudgetStretches)
                 {
