@@ -7,7 +7,7 @@ namespace UNACEM.Service.Queries.DTO
     public class ProviderBricksDto
     {
         public int Id { get; set; }
-        public int ProviderImportationId { get; set; }
+        public int ProviderImportation_Id { get; set; }
         public string Name { get; set; }
         public string Recommended_Zone { get; set; }
         public string Composition { get; set; }

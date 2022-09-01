@@ -6,8 +6,8 @@ namespace UNACEM.Service.Queries.ViewModel.Request
 {
     public class GalleryRequest
     {
-        public int GalleryId { get; set; }
-        public int VersionId { get; set; }
+        public int Id { get; set; }
+        public int Version_Id { get; set; }
         public string Type { get; set; }
         public string Name { get; set; }
         public string Title { get; set; }

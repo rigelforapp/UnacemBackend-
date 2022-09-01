@@ -33,7 +33,7 @@ namespace UNACEM.Service.Queries
                 var providersresult = collection.MapTo<DataCollection<BrickFormatsDto>>();
 
                 result.Success = true;
-                result.Message = "Se realizo satisfactoriamente";
+                result.Message = "Se realizó satisfactoriamente";
                 result.Data = (List<BrickFormatsDto>)providersresult.Items;
 
             }

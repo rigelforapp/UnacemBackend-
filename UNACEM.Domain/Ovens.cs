@@ -7,12 +7,12 @@ namespace UNACEM.Domain
     {
         public int Id { get; set; }
 
-        public int HeadquarterId { get; set; }
-        [ForeignKey("HeadquarterId")]
+        public int Headquarter_Id { get; set; }
+        [ForeignKey("Headquarter_Id")]
         public virtual Headquarters Headquarters { get; set; }
 
-        public int UserId { get; set; }
-        [ForeignKey("UserId")]
+        public int User_Id { get; set; }
+        [ForeignKey("User_Id")]
         public virtual Users Users { get; set; }
         public string Name { get; set; }
         [Column(TypeName = "decimal(5, 2)")]

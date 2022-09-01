@@ -8,8 +8,8 @@ namespace UNACEM.Service.Queries.ViewModel.Request
 {
     public class BudgetsRequest
     {
-        public int BudgetId { get; set; }
-        public int VersionId { get; set; }
+        public int Id { get; set; }
+        public int Version_Id { get; set; }
         public double Total_Amount { get; set; }
         public List<BudgetStretchRequest> BudgetStretches { get; set; }
     }

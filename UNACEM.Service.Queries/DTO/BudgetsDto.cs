@@ -9,7 +9,7 @@ namespace UNACEM.Service.Queries.DTO
     public class BudgetsDto
     {
         public int Id { get; set; }
-        public int VersionId { get; set; }
+        public int Version_Id { get; set; }
         public double Total_Amount { get; set; }
     }
 }

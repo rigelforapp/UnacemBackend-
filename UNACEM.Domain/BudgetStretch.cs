@@ -9,15 +9,16 @@ namespace UNACEM.Domain
     public class BudgetStretch : AuditFields, IAuditFields
     {
         public int Id { get; set; }
-        public int BudgetId { get; set; }
-        [ForeignKey("BudgetId")]
+        public int Budget_Id { get; set; }
+        [ForeignKey("Budget_Id")]
         public virtual Budgets Budgets { get; set; }
 
-        public int? StretchId { get; set; }
-        [ForeignKey("StretchId")]
+        public int? Stretch_Id { get; set; }
+        [ForeignKey("Stretch_Id")]
         public virtual Stretchs Stretchs { get; set; }
-        public int? BrickFormatId { get; set; }
-        [ForeignKey("BrickFormatId")]
+
+        public int? BrickFormat_Id { get; set; }
+        [ForeignKey("BrickFormat_Id")]
         public virtual BrickFormats BrickFormats { get; set; }
 
         public double Brick_a_Cost { get; set; }

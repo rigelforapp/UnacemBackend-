@@ -44,8 +44,8 @@ namespace UNACEM.Service.Queries
             {
                 Ovens ovens = new Ovens();
                 // await SomeAsyncMethod();
-                ovens.HeadquarterId = ovensRequest.HeadquarterId;
-                ovens.UserId = ovensRequest.UserId;
+                ovens.Headquarter_Id = ovensRequest.Headquarter_Id;
+                ovens.User_Id = ovensRequest.UserId;
                 ovens.Name = ovensRequest.Name;
                 ovens.Large = ovensRequest.Large;
                 ovens.Diameter = ovensRequest.Diameter;
@@ -58,9 +58,9 @@ namespace UNACEM.Service.Queries
                 {
                     Tyres tyres = new Tyres();
 
-                    tyres.OvenId = TyresImportationId;
-                    tyres.ColorId = item.ColorId;
-                    tyres.TextureId = item.TextureId;
+                    tyres.Oven_Id = TyresImportationId;
+                    tyres.Color_Id = item.Color_Id;
+                    tyres.Texture_Id = item.Texture_Id;
                     tyres.Position = item.Position;
 
                     await _context.AddAsync(tyres);
@@ -69,7 +69,7 @@ namespace UNACEM.Service.Queries
                 }
 
                 result.Success = true;
-                result.Message = "Se realizo satisfactoriamente";
+                result.Message = "Se realizó satisfactoriamente";
 
             }
             catch (Exception ex)
@@ -101,19 +101,19 @@ namespace UNACEM.Service.Queries
                 foreach (var ovens in ovensresult.Items)
                 {
                   
-                    var ovenstemporal = _context.Versions.Where(x => x.OvenId == ovens.Id).OrderByDescending(c => c.Date_End).FirstOrDefault();
+                    var ovenstemporal = _context.Versions.Where(x => x.Oven_Id == ovens.Id).OrderByDescending(c => c.Date_End).FirstOrDefault();
                     if (ovenstemporal != null)
                     {
-                        var QuantityVersions = _context.Versions.Where(a => a.OvenId == ovens.Id).ToList().Count();
+                        var QuantityVersions = _context.Versions.Where(a => a.Oven_Id == ovens.Id).ToList().Count();
                         ovens.QuantityVersions = QuantityVersions;
                         ovens.Last_date_end = Convert.ToDateTime(ovenstemporal.Date_End).ToString("dd/MM/yyyy");
 
                         #region Calculamos la cantidad de presupuestos
                         int cantidad = 0;
               
-                        foreach (var version in _context.Versions.Where(a => a.OvenId == ovens.Id).ToList())
+                        foreach (var version in _context.Versions.Where(a => a.Oven_Id == ovens.Id).ToList())
                         {
-                            var QuantityBudgets = _context.Budgets.Where(a => a.VersionId == version.Id).ToList().Count();
+                            var QuantityBudgets = _context.Budgets.Where(a => a.Version_Id == version.Id).ToList().Count();
                             cantidad = QuantityBudgets+cantidad;
                             ovens.QuantityBudgets = cantidad;
                         }
@@ -128,7 +128,7 @@ namespace UNACEM.Service.Queries
                 #endregion
 
                 result.Success = true;
-                result.Message = "Se realizo correctamente";
+                result.Message = "Se realizó correctamente";
                 result.Data = (List<OvensDto>)ovensresult.Items;
             }
             catch (Exception ex)
@@ -147,11 +147,11 @@ namespace UNACEM.Service.Queries
             
             try
             {
-                var ovens = _context.Ovens.Where(a => a.Id == ovensRequest.OvenId).FirstOrDefault();
+                var ovens = _context.Ovens.Where(a => a.Id == ovensRequest.Id).FirstOrDefault();
                 if (ovens != null)
                 {
-                    ovens.HeadquarterId = ovensRequest.HeadquarterId;
-                    ovens.UserId = ovensRequest.UserId;
+                    ovens.Headquarter_Id = ovensRequest.Headquarter_Id;
+                    ovens.User_Id = ovensRequest.UserId;
                     ovens.Name = ovensRequest.Name;
                     ovens.Large = ovensRequest.Large;
                     ovens.Diameter = ovensRequest.Diameter;
@@ -165,15 +165,15 @@ namespace UNACEM.Service.Queries
                         foreach (var item in ovensRequest.Tyres)
                         {
                            
-                            tyres = _context.Tyres.Where(t => t.Id == item.TyreId).FirstOrDefault();
+                            tyres = _context.Tyres.Where(t => t.Id == item.Id).FirstOrDefault();
 
                             if(tyres == null)
                             {
                                 tyres = new Tyres();
                                 
-                                tyres.OvenId = ovensRequest.OvenId;
-                                tyres.ColorId = item.ColorId;
-                                tyres.TextureId = item.TextureId;
+                                tyres.Oven_Id = ovensRequest.Id;
+                                tyres.Color_Id = item.Color_Id;
+                                tyres.Texture_Id = item.Texture_Id;
                                 tyres.Position = item.Position;
                                 //tyres.CreatedBy = ovensRequest.CreatedBy;
 
@@ -183,9 +183,9 @@ namespace UNACEM.Service.Queries
                             }
                             else
                             {
-                                tyres.ColorId = item.ColorId;
-                                tyres.OvenId = ovensRequest.OvenId;
-                                tyres.TextureId = item.TextureId;
+                                tyres.Color_Id = item.Color_Id;
+                                tyres.Oven_Id = ovensRequest.Id;
+                                tyres.Texture_Id = item.Texture_Id;
                                 tyres.Position = item.Position;
                                 //tyres.CreatedBy = ovensRequest.CreatedBy;
                             
@@ -194,11 +194,11 @@ namespace UNACEM.Service.Queries
                         }
 
                         result.Success = true;
-                        result.Message = "Se realizo correctamente";                        
+                        result.Message = "Se realizó correctamente";                        
                     }
                     else
                     {               
-                        var list = _context.Tyres.Where(a => a.OvenId == ovensRequest.OvenId).ToList();
+                        var list = _context.Tyres.Where(a => a.Oven_Id == ovensRequest.Id).ToList();
                         _context.Tyres.RemoveRange(list);
                         _context.SaveChanges();
                         result.Message = "Se elimino el regitro de Tyres";

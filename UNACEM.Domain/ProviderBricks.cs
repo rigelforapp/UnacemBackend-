@@ -7,8 +7,8 @@ namespace UNACEM.Domain
     public class ProviderBricks : AuditFields, IAuditFields
     {
         public int Id { get; set; }
-        public int ProviderImportationId { get; set; }
-        [ForeignKey("ProviderImportationId")]
+        public int ProviderImportation_Id { get; set; }
+        [ForeignKey("ProviderImportation_Id")]
         public virtual ProviderImportations ProviderImportations { get; set; }
         public string Name { get; set; }
         public string Recommended_Zone { get; set; }
@@ -22,5 +22,6 @@ namespace UNACEM.Domain
         public decimal Thermal_Conductivity_700 { get; set; }
         [Column(TypeName = "decimal(5, 2)")] 
         public decimal Thermal_Conductivity_100 { get; set; }
+
     }
 }

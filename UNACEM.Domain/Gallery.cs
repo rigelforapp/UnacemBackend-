@@ -9,8 +9,8 @@ namespace UNACEM.Domain
     public class Gallery : AuditFields, IAuditFields
     {
         public int Id { get; set; }
-        public int VersionId { get; set; }
-        [ForeignKey("VersionId")]
+        public int Version_Id { get; set; }
+        [ForeignKey("Version_Id")]
         public virtual Versions Versions { get; set; }
         public string Type { get; set; }
         public string Name { get; set; }

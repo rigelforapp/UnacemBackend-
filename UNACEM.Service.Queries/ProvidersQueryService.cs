@@ -44,13 +44,13 @@ namespace UNACEM.Service.Queries
                 await _context.AddAsync(new Providers()
                 {
                     Name = providersRequest.Name,
-                    CreatedBy = "Usuario"
+                    Created_By = "Usuario"
                 }
                 );
 
                 await _context.SaveChangesAsync();
                 result.Success = true;
-                result.Message = "Se realizo satisfactoriamente";
+                result.Message = "Se realizó satisfactoriamente";
             }
             catch (Exception ex)
             {
@@ -66,13 +66,13 @@ namespace UNACEM.Service.Queries
             ProvidersResponse result = new ProvidersResponse();
             try
             {
-                var providers = _context.Providers.Where(a => a.Id == providersRequest.ProviderId).FirstOrDefault();
+                var providers = _context.Providers.Where(a => a.Id == providersRequest.Id).FirstOrDefault();
                 if (providers != null)
                 {
                     providers.Name = providersRequest.Name;
                     await _context.SaveChangesAsync();
                     result.Success = true;
-                    result.Message = "Se realizo satisfactoriamente";
+                    result.Message = "Se realizó satisfactoriamente";
                 }
                 else
                 {
@@ -117,14 +117,14 @@ namespace UNACEM.Service.Queries
                 foreach (var item in providersresult.Items)
                 {
                     item.Last_importation_date = string.Empty;
-                    var ProviderImportations= _context.ProviderImportations.Where(x => x.ProviderId == item.Id).OrderByDescending(c => c.CreatedAt).FirstOrDefault();
+                    var ProviderImportations= _context.ProviderImportations.Where(x => x.Provider_Id == item.Id).OrderByDescending(c => c.Created_At).FirstOrDefault();
                     if (ProviderImportations!=null)
                     {
-                        item.Last_importation_date = Convert.ToDateTime(ProviderImportations.CreatedAt).ToString("dd/MM/yyyy HH:mm");
+                        item.Last_importation_date = Convert.ToDateTime(ProviderImportations.Created_At).ToString("dd/MM/yyyy HH:mm");
                     }
                 }
                 result.Success = true;
-                result.Message = "Se realizo satisfactoriamente";
+                result.Message = "Se realizó satisfactoriamente";
                 result.Data = (List<ProvidersDto>)providersresult.Items;
 
             }
@@ -149,8 +149,8 @@ namespace UNACEM.Service.Queries
                     using (TransactionScope tx = new TransactionScope())
                     {
                         await SomeAsyncMethod();
-                        ProviderImportations.ProviderId = providersRequest.ProviderId;
-                        ProviderImportations.CreatedBy = providersRequest.CreatedBy;
+                        ProviderImportations.Provider_Id = providersRequest.Id;
+                        ProviderImportations.Created_By = providersRequest.Created_By;
                         await _context.AddAsync(ProviderImportations);
                         await _context.SaveChangesAsync();
 
@@ -163,7 +163,7 @@ namespace UNACEM.Service.Queries
                             await BulkInsert(LstProviderBricks);
                         }
                         result.Success = true;
-                        result.Message = "Se realizo satisfactoriamente";
+                        result.Message = "Se realizó satisfactoriamente";
                         tx.Complete();
                     }
                     
@@ -242,7 +242,7 @@ namespace UNACEM.Service.Queries
             foreach (var item in lstData)
             {
                 DataRow row = table.NewRow();
-                row["ProviderImportationId"] = item.ProviderImportationId;
+                row["ProviderImportationId"] = item.ProviderImportation_Id;
                 row["Name"] = item.Name;
                 row["Recommended_Zone"] = item.Recommended_Zone;
                 row["Composition"] = item.Composition;
@@ -303,7 +303,7 @@ namespace UNACEM.Service.Queries
                         try
                         {
                             var providerBricksDto = new ProviderBricksDto();
-                            providerBricksDto.ProviderImportationId = ProviderImportationId;
+                            providerBricksDto.ProviderImportation_Id = ProviderImportationId;
                             providerBricksDto.Name = reader.GetString(0);
                             providerBricksDto.Recommended_Zone = reader.GetString(1);
                             providerBricksDto.Composition = reader.GetString(2);

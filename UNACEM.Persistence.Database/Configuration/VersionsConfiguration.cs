@@ -15,8 +15,8 @@ namespace UNACEM.Persistence.Database.Configuration
             entityBuilder.Property(x => x.Date_Ini).IsRequired().HasColumnType("Date");
             entityBuilder.Property(x => x.Date_End).IsRequired().HasColumnType("Date");
 
-            entityBuilder.Property(x => x.CreatedAt).IsRequired().HasColumnType("DateTime");
-            entityBuilder.Property(x => x.UpdatedAt).HasColumnType("DateTime");
+            entityBuilder.Property(x => x.Created_At).IsRequired().HasColumnType("DateTime");
+            entityBuilder.Property(x => x.Updated_At).HasColumnType("DateTime");
 
         }
     }

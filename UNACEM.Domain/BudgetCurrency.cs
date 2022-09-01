@@ -9,9 +9,9 @@ namespace UNACEM.Domain
     public class BudgetCurrency : AuditFields, IAuditFields
     {
         public int Id { get; set; }
-        public int BudgetId { get; set; }
+        public int Budget_Id { get; set; }
 
-        [ForeignKey("BudgetId")]
+        [ForeignKey("Budget_Id")]
         public virtual Budgets Budgets { get; set; }
         public string Name { get; set; }
         public string Symbol { get; set; }

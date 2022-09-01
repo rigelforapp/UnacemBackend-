@@ -10,15 +10,18 @@ namespace UNACEM.Domain
     {
         public int Id { get; set; }
 
-        public int OvenId { get; set; }
-        [ForeignKey("OvenId")]
+        public int Oven_Id { get; set; }
+        [ForeignKey("Oven_Id")]
         public virtual Ovens Ovens { get; set; }
-        public int ColorId { get; set; }
 
-        [ForeignKey("ColorId")] 
+        public int Color_Id { get; set; }
+        [ForeignKey("Color_Id")] 
         public virtual Color Color { get; set; }
-        public int TextureId { get; set; }
-        public int Position { get; set; }
+
+        public int Texture_Id { get; set; }
+
+       // [Column(TypeName = "decimal(5, 2)")]
+        public double Position { get; set; }
 
     }
 }

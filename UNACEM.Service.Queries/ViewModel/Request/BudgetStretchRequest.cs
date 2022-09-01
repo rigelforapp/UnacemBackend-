@@ -10,9 +10,9 @@ namespace UNACEM.Service.Queries.ViewModel.Request
 {
     public class BudgetStretchRequest
     {
-        public int BudgetStretchId { get; set; }
-        public int? StretchId { get; set; }
-        public int? BrickFormatId { get; set; }
+        public int Id { get; set; }
+        public int? Stretch_Id { get; set; }
+        public int? BrickFormat_Id { get; set; }
         public double Brick_a_Cost { get; set; }
         public double Brick_b_Cost { get; set; }
         public double Wedge_a_Quantity { get; set; }

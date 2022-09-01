@@ -81,11 +81,11 @@ namespace UNACEM.Persistence.Database
                 if (entry.State == EntityState.Added)
                 {
                     //entity.CreatedBy = entity.CreatedBy;
-                    entity.CreatedAt = now;
+                    entity.Created_At = now;
                 }
                 else
                 {
-                    entity.UpdatedAt = now;
+                    entity.Updated_At = now;
                 }
 
              
