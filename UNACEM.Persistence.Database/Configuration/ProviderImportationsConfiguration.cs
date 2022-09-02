@@ -7,7 +7,7 @@ namespace UNACEM.Persistence.Database.Configuration
     {
         public ProviderImportationsConfiguration(EntityTypeBuilder<UNACEM.Domain.ProviderImportations> entityBuilder)
         {
-            entityBuilder.HasKey(x => x.ProviderImportationId);
+            entityBuilder.HasKey(x => x.Id);
     
             entityBuilder.Property(x => x.Created_By).IsRequired().HasMaxLength(50);
             entityBuilder.Property(x => x.Created_At).IsRequired().HasColumnType("DateTime");

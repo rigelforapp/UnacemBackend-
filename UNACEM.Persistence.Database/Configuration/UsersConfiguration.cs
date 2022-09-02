@@ -10,7 +10,7 @@ namespace UNACEM.Persistence.Database.Configuration
     {
         public UsersConfiguration(EntityTypeBuilder<UNACEM.Domain.Users> entityBuilder)
         {
-            entityBuilder.HasKey(x => x.UserId);           
+            entityBuilder.HasKey(x => x.Id);           
             entityBuilder.Property(x => x.Created_At).IsRequired().HasColumnType("DateTime");
             entityBuilder.Property(x => x.Updated_At).HasColumnType("DateTime");
         }

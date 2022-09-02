@@ -96,7 +96,7 @@ namespace UNACEM.Service.Queries
 
             try
             {
-                var versions = _context.Versions.Where(v => v.VersionId == versionRequest.Id).FirstOrDefault();
+                var versions = _context.Versions.Where(v => v.Id == versionRequest.Id).FirstOrDefault();
 
                 if (versions != null)
                 {

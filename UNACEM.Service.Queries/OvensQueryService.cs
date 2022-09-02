@@ -44,7 +44,7 @@ namespace UNACEM.Service.Queries
             {
                 Ovens ovens = new Ovens();
                 // await SomeAsyncMethod();
-                ovens.HeadquarterId = ovensRequest.Headquarter_Id;
+                ovens.HeadquarterId = ovensRequest.HeadquarterId;
                 ovens.UserId = ovensRequest.UserId;
                 ovens.Name = ovensRequest.Name;
                 ovens.Large = ovensRequest.Large;
@@ -52,7 +52,7 @@ namespace UNACEM.Service.Queries
 
                 await _context.AddAsync(ovens);
                 await _context.SaveChangesAsync();
-                int TyresImportationId = ovens.OvenId;
+                int TyresImportationId = ovens.Id;
 
                 foreach (var item in ovensRequest.Tyres)
                 {
@@ -93,7 +93,7 @@ namespace UNACEM.Service.Queries
             
             try
             {
-                var collection = await _context.Ovens.AsNoTracking().OrderBy(x => x.OvenId).GetPagedAsync(Start, Limit);
+                var collection = await _context.Ovens.AsNoTracking().OrderBy(x => x.Id).GetPagedAsync(Start, Limit);
                 var ovensresult = collection.MapTo<DataCollection<OvensDto>>();
 
                 #region Calculamos la cantidad de versiones
@@ -113,7 +113,7 @@ namespace UNACEM.Service.Queries
               
                         foreach (var version in _context.Versions.Where(a => a.OvenId == ovens.Id).ToList())
                         {
-                            var QuantityBudgets = _context.Budgets.Where(a => a.VersionId == version.VersionId).ToList().Count();
+                            var QuantityBudgets = _context.Budgets.Where(a => a.VersionId == version.Id).ToList().Count();
                             cantidad = QuantityBudgets+cantidad;
                             ovens.QuantityBudgets = cantidad;
                         }
@@ -147,10 +147,10 @@ namespace UNACEM.Service.Queries
             
             try
             {
-                var ovens = _context.Ovens.Where(a => a.OvenId == ovensRequest.Id).FirstOrDefault();
+                var ovens = _context.Ovens.Where(a => a.Id == ovensRequest.Id).FirstOrDefault();
                 if (ovens != null)
                 {
-                    ovens.HeadquarterId = ovensRequest.Headquarter_Id;
+                    ovens.HeadquarterId = ovensRequest.HeadquarterId;
                     ovens.UserId = ovensRequest.UserId;
                     ovens.Name = ovensRequest.Name;
                     ovens.Large = ovensRequest.Large;
@@ -165,7 +165,7 @@ namespace UNACEM.Service.Queries
                         foreach (var item in ovensRequest.Tyres)
                         {
                            
-                            tyres = _context.Tyres.Where(t => t.TyreId == item.Id).FirstOrDefault();
+                            tyres = _context.Tyres.Where(t => t.Id == item.Id).FirstOrDefault();
 
                             if(tyres == null)
                             {

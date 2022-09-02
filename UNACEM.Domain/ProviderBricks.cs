@@ -6,7 +6,7 @@ namespace UNACEM.Domain
 {
     public class ProviderBricks : AuditFields, IAuditFields
     {
-        public int ProviderBrickId { get; set; }
+        public int Id { get; set; }
         public int ProviderImportationId { get; set; }
         [ForeignKey("ProviderImportationId")]
         public virtual ProviderImportations ProviderImportations { get; set; }

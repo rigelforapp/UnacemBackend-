@@ -5,7 +5,7 @@ namespace UNACEM.Domain
 {
     public class Ovens : AuditFields, IAuditFields
     {
-        public int OvenId { get; set; }
+        public int Id { get; set; }
 
         public int HeadquarterId { get; set; }
         [ForeignKey("HeadquarterId")]

@@ -8,7 +8,7 @@ namespace UNACEM.Domain
 {
     public class BudgetStretch : AuditFields, IAuditFields
     {
-        public int BudgetStretchId { get; set; }
+        public int Id { get; set; }
         public int BudgetId { get; set; }
         [ForeignKey("BudgetId")]
         public virtual Budgets Budgets { get; set; }

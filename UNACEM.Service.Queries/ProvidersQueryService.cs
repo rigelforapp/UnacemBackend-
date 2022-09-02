@@ -66,7 +66,7 @@ namespace UNACEM.Service.Queries
             ProvidersResponse result = new ProvidersResponse();
             try
             {
-                var providers = _context.Providers.Where(a => a.ProviderId == providersRequest.Id).FirstOrDefault();
+                var providers = _context.Providers.Where(a => a.Id == providersRequest.Id).FirstOrDefault();
                 if (providers != null)
                 {
                     providers.Name = providersRequest.Name;
@@ -111,7 +111,7 @@ namespace UNACEM.Service.Queries
                 //         .OrderByDescending(d => d.ProviderId).GroupBy(x=> x.CreatedAt).ToList();
 
 
-                var collection = await _context.Providers.AsNoTracking().OrderBy(x => x.ProviderId).GetPagedAsync(Start, Limit);
+                var collection = await _context.Providers.AsNoTracking().OrderBy(x => x.Id).GetPagedAsync(Start, Limit);
                 var providersresult = collection.MapTo<DataCollection<ProvidersDto>>();
 
                 foreach (var item in providersresult.Items)
@@ -146,15 +146,15 @@ namespace UNACEM.Service.Queries
 
             try
             {
-                    using (TransactionScope tx = new TransactionScope())
-                    {
-                        await SomeAsyncMethod();
+                    //using (TransactionScope tx = new TransactionScope())
+                    //{
+                      //  await SomeAsyncMethod();
                         ProviderImportations.ProviderId = providersRequest.Id;
                         ProviderImportations.Created_By = providersRequest.Created_By;
                         await _context.AddAsync(ProviderImportations);
                         await _context.SaveChangesAsync();
 
-                        int ProviderImportationId = ProviderImportations.ProviderImportationId;
+                        int ProviderImportationId = ProviderImportations.Id;
 
                         for (int i = 0; i < hojas_excel.Count; i++)
                         {
@@ -164,8 +164,8 @@ namespace UNACEM.Service.Queries
                         }
                         result.Success = true;
                         result.Message = "Se realizó satisfactoriamente";
-                        tx.Complete();
-                    }
+                       // tx.Complete();
+                   // }
                     
                 
             }
