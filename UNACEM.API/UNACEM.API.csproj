@@ -18,10 +18,12 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\UNACEM.Common\UNACEM.Common.csproj" />
     <ProjectReference Include="..\UNACEM.Persistence.Database\UNACEM.Persistence.Database.csproj" />
     <ProjectReference Include="..\UNACEM.Service.Queries\UNACEM.Service.Queries.csproj" />
   </ItemGroup>

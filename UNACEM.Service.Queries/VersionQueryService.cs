@@ -40,11 +40,12 @@ namespace UNACEM.Service.Queries
             {
                 Versions version = new Versions();
 
-                version.OvenId = versionRequest.Oven_Id;
+                version.OvenId = versionRequest.OvenId;
                 version.Name = versionRequest.Name;
-                version.Date_Ini = versionRequest.Date_Ini;
-                version.Date_End = versionRequest.Date_End;
-
+                //version.DateIni = Convert.ToDateTime(versionRequest.DateIni);
+                //version.DateEnd = Convert.ToDateTime(versionRequest.DateEnd);
+                version.DateIni =versionRequest.DateIni;
+                version.DateEnd =versionRequest.DateEnd;
                 await _context.AddAsync(version);
                 await _context.SaveChangesAsync();
 
@@ -74,11 +75,11 @@ namespace UNACEM.Service.Queries
                 result.Message = "Se realizó correctamente";
                 result.Data = (List<VersionDto>)versionresult.Items;
 
-                foreach (var item in result.Data)
-                {
-                    item.DateIni = item.Date_Ini.ToString("dd/MM/yyyy");
-                    item.DateEnd = item.Date_End.ToString("dd/MM/yyyy");
-                }
+                //foreach (var item in result.Data)
+                //{
+                //    item.DateIni = Convert.ToDateTime(item.DateIni.ToString("dd/MM/yyyy"));
+                //    item.DateEnd = Convert.ToDateTime(item.DateEnd.ToString("dd/MM/yyyy"));
+                //}
             }
             catch (Exception ex)
             {
@@ -100,10 +101,10 @@ namespace UNACEM.Service.Queries
 
                 if (versions != null)
                 {
-                    versions.OvenId = versionRequest.Oven_Id;
+                    versions.OvenId = versionRequest.OvenId;
                     versions.Name = versionRequest.Name;
-                    versions.Date_Ini = versionRequest.Date_Ini;
-                    versions.Date_End = versionRequest.Date_End;
+                    versions.DateIni = Convert.ToDateTime(versionRequest.DateIni);
+                    versions.DateEnd = Convert.ToDateTime(versionRequest.DateEnd);
 
                     await _context.SaveChangesAsync();
                     result.Success = true;

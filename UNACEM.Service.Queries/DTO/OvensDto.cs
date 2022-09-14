@@ -7,13 +7,13 @@ namespace UNACEM.Service.Queries.DTO
     public class OvensDto
     {
         public int Id { get; set; }
-        public int Headquarter_Id { get; set; }
-        public int User_Id { get; set; }
+        public int HeadquarterId { get; set; }
+        public int UserId { get; set; }
         public string Name { get; set; }
         public decimal Large { get; set; }
         public int Diameter { get; set; }
         public int QuantityVersions { get; set; }
         public int QuantityBudgets { get; set; }
-        public string Last_date_end{ get; set; }
+        public string LastDateEnd{ get; set; }
     }
 }

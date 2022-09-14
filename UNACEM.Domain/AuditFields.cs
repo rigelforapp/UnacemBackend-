@@ -9,10 +9,10 @@ namespace UNACEM.Domain
     public abstract class AuditFields : IAuditFields
     {
 
-        public DateTime? Created_At { get; set; }
+        public DateTime? CreatedAt { get; set; }
 
-        public DateTime? Updated_At { get; set; }
+        public DateTime? UpdatedAt { get; set; }
 
-        public DateTime? Deleted_At { get; set; }
+        public DateTime? DeletedAt { get; set; }
     }
 }

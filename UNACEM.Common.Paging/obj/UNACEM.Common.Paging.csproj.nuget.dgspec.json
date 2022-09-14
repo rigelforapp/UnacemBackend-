@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj": {}
+    "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj": {}
   },
   "projects": {
-    "C:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj": {
+    "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj",
+        "projectUniqueName": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj",
         "projectName": "UNACEM.Common.Collection",
-        "projectPath": "C:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj",
+        "projectPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Collection\\obj\\",
+        "outputPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Collection\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -59,18 +59,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj": {
+    "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj",
+        "projectUniqueName": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj",
         "projectName": "UNACEM.Common.Paging",
-        "projectPath": "C:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj",
+        "projectPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Paging\\obj\\",
+        "outputPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Paging\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -91,8 +91,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj": {
-                "projectPath": "C:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj"
+              "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj": {
+                "projectPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj"
               }
             }
           }
@@ -128,7 +128,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

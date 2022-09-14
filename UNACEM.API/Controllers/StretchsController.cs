@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using UNACEM.Common.Configuration;
 using UNACEM.Service.Queries;
 using UNACEM.Service.Queries.ViewModel;
 using UNACEM.Service.Queries.ViewModel.Request;
@@ -30,7 +31,7 @@ namespace UNACEM.API.Controllers
         }
 
         [HttpGet]
-        public async Task<StretchsResponse> GetAll(int VersionId, int Start, int Limit)
+        public async Task<StretchsResponse> GetAll(int VersionId, int Start = Manager.VariableGlobal.Numero.Uno, int Limit = Manager.VariableGlobal.Numero.Diez)
         {
             return await _stretchsQueryService.GetAll(VersionId, Start, Limit);
         }

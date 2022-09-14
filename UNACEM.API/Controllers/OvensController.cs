@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using UNACEM.Common.Configuration;
 using UNACEM.Service.Queries;
 using UNACEM.Service.Queries.ViewModel.Request;
 using UNACEM.Service.Queries.ViewModel.Response;
@@ -35,7 +36,7 @@ namespace UNACEM.API.Controllers
         }
 
         [HttpGet]
-        public async Task<OvensResponse> GetAll(int Start, int Limit)
+        public async Task<OvensResponse> GetAll(int Start = Manager.VariableGlobal.Numero.Uno, int Limit = Manager.VariableGlobal.Numero.Diez)
         {
             return await _ovensQueryService.GetAll(Start, Limit);
         }

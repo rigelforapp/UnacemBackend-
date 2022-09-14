@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using UNACEM.Common.Configuration;
 using UNACEM.Service.Queries;
 using UNACEM.Service.Queries.ViewModel.Request;
 using UNACEM.Service.Queries.ViewModel.Response;
@@ -20,7 +21,7 @@ namespace UNACEM.API.Controllers
         }
 
         [HttpGet]
-        public async Task<BudgetsResponse> GetAll(int VersionId, int Start, int Limit)
+        public async Task<BudgetsResponse> GetAll(int VersionId, int Start = Manager.VariableGlobal.Numero.Uno, int Limit = Manager.VariableGlobal.Numero.Diez)
         {
             return await _budgetsQueryService.GetAll(VersionId, Start, Limit);
         }

@@ -13,7 +13,7 @@ namespace UNACEM.Persistence.Database.Configuration
             entityBuilder.HasKey(x => x.Id);
 
             entityBuilder.Property(x => x.Name).IsRequired().HasMaxLength(50);
-            entityBuilder.Property(x => x.Recommended_Zone).IsRequired().HasMaxLength(1000);
+            entityBuilder.Property(x => x.RecommendedZone).IsRequired().HasMaxLength(1000);
             entityBuilder.Property(x => x.Composition).IsRequired().HasMaxLength(1000);
             entityBuilder.Property(x => x.Density).IsRequired().HasMaxLength(100);
             entityBuilder.Property(x => x.Porosity).IsRequired().HasMaxLength(100);

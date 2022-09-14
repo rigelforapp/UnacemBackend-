@@ -59,8 +59,8 @@ namespace UNACEM.Service.Queries
                     Tyres tyres = new Tyres();
 
                     tyres.OvenId = TyresImportationId;
-                    tyres.ColorId = item.Color_Id;
-                    tyres.Texture_Id = item.Texture_Id;
+                    tyres.ColorId = item.ColorId;
+                    tyres.TextureId = item.TextureId;
                     tyres.Position = item.Position;
 
                     await _context.AddAsync(tyres);
@@ -101,12 +101,12 @@ namespace UNACEM.Service.Queries
                 foreach (var ovens in ovensresult.Items)
                 {
                   
-                    var ovenstemporal = _context.Versions.Where(x => x.OvenId == ovens.Id).OrderByDescending(c => c.Date_End).FirstOrDefault();
+                    var ovenstemporal = _context.Versions.Where(x => x.OvenId == ovens.Id).OrderByDescending(c => c.DateEnd).FirstOrDefault();
                     if (ovenstemporal != null)
                     {
                         var QuantityVersions = _context.Versions.Where(a => a.OvenId == ovens.Id).ToList().Count();
                         ovens.QuantityVersions = QuantityVersions;
-                        ovens.Last_date_end = Convert.ToDateTime(ovenstemporal.Date_End).ToString("dd/MM/yyyy");
+                        ovens.LastDateEnd = Convert.ToDateTime(ovenstemporal.DateEnd).ToString("dd/MM/yyyy");
 
                         #region Calculamos la cantidad de presupuestos
                         int cantidad = 0;
@@ -172,8 +172,8 @@ namespace UNACEM.Service.Queries
                                 tyres = new Tyres();
                                 
                                 tyres.OvenId = ovensRequest.Id;
-                                tyres.ColorId = item.Color_Id;
-                                tyres.Texture_Id = item.Texture_Id;
+                                tyres.ColorId = item.ColorId;
+                                tyres.TextureId = item.TextureId;
                                 tyres.Position = item.Position;
                                 //tyres.CreatedBy = ovensRequest.CreatedBy;
 
@@ -183,9 +183,9 @@ namespace UNACEM.Service.Queries
                             }
                             else
                             {
-                                tyres.ColorId = item.Color_Id;
+                                tyres.ColorId = item.ColorId;
                                 tyres.OvenId = ovensRequest.Id;
-                                tyres.Texture_Id = item.Texture_Id;
+                                tyres.TextureId = item.TextureId;
                                 tyres.Position = item.Position;
                                 //tyres.CreatedBy = ovensRequest.CreatedBy;
                             

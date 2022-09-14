@@ -14,6 +14,7 @@ namespace UNACEM.Domain
         public int UserId { get; set; }
         [ForeignKey("UserId")]
         public virtual Users Users { get; set; }
+
         public string Name { get; set; }
         [Column(TypeName = "decimal(5, 2)")]
         public decimal Large { get; set; }

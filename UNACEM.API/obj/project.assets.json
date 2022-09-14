@@ -2069,6 +2069,16 @@
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
+      "UNACEM.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/UNACEM.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UNACEM.Common.dll": {}
+        }
+      },
       "UNACEM.Common.Collection/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -6428,6 +6438,11 @@
         "system.xml.xpath.xmldocument.nuspec"
       ]
     },
+    "UNACEM.Common/1.0.0": {
+      "type": "project",
+      "path": "../UNACEM.Common/UNACEM.Common.csproj",
+      "msbuildProject": "../UNACEM.Common/UNACEM.Common.csproj"
+    },
     "UNACEM.Common.Collection/1.0.0": {
       "type": "project",
       "path": "../UNACEM.Common.Collection/UNACEM.Common.Collection.csproj",
@@ -6462,7 +6477,9 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.0",
+      "Microsoft.Extensions.Options >= 6.0.0",
       "Swashbuckle.AspNetCore >= 6.0.0",
+      "UNACEM.Common >= 1.0.0",
       "UNACEM.Persistence.Database >= 1.0.0",
       "UNACEM.Service.Queries >= 1.0.0"
     ]
@@ -6474,11 +6491,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\proyectos\\UNACEM\\Code\\UNACEM.API\\UNACEM.API.csproj",
+      "projectUniqueName": "D:\\proyectos\\UNACEM\\Code\\UNACEM.API\\UNACEM.API.csproj",
       "projectName": "UNACEM.API",
-      "projectPath": "C:\\proyectos\\UNACEM\\Code\\UNACEM.API\\UNACEM.API.csproj",
+      "projectPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.API\\UNACEM.API.csproj",
       "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "C:\\proyectos\\UNACEM\\Code\\UNACEM.API\\obj\\",
+      "outputPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -6499,11 +6516,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\proyectos\\UNACEM\\Code\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj": {
-              "projectPath": "C:\\proyectos\\UNACEM\\Code\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj"
+            "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common\\UNACEM.Common.csproj": {
+              "projectPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common\\UNACEM.Common.csproj"
             },
-            "C:\\proyectos\\UNACEM\\Code\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj": {
-              "projectPath": "C:\\proyectos\\UNACEM\\Code\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj"
+            "D:\\proyectos\\UNACEM\\Code\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj": {
+              "projectPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj"
+            },
+            "D:\\proyectos\\UNACEM\\Code\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj": {
+              "projectPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj"
             }
           }
         }
@@ -6521,6 +6541,10 @@
           "Microsoft.EntityFrameworkCore.Tools": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
+            "target": "Package",
+            "version": "[6.0.0, )"
+          },
+          "Microsoft.Extensions.Options": {
             "target": "Package",
             "version": "[6.0.0, )"
           },
@@ -6548,7 +6572,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

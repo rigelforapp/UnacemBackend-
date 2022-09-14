@@ -32,6 +32,8 @@ namespace UNACEM.Persistence.Database
         public DbSet<UNACEM.Domain.ProviderBricks> ProviderBricks { get; set; }
         public DbSet<UNACEM.Domain.BudgetStretch> BudgetStretch { get; set; }
         public DbSet<UNACEM.Domain.Gallery> Gallery { get; set; }
+        public DbSet<UNACEM.Domain.ProviderInsulatings> ProviderInsulatings { get; set; }
+        public DbSet<UNACEM.Domain.ProviderConcretes> ProviderConcretes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -56,6 +58,8 @@ namespace UNACEM.Persistence.Database
             new ProviderBricksConfiguration(modelBuilder.Entity<UNACEM.Domain.ProviderBricks>());
             new BudgetStretchConfiguration(modelBuilder.Entity<UNACEM.Domain.BudgetStretch>());
             new GalleryConfiguration(modelBuilder.Entity<UNACEM.Domain.Gallery>());
+            new ProviderConcretesConfiguration(modelBuilder.Entity<UNACEM.Domain.ProviderConcretes>());
+            new ProviderInsulatingsConfiguration(modelBuilder.Entity<UNACEM.Domain.ProviderInsulatings>());
             
         }
 
@@ -81,11 +85,11 @@ namespace UNACEM.Persistence.Database
                 if (entry.State == EntityState.Added)
                 {
                     //entity.CreatedBy = entity.CreatedBy;
-                    entity.Created_At = now;
+                    entity.CreatedAt = now;
                 }
                 else
                 {
-                    entity.Updated_At = now;
+                    entity.UpdatedAt = now;
                 }
 
              

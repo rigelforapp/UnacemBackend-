@@ -9,7 +9,9 @@
       "UNACEM.API/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Tools": "6.0.0",
+          "Microsoft.Extensions.Options": "6.0.0",
           "Swashbuckle.AspNetCore": "6.0.0",
+          "UNACEM.Common": "1.0.0",
           "UNACEM.Persistence.Database": "1.0.0",
           "UNACEM.Service.Queries": "1.0.0"
         },
@@ -1059,6 +1061,11 @@
           }
         }
       },
+      "UNACEM.Common/1.0.0": {
+        "runtime": {
+          "UNACEM.Common.dll": {}
+        }
+      },
       "UNACEM.Common.Collection/1.0.0": {
         "runtime": {
           "UNACEM.Common.Collection.dll": {}
@@ -1965,6 +1972,11 @@
       "sha512": "sha512-A/uxsWi/Ifzkmd4ArTLISMbfFs6XpRPsXZonrIqyTY70xi8t+mDtvSM5Os0RqyRDobjMBwIDHDL4NOIbkDwf7A==",
       "path": "system.xml.xpath.xmldocument/4.3.0",
       "hashPath": "system.xml.xpath.xmldocument.4.3.0.nupkg.sha512"
+    },
+    "UNACEM.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "UNACEM.Common.Collection/1.0.0": {
       "type": "project",

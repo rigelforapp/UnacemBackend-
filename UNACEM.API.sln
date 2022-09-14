@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32510.428
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{9B5CE7BB-8054-44E3-B182-F01B21BA9032}"
 EndProject
@@ -27,7 +27,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UNACEM.Common.Mapping", "UN
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UNACEM.Common.Collection", "UNACEM.Common.Collection\UNACEM.Common.Collection.csproj", "{D070286D-2099-4049-948A-C10821E76C7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UNACEM.Common.Paging", "UNACEM.Common.Paging\UNACEM.Common.Paging.csproj", "{8212C8D9-6480-496A-B25F-3B97A840DBF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UNACEM.Common.Paging", "UNACEM.Common.Paging\UNACEM.Common.Paging.csproj", "{8212C8D9-6480-496A-B25F-3B97A840DBF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UNACEM.Common", "UNACEM.Common\UNACEM.Common.csproj", "{AF8A81B5-F9A1-4493-A2A8-08CEB4EAE384}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{8212C8D9-6480-496A-B25F-3B97A840DBF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8212C8D9-6480-496A-B25F-3B97A840DBF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8212C8D9-6480-496A-B25F-3B97A840DBF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF8A81B5-F9A1-4493-A2A8-08CEB4EAE384}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF8A81B5-F9A1-4493-A2A8-08CEB4EAE384}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF8A81B5-F9A1-4493-A2A8-08CEB4EAE384}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF8A81B5-F9A1-4493-A2A8-08CEB4EAE384}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,42 +86,9 @@ Global
 		{57B7C2F6-ACA8-4DD0-89B8-CA4A73794029} = {8D707837-9E62-424A-95E2-FF6B9D6C2C29}
 		{D070286D-2099-4049-948A-C10821E76C7C} = {8D707837-9E62-424A-95E2-FF6B9D6C2C29}
 		{8212C8D9-6480-496A-B25F-3B97A840DBF9} = {8D707837-9E62-424A-95E2-FF6B9D6C2C29}
+		{AF8A81B5-F9A1-4493-A2A8-08CEB4EAE384} = {8D707837-9E62-424A-95E2-FF6B9D6C2C29}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1FA37F2D-B4F5-40AA-B10F-96ADEE5A7B86}
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 8
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://dev.azure.com/acarhuamaca
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = UNACEM.API\\UNACEM.API.csproj
-		SccProjectTopLevelParentUniqueName1 = UNACEM.API.sln
-		SccProjectName1 = UNACEM.API
-		SccLocalPath1 = UNACEM.API
-		SccProjectUniqueName2 = UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj
-		SccProjectTopLevelParentUniqueName2 = UNACEM.API.sln
-		SccProjectName2 = UNACEM.Persistence.Database
-		SccLocalPath2 = UNACEM.Persistence.Database
-		SccProjectUniqueName3 = UNACEM.Domain\\UNACEM.Domain.csproj
-		SccProjectTopLevelParentUniqueName3 = UNACEM.API.sln
-		SccProjectName3 = UNACEM.Domain
-		SccLocalPath3 = UNACEM.Domain
-		SccProjectUniqueName4 = UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj
-		SccProjectTopLevelParentUniqueName4 = UNACEM.API.sln
-		SccProjectName4 = UNACEM.Service.Queries
-		SccLocalPath4 = UNACEM.Service.Queries
-		SccProjectUniqueName5 = UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj
-		SccProjectTopLevelParentUniqueName5 = UNACEM.API.sln
-		SccProjectName5 = UNACEM.Common.Mapping
-		SccLocalPath5 = UNACEM.Common.Mapping
-		SccProjectUniqueName6 = UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj
-		SccProjectTopLevelParentUniqueName6 = UNACEM.API.sln
-		SccProjectName6 = UNACEM.Common.Collection
-		SccLocalPath6 = UNACEM.Common.Collection
-		SccProjectUniqueName7 = UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj
-		SccProjectTopLevelParentUniqueName7 = UNACEM.API.sln
-		SccProjectName7 = UNACEM.Common.Paging
-		SccLocalPath7 = UNACEM.Common.Paging
 	EndGlobalSection
 EndGlobal

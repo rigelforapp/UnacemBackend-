@@ -44,7 +44,7 @@ namespace UNACEM.Service.Queries
                 await _context.AddAsync(new Providers()
                 {
                     Name = providersRequest.Name,
-                    Created_By = "Usuario"
+                    CreatedBy = "Usuario"
                 }
                 );
 
@@ -116,11 +116,11 @@ namespace UNACEM.Service.Queries
 
                 foreach (var item in providersresult.Items)
                 {
-                    item.Last_importation_date = string.Empty;
-                    var ProviderImportations= _context.ProviderImportations.Where(x => x.ProviderId == item.Id).OrderByDescending(c => c.Created_At).FirstOrDefault();
+                    item.LastImportationDate = string.Empty;
+                    var ProviderImportations= _context.ProviderImportations.Where(x => x.ProviderId == item.Id).OrderByDescending(c => c.CreatedAt).FirstOrDefault();
                     if (ProviderImportations!=null)
                     {
-                        item.Last_importation_date = Convert.ToDateTime(ProviderImportations.Created_At).ToString("dd/MM/yyyy HH:mm");
+                        item.LastImportationDate = Convert.ToDateTime(ProviderImportations.CreatedAt).ToString("dd/MM/yyyy HH:mm");
                     }
                 }
                 result.Success = true;
@@ -150,7 +150,7 @@ namespace UNACEM.Service.Queries
                     //{
                       //  await SomeAsyncMethod();
                         ProviderImportations.ProviderId = providersRequest.Id;
-                        ProviderImportations.Created_By = providersRequest.Created_By;
+                        ProviderImportations.CreatedBy = providersRequest.CreatedBy;
                         await _context.AddAsync(ProviderImportations);
                         await _context.SaveChangesAsync();
 
@@ -242,16 +242,16 @@ namespace UNACEM.Service.Queries
             foreach (var item in lstData)
             {
                 DataRow row = table.NewRow();
-                row["ProviderImportationId"] = item.ProviderImportation_Id;
+                row["ProviderImportationId"] = item.ProviderImportationId;
                 row["Name"] = item.Name;
-                row["Recommended_Zone"] = item.Recommended_Zone;
+                row["Recommended_Zone"] = item.RecommendedZone;
                 row["Composition"] = item.Composition;
                 row["Density"] = item.Density;
                 row["Porosity"] = item.Porosity;
                 row["Ccs"] = item.Ccs;
-                row["Thermal_Conductivity_300"] = item.Thermal_Conductivity_300;
-                row["Thermal_Conductivity_700"] = item.Thermal_Conductivity_700;
-                row["Thermal_Conductivity_100"] = item.Thermal_Conductivity_100;
+                row["Thermal_Conductivity_300"] = item.ThermalConductivity300;
+                row["Thermal_Conductivity_700"] = item.ThermalConductivity700;
+                row["Thermal_Conductivity_100"] = item.ThermalConductivity100;
                
 
                 table.Rows.Add(row);
@@ -303,16 +303,16 @@ namespace UNACEM.Service.Queries
                         try
                         {
                             var providerBricksDto = new ProviderBricksDto();
-                            providerBricksDto.ProviderImportation_Id = ProviderImportationId;
+                            providerBricksDto.ProviderImportationId = ProviderImportationId;
                             providerBricksDto.Name = reader.GetString(0);
-                            providerBricksDto.Recommended_Zone = reader.GetString(1);
+                            providerBricksDto.RecommendedZone = reader.GetString(1);
                             providerBricksDto.Composition = reader.GetString(2);
                             providerBricksDto.Density = reader.GetString(3);
                             providerBricksDto.Porosity = reader.GetString(4);
                             providerBricksDto.Ccs = reader.GetDouble(5).ToString();
-                            providerBricksDto.Thermal_Conductivity_300 = Convert.ToDecimal(reader.GetString(6));
-                            providerBricksDto.Thermal_Conductivity_700 = Convert.ToDecimal(reader.GetString(7));
-                            providerBricksDto.Thermal_Conductivity_100 = Convert.ToDecimal(reader.GetString(8));
+                            providerBricksDto.ThermalConductivity300 = Convert.ToDecimal(reader.GetString(6));
+                            providerBricksDto.ThermalConductivity700 = Convert.ToDecimal(reader.GetString(7));
+                            providerBricksDto.ThermalConductivity100 = Convert.ToDecimal(reader.GetString(8));
 
                             Lista.Add(providerBricksDto);
 

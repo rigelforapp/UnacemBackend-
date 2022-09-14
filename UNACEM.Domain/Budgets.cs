@@ -11,7 +11,7 @@ namespace UNACEM.Domain
         public int VersionId { get; set; }
         [ForeignKey("VersionId")]
         public virtual Versions Versions { get; set; }
-        public double Total_Amount { get; set; }
+        public double TotalAmount { get; set; }
      
     }
 }

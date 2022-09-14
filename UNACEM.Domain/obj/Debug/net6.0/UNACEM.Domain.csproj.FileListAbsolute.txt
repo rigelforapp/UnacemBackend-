@@ -34,3 +34,15 @@ C:\proyectos\UNACEM\Code\UNACEM.Domain\obj\Debug\net6.0\UNACEM.Domain.dll
 C:\proyectos\UNACEM\Code\UNACEM.Domain\obj\Debug\net6.0\refint\UNACEM.Domain.dll
 C:\proyectos\UNACEM\Code\UNACEM.Domain\obj\Debug\net6.0\UNACEM.Domain.pdb
 C:\proyectos\UNACEM\Code\UNACEM.Domain\obj\Debug\net6.0\ref\UNACEM.Domain.dll
+D:\proyectos\UNACEM\Code\UNACEM.Domain\bin\Debug\net6.0\UNACEM.Domain.deps.json
+D:\proyectos\UNACEM\Code\UNACEM.Domain\bin\Debug\net6.0\UNACEM.Domain.dll
+D:\proyectos\UNACEM\Code\UNACEM.Domain\bin\Debug\net6.0\UNACEM.Domain.pdb
+D:\proyectos\UNACEM\Code\UNACEM.Domain\obj\Debug\net6.0\UNACEM.Domain.csproj.AssemblyReference.cache
+D:\proyectos\UNACEM\Code\UNACEM.Domain\obj\Debug\net6.0\UNACEM.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\proyectos\UNACEM\Code\UNACEM.Domain\obj\Debug\net6.0\UNACEM.Domain.AssemblyInfoInputs.cache
+D:\proyectos\UNACEM\Code\UNACEM.Domain\obj\Debug\net6.0\UNACEM.Domain.AssemblyInfo.cs
+D:\proyectos\UNACEM\Code\UNACEM.Domain\obj\Debug\net6.0\UNACEM.Domain.csproj.CoreCompileInputs.cache
+D:\proyectos\UNACEM\Code\UNACEM.Domain\obj\Debug\net6.0\UNACEM.Domain.dll
+D:\proyectos\UNACEM\Code\UNACEM.Domain\obj\Debug\net6.0\refint\UNACEM.Domain.dll
+D:\proyectos\UNACEM\Code\UNACEM.Domain\obj\Debug\net6.0\UNACEM.Domain.pdb
+D:\proyectos\UNACEM\Code\UNACEM.Domain\obj\Debug\net6.0\ref\UNACEM.Domain.dll

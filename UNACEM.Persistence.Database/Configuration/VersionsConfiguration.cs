@@ -12,11 +12,11 @@ namespace UNACEM.Persistence.Database.Configuration
         {
             entityBuilder.HasKey(x => x.Id);
             entityBuilder.Property(x => x.Name).IsRequired().HasMaxLength(100);
-            entityBuilder.Property(x => x.Date_Ini).IsRequired().HasColumnType("Date");
-            entityBuilder.Property(x => x.Date_End).IsRequired().HasColumnType("Date");
+            entityBuilder.Property(x => x.DateIni).IsRequired().HasColumnType("Date");
+            entityBuilder.Property(x => x.DateEnd).IsRequired().HasColumnType("Date");
 
-            entityBuilder.Property(x => x.Created_At).IsRequired().HasColumnType("DateTime");
-            entityBuilder.Property(x => x.Updated_At).HasColumnType("DateTime");
+            entityBuilder.Property(x => x.CreatedAt).IsRequired().HasColumnType("DateTime");
+            entityBuilder.Property(x => x.UpdatedAt).HasColumnType("DateTime");
 
         }
     }

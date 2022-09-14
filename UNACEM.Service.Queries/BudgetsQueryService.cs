@@ -37,8 +37,8 @@ namespace UNACEM.Service.Queries
             {
                 Budgets budgets = new Budgets();
 
-                budgets.VersionId = budgetsRequest.Version_Id;
-                budgets.Total_Amount = budgetsRequest.Total_Amount;
+                budgets.VersionId = budgetsRequest.VersionId;
+                budgets.TotalAmount = budgetsRequest.TotalAmount;
 
                 await _context.AddAsync(budgets);
                 await _context.SaveChangesAsync();
@@ -50,15 +50,15 @@ namespace UNACEM.Service.Queries
                     BudgetStretch budgetStretch = new BudgetStretch();
 
                     budgetStretch.BudgetId = TyresImportationId;
-                    budgetStretch.StretchId = item.Stretch_Id;
-                    budgetStretch.BrickFormatId = item.BrickFormat_Id;
-                    budgetStretch.Brick_a_Cost = item.Brick_a_Cost;
-                    budgetStretch.Brick_b_Cost = item.Brick_b_Cost;
-                    budgetStretch.Wedge_a_Quantity = item.Wedge_a_Quantity;
-                    budgetStretch.Wedge_b_Quantity = item.Wedge_b_Quantity;
-                    budgetStretch.Wedge_a_Cost = item.Wedge_a_Cost;
-                    budgetStretch.Wedge_b_Cost = item.Wedge_b_Cost;
-                    budgetStretch.Total_Amount = item.Total_Amount;
+                    budgetStretch.StretchId = item.StretchId;
+                    budgetStretch.BrickFormatId = item.BrickFormatId;
+                    budgetStretch.BrickACost = item.BrickACost;
+                    budgetStretch.BrickBCost = item.BrickBCost;
+                    budgetStretch.WedgeAQuantity = item.WedgeAQuantity;
+                    budgetStretch.WedgeBQuantity = item.WedgeBQuantity;
+                    budgetStretch.WedgeACost = item.WedgeACost;
+                    budgetStretch.WedgeBCost = item.WedgeBCost;
+                    budgetStretch.TotalAmount = item.TotalAmount;
 
                     await _context.AddAsync(budgetStretch);
                     await _context.SaveChangesAsync();

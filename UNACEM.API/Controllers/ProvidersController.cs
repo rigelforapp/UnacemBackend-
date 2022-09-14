@@ -6,6 +6,7 @@ using System.Data;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using UNACEM.Common.Configuration;
 using UNACEM.Service.Queries;
 using UNACEM.Service.Queries.ViewModel.Request;
 using UNACEM.Service.Queries.ViewModel.Response;
@@ -34,21 +35,21 @@ namespace UNACEM.API.Controllers
         }
 
         [HttpGet]
-        public async Task<ProvidersResponse> GetAll(int Start, int Limit)
+        public async Task<ProvidersResponse> GetAll(int Start = Manager.VariableGlobal.Numero.Uno, int Limit = Manager.VariableGlobal.Numero.Diez)
         {
             return await _providersQueryService.GetAll(Start, Limit);
         }
 
         [HttpPost("UploadFile")]
-        public async Task<ProvidersResponse> UploadFile([FromForm] ProvidersRequest providersRequest,IFormFile file )
+        public async Task<ProvidersResponse> UploadFile([FromForm] ProvidersRequest providersRequest,IFormFile File )
         {
             var ProvidersResponse = new ProvidersResponse();
             //var files = file;
-            if (file!=null)
+            if (File != null)
             {
                 using (var ms = new MemoryStream())
                 {
-                    file.CopyTo(ms);
+                    File.CopyTo(ms);
                     var fileBytes = ms.ToArray();
                     string s = Convert.ToBase64String(fileBytes);
                     Stream stream = new MemoryStream(fileBytes);

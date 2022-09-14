@@ -24,7 +24,7 @@ namespace UNACEM.Service.Queries
         {
             _context = context;
         }
-        public async Task<BrickFormatsResponse> GetAll(int Start, int Limit, int Diameter)
+        public async Task<BrickFormatsResponse> GetAll(int Diameter, int Start, int Limit)
         {
             var result = new BrickFormatsResponse();
             try

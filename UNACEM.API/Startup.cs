@@ -14,6 +14,8 @@ using System.Threading.Tasks;
 using UNACEM.Persistence.Database;
 using UNACEM.Service.Queries;
 using UNACEM.Service.Queries.ViewModel;
+using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Mvc.Formatters;
 
 namespace UNACEM.API
 {
@@ -50,16 +52,34 @@ namespace UNACEM.API
 
                 services.AddCors();
                 services.AddControllers();
-                //services.AddCors(options =>
+
+                //services
+                //  .AddMvc()
+                //  .AddJsonOptions(opt => opt.SerializerSettings.ContractResolver
+                //      = new DefaultContractResolver());
+
+
+                //services.AddControllers().AddNewtonsoftJson(options =>
                 //{
-                //    options.AddPolicy(allowSpecificOrigins,
-                //                          policy =>
-                //                          {
-                //                              policy.WithOrigins("http://localhost:5674")
-                //                                                  .AllowAnyHeader()
-                //                                                  .AllowAnyMethod();
-                //                          });
+                //    // Use the default property (Pascal) casing
+                //    options.SerializerSettings.ContractResolver = new DefaultContractResolver();
+                  
+
+                    
                 //});
+
+                services.Configure<JsonOptions>(options =>
+                {
+                    options.JsonSerializerOptions.PropertyNameCaseInsensitive = false;
+                    options.JsonSerializerOptions.PropertyNamingPolicy = null;
+                    options.JsonSerializerOptions.WriteIndented = true;
+                });
+                //services.AddControllers()
+                //   .AddJsonOptions(options =>
+                //      options.JsonSerializerOptions.PropertyNamingPolicy = null);
+
+           
+           
 
                 //var securitySchema = new OpenApiSecurityScheme
                 //{

@@ -7,11 +7,11 @@ namespace UNACEM.Service.Queries.DTO
     public class StretchsDto
     {
         public int Id { get; set; }
-        public double Position_Ini { get; set; }
-        public double Position_End { get; set; }
-        public int Color_Id { get; set; }
-        public int Texture_Id { get; set; }
-        public int ProviderBrick_Id { get; set; }
-        public int BrickFormat_Id { get; set; }
+        public double PositionIni { get; set; }
+        public double PositionEnd { get; set; }
+        public int ColorId { get; set; }
+        public int TextureId { get; set; }
+        public int ProviderBrickId { get; set; }
+        public int BrickFormatId { get; set; }
     }
 }

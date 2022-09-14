@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using UNACEM.Common.Configuration;
 using UNACEM.Service.Queries;
 using UNACEM.Service.Queries.ViewModel.Request;
 using UNACEM.Service.Queries.ViewModel.Response;
@@ -24,23 +25,23 @@ namespace UNACEM.API.Controllers
         }
 
         [HttpPost]
-        public async Task<GalleryResponse> Create([FromForm] GalleryRequest galleryRequest, IFormFile file)
+        public async Task<GalleryResponse> Create([FromForm] GalleryRequest galleryRequest, IFormFile File)
         {
             byte[] bufferfoto;
 
-            if (file != null)
+            if (File != null)
             {
                 using (var ms = new MemoryStream())
                 {
-                    file.CopyTo(ms);
+                    File.CopyTo(ms);
                     var fileBytes = ms.ToArray();
                     string s = Convert.ToBase64String(fileBytes);
                     Stream stream = new MemoryStream(fileBytes);
                     BinaryReader lector = new BinaryReader(stream);
-                    bufferfoto = lector.ReadBytes((int)file.Length);
+                    bufferfoto = lector.ReadBytes((int)File.Length);
                     galleryRequest.Image = bufferfoto;
-                    galleryRequest.Type = file.ContentType;
-                    galleryRequest.Name = file.FileName;
+                    galleryRequest.Type = File.ContentType;
+                    galleryRequest.Name = File.FileName;
                 }
 
             }
@@ -48,29 +49,29 @@ namespace UNACEM.API.Controllers
         }
 
         [HttpGet]
-        public async Task<GalleryResponse> GetAll(int VersionId, int Start, int Limit)
+        public async Task<GalleryResponse> GetAll(int VersionId, int Start = Manager.VariableGlobal.Numero.Uno, int Limit = Manager.VariableGlobal.Numero.Diez)
         {
             return await _galleryQueryService.GetAll(VersionId, Start, Limit);
         }
 
         [HttpPut]
-        public async Task<GalleryResponse> Update([FromForm] GalleryRequest galleryRequest, IFormFile file)
+        public async Task<GalleryResponse> Update([FromForm] GalleryRequest galleryRequest, IFormFile File)
         {
             byte[] bufferfoto;
 
-            if (file != null)
+            if (File != null)
             {
                 using (var ms = new MemoryStream())
                 {
-                    file.CopyTo(ms);
+                    File.CopyTo(ms);
                     var fileBytes = ms.ToArray();
                     string s = Convert.ToBase64String(fileBytes);
                     Stream stream = new MemoryStream(fileBytes);
                     BinaryReader lector = new BinaryReader(stream);
-                    bufferfoto = lector.ReadBytes((int)file.Length);
+                    bufferfoto = lector.ReadBytes((int)File.Length);
                     galleryRequest.Image = bufferfoto;
-                    galleryRequest.Type = file.ContentType;
-                    galleryRequest.Name = file.FileName;
+                    galleryRequest.Type = File.ContentType;
+                    galleryRequest.Name = File.FileName;
                 }
 
             }

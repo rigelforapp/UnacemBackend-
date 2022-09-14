@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj": {}
+    "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj": {}
   },
   "projects": {
-    "C:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj": {
+    "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj",
+        "projectUniqueName": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj",
         "projectName": "UNACEM.Common.Mapping",
-        "projectPath": "C:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj",
+        "projectPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Mapping\\obj\\",
+        "outputPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Mapping\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -65,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

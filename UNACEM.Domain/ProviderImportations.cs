@@ -12,9 +12,9 @@ namespace UNACEM.Domain
         public int ProviderId { get; set; }
         [ForeignKey("ProviderId")]
         public virtual Providers Providers { get; set; }
-        public string Created_By { get; set; }
-        public string Updated_By { get; set; }
-        public string Deleted_By { get; set; }
+        public string CreatedBy { get; set; }
+        public string UpdatedBy { get; set; }
+        public string DeletedBy { get; set; }
 
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\proyectos\\UNACEM\\Code\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj": {}
+    "D:\\proyectos\\UNACEM\\Code\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj": {}
   },
   "projects": {
-    "C:\\proyectos\\UNACEM\\Code\\UNACEM.Domain\\UNACEM.Domain.csproj": {
+    "D:\\proyectos\\UNACEM\\Code\\UNACEM.Domain\\UNACEM.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\proyectos\\UNACEM\\Code\\UNACEM.Domain\\UNACEM.Domain.csproj",
+        "projectUniqueName": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Domain\\UNACEM.Domain.csproj",
         "projectName": "UNACEM.Domain",
-        "projectPath": "C:\\proyectos\\UNACEM\\Code\\UNACEM.Domain\\UNACEM.Domain.csproj",
+        "projectPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Domain\\UNACEM.Domain.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\proyectos\\UNACEM\\Code\\UNACEM.Domain\\obj\\",
+        "outputPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -59,18 +59,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\proyectos\\UNACEM\\Code\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj": {
+    "D:\\proyectos\\UNACEM\\Code\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\proyectos\\UNACEM\\Code\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj",
+        "projectUniqueName": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj",
         "projectName": "UNACEM.Persistence.Database",
-        "projectPath": "C:\\proyectos\\UNACEM\\Code\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj",
+        "projectPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\proyectos\\UNACEM\\Code\\UNACEM.Persistence.Database\\obj\\",
+        "outputPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Persistence.Database\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -91,8 +91,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\proyectos\\UNACEM\\Code\\UNACEM.Domain\\UNACEM.Domain.csproj": {
-                "projectPath": "C:\\proyectos\\UNACEM\\Code\\UNACEM.Domain\\UNACEM.Domain.csproj"
+              "D:\\proyectos\\UNACEM\\Code\\UNACEM.Domain\\UNACEM.Domain.csproj": {
+                "projectPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Domain\\UNACEM.Domain.csproj"
               }
             }
           }
@@ -136,7 +136,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

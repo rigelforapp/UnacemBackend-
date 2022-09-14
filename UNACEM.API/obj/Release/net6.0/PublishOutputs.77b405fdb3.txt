@@ -44,11 +44,13 @@ C:\proyectos\UNACEM\Code\UNACEM.API\obj\Release\net6.0\PubTmp\Out\runtimes\win\l
 C:\proyectos\UNACEM\Code\UNACEM.API\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\proyectos\UNACEM\Code\UNACEM.API\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\proyectos\UNACEM\Code\UNACEM.API\obj\Release\net6.0\PubTmp\Out\UNACEM.Common.Collection.dll
+C:\proyectos\UNACEM\Code\UNACEM.API\obj\Release\net6.0\PubTmp\Out\UNACEM.Common.dll
 C:\proyectos\UNACEM\Code\UNACEM.API\obj\Release\net6.0\PubTmp\Out\UNACEM.Common.Mapping.dll
 C:\proyectos\UNACEM\Code\UNACEM.API\obj\Release\net6.0\PubTmp\Out\UNACEM.Common.Paging.dll
 C:\proyectos\UNACEM\Code\UNACEM.API\obj\Release\net6.0\PubTmp\Out\UNACEM.Domain.dll
 C:\proyectos\UNACEM\Code\UNACEM.API\obj\Release\net6.0\PubTmp\Out\UNACEM.Persistence.Database.dll
 C:\proyectos\UNACEM\Code\UNACEM.API\obj\Release\net6.0\PubTmp\Out\UNACEM.Service.Queries.dll
+C:\proyectos\UNACEM\Code\UNACEM.API\obj\Release\net6.0\PubTmp\Out\UNACEM.Common.pdb
 C:\proyectos\UNACEM\Code\UNACEM.API\obj\Release\net6.0\PubTmp\Out\UNACEM.Persistence.Database.pdb
 C:\proyectos\UNACEM\Code\UNACEM.API\obj\Release\net6.0\PubTmp\Out\UNACEM.Service.Queries.pdb
 C:\proyectos\UNACEM\Code\UNACEM.API\obj\Release\net6.0\PubTmp\Out\UNACEM.Common.Collection.pdb

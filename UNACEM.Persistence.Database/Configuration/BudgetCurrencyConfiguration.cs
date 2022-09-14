@@ -15,8 +15,8 @@ namespace UNACEM.Persistence.Database.Configuration
             entityBuilder.Property(x => x.Name).IsRequired().HasMaxLength(50);
             entityBuilder.Property(x => x.Symbol).IsRequired().HasMaxLength(50);
 
-            entityBuilder.Property(x => x.Created_At).IsRequired().HasColumnType("DateTime");
-            entityBuilder.Property(x => x.Updated_At).HasColumnType("DateTime");
+            entityBuilder.Property(x => x.CreatedAt).IsRequired().HasColumnType("DateTime");
+            entityBuilder.Property(x => x.UpdatedAt).HasColumnType("DateTime");
         }
     }
 }

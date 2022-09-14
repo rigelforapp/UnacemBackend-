@@ -38,7 +38,7 @@ namespace UNACEM.Service.Queries
             {
                 await _context.AddAsync(new Gallery() 
                 {
-                    VersionId = galleryRequest.Version_Id,
+                    VersionId = galleryRequest.VersionId,
                     Type = galleryRequest.Type,
                     Name = galleryRequest.Name,
                     Title = galleryRequest.Title,
@@ -94,7 +94,7 @@ namespace UNACEM.Service.Queries
 
                 if(gallery != null)
                 {
-                    gallery.VersionId = galleryRequest.Version_Id;
+                    gallery.VersionId = galleryRequest.VersionId;
                     gallery.Type = galleryRequest.Type;
                     gallery.Name = galleryRequest.Name;
                     gallery.Title = galleryRequest.Title;

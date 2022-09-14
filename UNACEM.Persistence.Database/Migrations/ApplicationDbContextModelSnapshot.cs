@@ -30,19 +30,19 @@ namespace UNACEM.Persistence.Database.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("Brick_a")
+                    b.Property<string>("BrickA")
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50)");
 
-                    b.Property<string>("Brick_b")
+                    b.Property<string>("BrickB")
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50)");
 
-                    b.Property<DateTime?>("Created_At")
+                    b.Property<DateTime?>("CreatedAt")
                         .IsRequired()
                         .HasColumnType("DateTime");
 
-                    b.Property<DateTime?>("Deleted_At")
+                    b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("Diameter")
@@ -52,13 +52,13 @@ namespace UNACEM.Persistence.Database.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50)");
 
-                    b.Property<int>("Quantity_a")
+                    b.Property<int>("QuantityA")
                         .HasColumnType("int");
 
-                    b.Property<int>("Quantity_b")
+                    b.Property<int>("QuantityB")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("Updated_At")
+                    b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("DateTime");
 
                     b.HasKey("Id");
@@ -77,11 +77,11 @@ namespace UNACEM.Persistence.Database.Migrations
                     b.Property<int>("BudgetId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("Created_At")
+                    b.Property<DateTime?>("CreatedAt")
                         .IsRequired()
                         .HasColumnType("DateTime");
 
-                    b.Property<DateTime?>("Deleted_At")
+                    b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<double>("Equivalence")
@@ -97,7 +97,7 @@ namespace UNACEM.Persistence.Database.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<DateTime?>("Updated_At")
+                    b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("DateTime");
 
                     b.HasKey("Id");
@@ -115,16 +115,16 @@ namespace UNACEM.Persistence.Database.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<DateTime?>("Created_At")
+                    b.Property<DateTime?>("CreatedAt")
                         .HasColumnType("DateTime");
 
-                    b.Property<DateTime?>("Deleted_At")
+                    b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<double>("Total_Amount")
+                    b.Property<double>("TotalAmount")
                         .HasColumnType("float");
 
-                    b.Property<DateTime?>("Updated_At")
+                    b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("DateTime");
 
                     b.Property<int>("VersionId")
@@ -145,44 +145,44 @@ namespace UNACEM.Persistence.Database.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<double>("BrickACost")
+                        .HasColumnType("float");
+
+                    b.Property<double>("BrickBCost")
+                        .HasColumnType("float");
+
                     b.Property<int?>("BrickFormatId")
                         .HasColumnType("int");
-
-                    b.Property<double>("Brick_a_Cost")
-                        .HasColumnType("float");
-
-                    b.Property<double>("Brick_b_Cost")
-                        .HasColumnType("float");
 
                     b.Property<int>("BudgetId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("Created_At")
+                    b.Property<DateTime?>("CreatedAt")
                         .IsRequired()
                         .HasColumnType("DateTime");
 
-                    b.Property<DateTime?>("Deleted_At")
+                    b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<int?>("StretchId")
                         .HasColumnType("int");
 
-                    b.Property<double>("Total_Amount")
+                    b.Property<double>("TotalAmount")
                         .HasColumnType("float");
 
-                    b.Property<DateTime?>("Updated_At")
+                    b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("DateTime");
 
-                    b.Property<double>("Wedge_a_Cost")
+                    b.Property<double>("WedgeACost")
                         .HasColumnType("float");
 
-                    b.Property<double>("Wedge_a_Quantity")
+                    b.Property<double>("WedgeAQuantity")
                         .HasColumnType("float");
 
-                    b.Property<double>("Wedge_b_Cost")
+                    b.Property<double>("WedgeBCost")
                         .HasColumnType("float");
 
-                    b.Property<double>("Wedge_b_Quantity")
+                    b.Property<double>("WedgeBQuantity")
                         .HasColumnType("float");
 
                     b.HasKey("Id");
@@ -220,10 +220,10 @@ namespace UNACEM.Persistence.Database.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<DateTime?>("Created_At")
+                    b.Property<DateTime?>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("Deleted_At")
+                    b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
@@ -249,7 +249,7 @@ namespace UNACEM.Persistence.Database.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<DateTime?>("Updated_At")
+                    b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("VersionId")
@@ -270,17 +270,17 @@ namespace UNACEM.Persistence.Database.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<DateTime?>("Created_At")
+                    b.Property<DateTime?>("CreatedAt")
                         .IsRequired()
                         .HasColumnType("DateTime");
 
-                    b.Property<DateTime?>("Deleted_At")
+                    b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("Updated_At")
+                    b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("DateTime");
 
                     b.HasKey("Id");
@@ -296,11 +296,11 @@ namespace UNACEM.Persistence.Database.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<DateTime?>("Created_At")
+                    b.Property<DateTime?>("CreatedAt")
                         .IsRequired()
                         .HasColumnType("DateTime");
 
-                    b.Property<DateTime?>("Deleted_At")
+                    b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("Diameter")
@@ -317,7 +317,7 @@ namespace UNACEM.Persistence.Database.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
-                    b.Property<DateTime?>("Updated_At")
+                    b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("DateTime");
 
                     b.Property<int>("UserId")
@@ -350,10 +350,10 @@ namespace UNACEM.Persistence.Database.Migrations
                         .HasMaxLength(1000)
                         .HasColumnType("nvarchar(1000)");
 
-                    b.Property<DateTime?>("Created_At")
+                    b.Property<DateTime?>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("Deleted_At")
+                    b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Density")
@@ -374,21 +374,21 @@ namespace UNACEM.Persistence.Database.Migrations
                     b.Property<int>("ProviderImportationId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Recommended_Zone")
+                    b.Property<string>("RecommendedZone")
                         .IsRequired()
                         .HasMaxLength(1000)
                         .HasColumnType("nvarchar(1000)");
 
-                    b.Property<decimal>("Thermal_Conductivity_100")
+                    b.Property<decimal>("ThermalConductivity100")
                         .HasColumnType("decimal(5,2)");
 
-                    b.Property<decimal>("Thermal_Conductivity_300")
+                    b.Property<decimal>("ThermalConductivity300")
                         .HasColumnType("decimal(5,2)");
 
-                    b.Property<decimal>("Thermal_Conductivity_700")
+                    b.Property<decimal>("ThermalConductivity700")
                         .HasColumnType("decimal(5,2)");
 
-                    b.Property<DateTime?>("Updated_At")
+                    b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
@@ -396,6 +396,65 @@ namespace UNACEM.Persistence.Database.Migrations
                     b.HasIndex("ProviderImportationId");
 
                     b.ToTable("ProviderBricks");
+                });
+
+            modelBuilder.Entity("UNACEM.Domain.ProviderConcretes", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Composition")
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .IsRequired()
+                        .HasColumnType("DateTime");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<double>("MaterialNeeded")
+                        .HasColumnType("float");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<int>("ProviderImportationsId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("RecommendedZone")
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<double>("Temperature")
+                        .HasColumnType("float");
+
+                    b.Property<double>("ThermalConductivity100")
+                        .HasColumnType("float");
+
+                    b.Property<double>("ThermalConductivity300")
+                        .HasColumnType("float");
+
+                    b.Property<double>("ThermalConductivity700")
+                        .HasColumnType("float");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("DateTime");
+
+                    b.Property<string>("WaterMix")
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProviderImportationsId");
+
+                    b.ToTable("ProviderConcretes");
                 });
 
             modelBuilder.Entity("UNACEM.Domain.ProviderImportations", b =>
@@ -406,28 +465,28 @@ namespace UNACEM.Persistence.Database.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<DateTime?>("Created_At")
+                    b.Property<DateTime?>("CreatedAt")
                         .IsRequired()
                         .HasColumnType("DateTime");
 
-                    b.Property<string>("Created_By")
+                    b.Property<string>("CreatedBy")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<DateTime?>("Deleted_At")
+                    b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Deleted_By")
+                    b.Property<string>("DeletedBy")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ProviderId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("Updated_At")
+                    b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("DateTime");
 
-                    b.Property<string>("Updated_By")
+                    b.Property<string>("UpdatedBy")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -438,6 +497,65 @@ namespace UNACEM.Persistence.Database.Migrations
                     b.ToTable("ProviderImportations");
                 });
 
+            modelBuilder.Entity("UNACEM.Domain.ProviderInsulatings", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Composition")
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .IsRequired()
+                        .HasColumnType("DateTime");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<double>("MaterialNeeded")
+                        .HasColumnType("float");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<int>("ProviderImportationsId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("RecommendedZone")
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<double>("Temperature")
+                        .HasColumnType("float");
+
+                    b.Property<double>("ThermalConductivity100")
+                        .HasColumnType("float");
+
+                    b.Property<double>("ThermalConductivity300")
+                        .HasColumnType("float");
+
+                    b.Property<double>("ThermalConductivity700")
+                        .HasColumnType("float");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("DateTime");
+
+                    b.Property<string>("WaterMix")
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProviderImportationsId");
+
+                    b.ToTable("ProviderInsulatings");
+                });
+
             modelBuilder.Entity("UNACEM.Domain.Providers", b =>
                 {
                     b.Property<int>("Id")
@@ -446,19 +564,19 @@ namespace UNACEM.Persistence.Database.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<DateTime?>("Created_At")
+                    b.Property<DateTime?>("CreatedAt")
                         .IsRequired()
                         .HasColumnType("DateTime");
 
-                    b.Property<string>("Created_By")
+                    b.Property<string>("CreatedBy")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<DateTime?>("Deleted_At")
+                    b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Deleted_By")
+                    b.Property<string>("DeletedBy")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -466,10 +584,10 @@ namespace UNACEM.Persistence.Database.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
-                    b.Property<DateTime?>("Updated_At")
+                    b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("DateTime");
 
-                    b.Property<string>("Updated_By")
+                    b.Property<string>("UpdatedBy")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
@@ -489,29 +607,29 @@ namespace UNACEM.Persistence.Database.Migrations
                     b.Property<int>("BrickFormatId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Color_Id")
+                    b.Property<int>("ColorId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("Created_At")
+                    b.Property<DateTime?>("CreatedAt")
                         .IsRequired()
                         .HasColumnType("DateTime");
 
-                    b.Property<DateTime?>("Deleted_At")
+                    b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<double>("Position_End")
+                    b.Property<double>("PositionEnd")
                         .HasColumnType("float");
 
-                    b.Property<double>("Position_Ini")
+                    b.Property<double>("PositionIni")
                         .HasColumnType("float");
 
                     b.Property<int>("ProviderBrickId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Texture_Id")
+                    b.Property<int>("TextureId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("Updated_At")
+                    b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("DateTime");
 
                     b.Property<int>("VersionId")
@@ -539,11 +657,11 @@ namespace UNACEM.Persistence.Database.Migrations
                     b.Property<int>("ColorId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("Created_At")
+                    b.Property<DateTime?>("CreatedAt")
                         .IsRequired()
                         .HasColumnType("DateTime");
 
-                    b.Property<DateTime?>("Deleted_At")
+                    b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("OvenId")
@@ -552,10 +670,10 @@ namespace UNACEM.Persistence.Database.Migrations
                     b.Property<double>("Position")
                         .HasColumnType("float");
 
-                    b.Property<int>("Texture_Id")
+                    b.Property<int>("TextureId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("Updated_At")
+                    b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("DateTime");
 
                     b.HasKey("Id");
@@ -575,11 +693,11 @@ namespace UNACEM.Persistence.Database.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<DateTime?>("Created_At")
+                    b.Property<DateTime?>("CreatedAt")
                         .IsRequired()
                         .HasColumnType("DateTime");
 
-                    b.Property<DateTime?>("Deleted_At")
+                    b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
@@ -591,7 +709,7 @@ namespace UNACEM.Persistence.Database.Migrations
                     b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("Updated_At")
+                    b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("DateTime");
 
                     b.HasKey("Id");
@@ -607,17 +725,17 @@ namespace UNACEM.Persistence.Database.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<DateTime?>("Created_At")
+                    b.Property<DateTime?>("CreatedAt")
                         .IsRequired()
                         .HasColumnType("DateTime");
 
-                    b.Property<DateTime>("Date_End")
+                    b.Property<DateTime>("DateEnd")
                         .HasColumnType("Date");
 
-                    b.Property<DateTime>("Date_Ini")
+                    b.Property<DateTime>("DateIni")
                         .HasColumnType("Date");
 
-                    b.Property<DateTime?>("Deleted_At")
+                    b.Property<DateTime?>("DeletedAt")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
@@ -628,7 +746,7 @@ namespace UNACEM.Persistence.Database.Migrations
                     b.Property<int>("OvenId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("Updated_At")
+                    b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("DateTime");
 
                     b.HasKey("Id");
@@ -724,6 +842,17 @@ namespace UNACEM.Persistence.Database.Migrations
                     b.Navigation("ProviderImportations");
                 });
 
+            modelBuilder.Entity("UNACEM.Domain.ProviderConcretes", b =>
+                {
+                    b.HasOne("UNACEM.Domain.ProviderImportations", "ProviderImportations")
+                        .WithMany()
+                        .HasForeignKey("ProviderImportationsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ProviderImportations");
+                });
+
             modelBuilder.Entity("UNACEM.Domain.ProviderImportations", b =>
                 {
                     b.HasOne("UNACEM.Domain.Providers", "Providers")
@@ -733,6 +862,17 @@ namespace UNACEM.Persistence.Database.Migrations
                         .IsRequired();
 
                     b.Navigation("Providers");
+                });
+
+            modelBuilder.Entity("UNACEM.Domain.ProviderInsulatings", b =>
+                {
+                    b.HasOne("UNACEM.Domain.ProviderImportations", "ProviderImportations")
+                        .WithMany()
+                        .HasForeignKey("ProviderImportationsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ProviderImportations");
                 });
 
             modelBuilder.Entity("UNACEM.Domain.Stretchs", b =>

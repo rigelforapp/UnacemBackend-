@@ -18,7 +18,7 @@ namespace UNACEM.Domain
         [ForeignKey("ColorId")] 
         public virtual Color Color { get; set; }
 
-        public int Texture_Id { get; set; }
+        public int TextureId { get; set; }
 
        // [Column(TypeName = "decimal(5, 2)")]
         public double Position { get; set; }

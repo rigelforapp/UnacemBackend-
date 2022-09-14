@@ -21,12 +21,12 @@ namespace UNACEM.Domain
         [ForeignKey("BrickFormatId")]
         public virtual BrickFormats BrickFormats { get; set; }
 
-        public double Brick_a_Cost { get; set; }
-        public double Brick_b_Cost { get; set; }
-        public double Wedge_a_Quantity { get; set; }
-        public double Wedge_b_Quantity { get; set; }
-        public double Wedge_a_Cost { get; set; }
-        public double Wedge_b_Cost { get; set; }
-        public double Total_Amount { get; set; }
+        public double BrickACost { get; set; }
+        public double BrickBCost { get; set; }
+        public double WedgeAQuantity { get; set; }
+        public double WedgeBQuantity { get; set; }
+        public double WedgeACost { get; set; }
+        public double WedgeBCost { get; set; }
+        public double TotalAmount { get; set; }
     }
 }
