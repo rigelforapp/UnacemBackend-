@@ -164,7 +164,7 @@ namespace UNACEM.Service.Queries
                     DataTable table = hojas_excel[i];
                     if (nombreHoja == "ladrillos")
                     {                              
-                        LstProviderBricks = ListProviderBricks(table, ProviderImportationId);
+                        LstProviderBricks = await ListProviderBricks(table, ProviderImportationId);
                         await BulkInsert(LstProviderBricks);
                     }
                     else if (nombreHoja == "concreto refractario")
@@ -424,8 +424,10 @@ namespace UNACEM.Service.Queries
         }
 
 
-        public List<ProviderBricksDto> ListProviderBricks(DataTable table, int ProviderImportationId)
+        public async Task<List<ProviderBricksDto>> ListProviderBricks(DataTable table, int ProviderImportationId)
         {
+            List<ProviderBricks> listaProviderBricks = new List<ProviderBricks>();
+            listaProviderBricks= _context.ProviderBricks.ToList();
             bool iniciarLectura = false;
             List<ProviderBricksDto> Lista = new List<ProviderBricksDto>();
             using (var reader = table.CreateDataReader())
@@ -443,6 +445,7 @@ namespace UNACEM.Service.Queries
                     {
                         try
                         {
+
                             var providerBricksDto = new ProviderBricksDto();
                             providerBricksDto.ProviderImportationId = ProviderImportationId;
                             providerBricksDto.Name = reader.GetString(0);
@@ -455,6 +458,18 @@ namespace UNACEM.Service.Queries
                             providerBricksDto.ThermalConductivity700 = Convert.ToDecimal(reader.GetString(7));
                             providerBricksDto.ThermalConductivity100 = Convert.ToDecimal(reader.GetString(8));
 
+                            var existeproviderBricks = listaProviderBricks.Where(a => a.Name == providerBricksDto.Name).FirstOrDefault();
+                            if (existeproviderBricks!=null)
+                            {
+                                var ProviderBricks = _context.ProviderBricks.Where(a => a.Id == existeproviderBricks.Id).FirstOrDefault();
+                                if (ProviderBricks != null)
+                                {
+                                    ProviderBricks.DeletedAt = DateTime.Now;
+
+                                    await _context.SaveChangesAsync();
+                                   
+                                }
+                            }
                             Lista.Add(providerBricksDto);
 
 
