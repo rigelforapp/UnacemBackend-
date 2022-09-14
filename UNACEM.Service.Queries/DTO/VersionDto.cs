@@ -10,7 +10,6 @@ namespace UNACEM.Service.Queries.DTO
         public string Name { get; set; }
         public DateTime DateIni { get; set; }
         public DateTime DateEnd { get; set; }
-        //public string DateIni { get; set; }
-        //public string DateEnd { get; set; }
+
     }
 }

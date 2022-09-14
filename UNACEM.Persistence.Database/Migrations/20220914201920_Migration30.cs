@@ -15,7 +15,7 @@ namespace UNACEM.Persistence.Database.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ProviderImportationsId = table.Column<int>(type: "int", nullable: false),
+                    ProviderImportationId = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: true),
                     RecommendedZone = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: true),
                     Composition = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: true),
@@ -25,7 +25,7 @@ namespace UNACEM.Persistence.Database.Migrations
                     ThermalConductivity300 = table.Column<double>(type: "float", nullable: false),
                     ThermalConductivity700 = table.Column<double>(type: "float", nullable: false),
                     ThermalConductivity100 = table.Column<double>(type: "float", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "DateTime", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
                     UpdatedAt = table.Column<DateTime>(type: "DateTime", nullable: true),
                     DeletedAt = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
@@ -33,8 +33,8 @@ namespace UNACEM.Persistence.Database.Migrations
                 {
                     table.PrimaryKey("PK_ProviderConcretes", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ProviderConcretes_ProviderImportations_ProviderImportationsId",
-                        column: x => x.ProviderImportationsId,
+                        name: "FK_ProviderConcretes_ProviderImportations_ProviderImportationId",
+                        column: x => x.ProviderImportationId,
                         principalTable: "ProviderImportations",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -46,7 +46,7 @@ namespace UNACEM.Persistence.Database.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ProviderImportationsId = table.Column<int>(type: "int", nullable: false),
+                    ProviderImportationId = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: true),
                     RecommendedZone = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: true),
                     Composition = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: true),
@@ -64,22 +64,22 @@ namespace UNACEM.Persistence.Database.Migrations
                 {
                     table.PrimaryKey("PK_ProviderInsulatings", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ProviderInsulatings_ProviderImportations_ProviderImportationsId",
-                        column: x => x.ProviderImportationsId,
+                        name: "FK_ProviderInsulatings_ProviderImportations_ProviderImportationId",
+                        column: x => x.ProviderImportationId,
                         principalTable: "ProviderImportations",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProviderConcretes_ProviderImportationsId",
+                name: "IX_ProviderConcretes_ProviderImportationId",
                 table: "ProviderConcretes",
-                column: "ProviderImportationsId");
+                column: "ProviderImportationId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProviderInsulatings_ProviderImportationsId",
+                name: "IX_ProviderInsulatings_ProviderImportationId",
                 table: "ProviderInsulatings",
-                column: "ProviderImportationsId");
+                column: "ProviderImportationId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

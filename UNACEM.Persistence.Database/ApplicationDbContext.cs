@@ -10,7 +10,7 @@ using UNACEM.Persistence.Database.Configuration;
 
 namespace UNACEM.Persistence.Database
 {
-    public class ApplicationDbContext: DbContext
+    public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
@@ -34,6 +34,9 @@ namespace UNACEM.Persistence.Database
         public DbSet<UNACEM.Domain.Gallery> Gallery { get; set; }
         public DbSet<UNACEM.Domain.ProviderInsulatings> ProviderInsulatings { get; set; }
         public DbSet<UNACEM.Domain.ProviderConcretes> ProviderConcretes { get; set; }
+        public DbSet<UNACEM.Domain.BudgetCiCurrency> BudgetCiCurrency{ get; set; }
+        public DbSet<UNACEM.Domain.BudgetsCi> BudgetsCi { get; set; }
+        public DbSet<UNACEM.Domain.BudgetCiRows> BudgetCiRows { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -60,7 +63,10 @@ namespace UNACEM.Persistence.Database
             new GalleryConfiguration(modelBuilder.Entity<UNACEM.Domain.Gallery>());
             new ProviderConcretesConfiguration(modelBuilder.Entity<UNACEM.Domain.ProviderConcretes>());
             new ProviderInsulatingsConfiguration(modelBuilder.Entity<UNACEM.Domain.ProviderInsulatings>());
-            
+            new BudgetCiCurrencyConfiguration(modelBuilder.Entity<UNACEM.Domain.BudgetCiCurrency>());
+            new BudgetsCiConfiguration(modelBuilder.Entity<UNACEM.Domain.BudgetsCi>());
+            new BudgetCiRowsConfiguration(modelBuilder.Entity<UNACEM.Domain.BudgetCiRows>());
+
         }
 
 

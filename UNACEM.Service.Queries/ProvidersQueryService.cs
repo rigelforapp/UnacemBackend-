@@ -1,4 +1,5 @@
-﻿    using System;
+﻿using System;
+using System.Text;
 using UNACEM.Common.Collection;
 using UNACEM.Common.Mapping;
 using UNACEM.Common.Paging;
@@ -12,7 +13,6 @@ using Microsoft.EntityFrameworkCore;
 using UNACEM.Service.Queries.DTO;
 using System.Collections.Generic;
 using System.IO;
-
 using System.Data;
 using ExcelDataReader;
 using Microsoft.Data.SqlClient;
@@ -80,8 +80,6 @@ namespace UNACEM.Service.Queries
                     result.Message = "No se encontro datos";
                 }
 
-
-
             }
             catch (Exception ex)
             {
@@ -140,6 +138,9 @@ namespace UNACEM.Service.Queries
         public async Task<ProvidersResponse> Upload(Stream stream, ProvidersRequest providersRequest)
         {
             List<ProviderBricksDto> LstProviderBricks = new List<ProviderBricksDto>();
+            List<ProviderInsulatingsDto> LstProviderInsulatings = new List<ProviderInsulatingsDto>();
+            List<ProviderConcretesDto> LstProviderConcretes = new List<ProviderConcretesDto>();
+
             ProvidersResponse result = new ProvidersResponse();
             DataTableCollection hojas_excel = Execute(stream);
             var ProviderImportations = new ProviderImportations();
@@ -149,25 +150,39 @@ namespace UNACEM.Service.Queries
                     //using (TransactionScope tx = new TransactionScope())
                     //{
                       //  await SomeAsyncMethod();
-                        ProviderImportations.ProviderId = providersRequest.Id;
-                        ProviderImportations.CreatedBy = providersRequest.CreatedBy;
-                        await _context.AddAsync(ProviderImportations);
-                        await _context.SaveChangesAsync();
+                ProviderImportations.ProviderId = providersRequest.Id;
+                ProviderImportations.CreatedBy = providersRequest.CreatedBy;
+                await _context.AddAsync(ProviderImportations);
+                await _context.SaveChangesAsync();
 
-                        int ProviderImportationId = ProviderImportations.Id;
+                int ProviderImportationId = ProviderImportations.Id;
 
-                        for (int i = 0; i < hojas_excel.Count; i++)
-                        {
-                            DataTable table = hojas_excel[i];
-                            LstProviderBricks = ListProviderBricks(table, ProviderImportationId);
-                            await BulkInsert(LstProviderBricks);
-                        }
-                        result.Success = true;
-                        result.Message = "Se realizó satisfactoriamente";
-                       // tx.Complete();
-                   // }
+                for (int i = 0; i < hojas_excel.Count; i++)
+                {
+                    string nombreHoja = hojas_excel[i].TableName;              
+
+                    DataTable table = hojas_excel[i];
+                    if (nombreHoja == "ladrillos")
+                    {                              
+                        LstProviderBricks = ListProviderBricks(table, ProviderImportationId);
+                        await BulkInsert(LstProviderBricks);
+                    }
+                    else if (nombreHoja == "concreto refractario")
+                    {
+                        LstProviderConcretes = ListProviderConcretes(table, ProviderImportationId);
+                        await BulkInsertProviderConcretes(LstProviderConcretes);
+                    }
+                    else if (nombreHoja == "concreto aislante")
+                    {
+                        LstProviderInsulatings = ListProviderInsulatings(table, ProviderImportationId);
+                        await BulkInsertProviderInsulatings(LstProviderInsulatings);
+                    }
                     
-                
+                }
+                result.Success = true;
+                result.Message = "Se realizó satisfactoriamente";
+                       // tx.Complete();
+                   // }                                    
             }
             catch (Exception ex)
             {
@@ -229,14 +244,14 @@ namespace UNACEM.Service.Queries
 
             table.Columns.Add("ProviderImportationId", typeof(int));
             table.Columns.Add("Name", typeof(string));
-            table.Columns.Add("Recommended_Zone", typeof(string));
+            table.Columns.Add("RecommendedZone", typeof(string));
             table.Columns.Add("Composition", typeof(string));
             table.Columns.Add("Density", typeof(string));
             table.Columns.Add("Porosity", typeof(string));
             table.Columns.Add("Ccs", typeof(string));
-            table.Columns.Add("Thermal_Conductivity_300", typeof(decimal));
-            table.Columns.Add("Thermal_Conductivity_700", typeof(decimal));
-            table.Columns.Add("Thermal_Conductivity_100", typeof(decimal));
+            table.Columns.Add("ThermalConductivity300", typeof(decimal));
+            table.Columns.Add("ThermalConductivity700", typeof(decimal));
+            table.Columns.Add("ThermalConductivity100", typeof(decimal));
 
 
             foreach (var item in lstData)
@@ -244,14 +259,14 @@ namespace UNACEM.Service.Queries
                 DataRow row = table.NewRow();
                 row["ProviderImportationId"] = item.ProviderImportationId;
                 row["Name"] = item.Name;
-                row["Recommended_Zone"] = item.RecommendedZone;
+                row["RecommendedZone"] = item.RecommendedZone;
                 row["Composition"] = item.Composition;
                 row["Density"] = item.Density;
                 row["Porosity"] = item.Porosity;
                 row["Ccs"] = item.Ccs;
-                row["Thermal_Conductivity_300"] = item.ThermalConductivity300;
-                row["Thermal_Conductivity_700"] = item.ThermalConductivity700;
-                row["Thermal_Conductivity_100"] = item.ThermalConductivity100;
+                row["ThermalConductivity300"] = item.ThermalConductivity300;
+                row["ThermalConductivity700"] = item.ThermalConductivity700;
+                row["ThermalConductivity100"] = item.ThermalConductivity100;
                
 
                 table.Rows.Add(row);
@@ -263,14 +278,14 @@ namespace UNACEM.Service.Queries
                     bulkInsert.DestinationTableName = table.TableName;
                     bulkInsert.ColumnMappings.Add("ProviderImportationId", "ProviderImportationId");
                     bulkInsert.ColumnMappings.Add("Name", "Name");
-                    bulkInsert.ColumnMappings.Add("Recommended_Zone", "Recommended_Zone");
+                    bulkInsert.ColumnMappings.Add("RecommendedZone", "RecommendedZone");
                     bulkInsert.ColumnMappings.Add("Composition", "Composition");
                     bulkInsert.ColumnMappings.Add("Density", "Density");
                     bulkInsert.ColumnMappings.Add("Porosity", "Porosity");
                     bulkInsert.ColumnMappings.Add("Ccs", "Ccs");
-                    bulkInsert.ColumnMappings.Add("Thermal_Conductivity_300", "Thermal_Conductivity_300");
-                    bulkInsert.ColumnMappings.Add("Thermal_Conductivity_700", "Thermal_Conductivity_700");
-                    bulkInsert.ColumnMappings.Add("Thermal_Conductivity_100", "Thermal_Conductivity_100");
+                    bulkInsert.ColumnMappings.Add("ThermalConductivity300", "ThermalConductivity300");
+                    bulkInsert.ColumnMappings.Add("ThermalConductivity700", "ThermalConductivity700");
+                    bulkInsert.ColumnMappings.Add("ThermalConductivity100", "ThermalConductivity100");
 
 
                   await  bulkInsert.WriteToServerAsync(table);
@@ -278,11 +293,137 @@ namespace UNACEM.Service.Queries
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
 
             }
             
         }
+
+        public async Task BulkInsertProviderInsulatings(List<ProviderInsulatingsDto> lstData)
+        {
+            DataTable table = new DataTable();
+            table.TableName = "ProviderInsulatings";
+
+            table.Columns.Add("ProviderImportationId", typeof(int));
+            table.Columns.Add("Name", typeof(string));
+            table.Columns.Add("RecommendedZone", typeof(string));
+            table.Columns.Add("Composition", typeof(string));
+            table.Columns.Add("MaterialNeeded", typeof(double));
+            table.Columns.Add("WaterMix", typeof(string));
+            table.Columns.Add("Temperature", typeof(double));
+            table.Columns.Add("ThermalConductivity300", typeof(double));
+            table.Columns.Add("ThermalConductivity700", typeof(double));
+            table.Columns.Add("ThermalConductivity100", typeof(double));
+
+
+            foreach (var item in lstData)
+            {
+                DataRow row = table.NewRow();
+                row["ProviderImportationId"] = item.ProviderImportationId;
+                row["Name"] = item.Name;
+                row["RecommendedZone"] = item.RecommendedZone;
+                row["Composition"] = item.Composition;
+                row["MaterialNeeded"] = item.MaterialNeeded;
+                row["WaterMix"] = item.WaterMix;
+                row["Temperature"] = item.Temperature;
+                row["ThermalConductivity300"] = item.ThermalConductivity300;
+                row["ThermalConductivity700"] = item.ThermalConductivity700;
+                row["ThermalConductivity100"] = item.ThermalConductivity100;
+
+                table.Rows.Add(row);
+            }
+            try
+            {
+                using (var bulkInsert = new SqlBulkCopy(_context.Database.GetDbConnection().ConnectionString))
+                {
+                    bulkInsert.DestinationTableName = table.TableName;
+                    bulkInsert.ColumnMappings.Add("ProviderImportationId", "ProviderImportationId");
+                    bulkInsert.ColumnMappings.Add("Name", "Name");
+                    bulkInsert.ColumnMappings.Add("RecommendedZone", "RecommendedZone");
+                    bulkInsert.ColumnMappings.Add("Composition", "Composition");
+                    bulkInsert.ColumnMappings.Add("MaterialNeeded", "MaterialNeeded");
+                    bulkInsert.ColumnMappings.Add("WaterMix", "WaterMix");
+                    bulkInsert.ColumnMappings.Add("Temperature", "Temperature");
+                    bulkInsert.ColumnMappings.Add("ThermalConductivity300", "ThermalConductivity300");
+                    bulkInsert.ColumnMappings.Add("ThermalConductivity700", "ThermalConductivity700");
+                    bulkInsert.ColumnMappings.Add("ThermalConductivity100", "ThermalConductivity100");
+
+
+                    await bulkInsert.WriteToServerAsync(table);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+
+            }
+
+        }
+
+
+        public async Task BulkInsertProviderConcretes(List<ProviderConcretesDto> lstData)
+        {
+            DataTable table = new DataTable();
+            table.TableName = "ProviderConcretes";
+
+            table.Columns.Add("ProviderImportationId", typeof(int));
+            table.Columns.Add("Name", typeof(string));
+            table.Columns.Add("RecommendedZone", typeof(string));
+            table.Columns.Add("Composition", typeof(string));
+            table.Columns.Add("MaterialNeeded", typeof(double));
+            table.Columns.Add("WaterMix", typeof(string));
+            table.Columns.Add("Temperature", typeof(double));
+            table.Columns.Add("ThermalConductivity300", typeof(double));
+            table.Columns.Add("ThermalConductivity700", typeof(double));
+            table.Columns.Add("ThermalConductivity100", typeof(double));
+
+
+            foreach (var item in lstData)
+            {
+                DataRow row = table.NewRow();
+                row["ProviderImportationId"] = item.ProviderImportationId;
+                row["Name"] = item.Name;
+                row["RecommendedZone"] = item.RecommendedZone;
+                row["Composition"] = item.Composition;
+                row["MaterialNeeded"] = item.MaterialNeeded;
+                row["WaterMix"] = item.WaterMix;
+                row["Temperature"] = item.Temperature;
+                row["ThermalConductivity300"] = item.ThermalConductivity300;
+                row["ThermalConductivity700"] = item.ThermalConductivity700;
+                row["ThermalConductivity100"] = item.ThermalConductivity100;
+
+
+                table.Rows.Add(row);
+            }
+            try
+            {
+                using (var bulkInsert = new SqlBulkCopy(_context.Database.GetDbConnection().ConnectionString))
+                {
+                    bulkInsert.DestinationTableName = table.TableName;
+                    bulkInsert.ColumnMappings.Add("ProviderImportationId", "ProviderImportationId");
+                    bulkInsert.ColumnMappings.Add("Name", "Name");
+                    bulkInsert.ColumnMappings.Add("RecommendedZone", "RecommendedZone");
+                    bulkInsert.ColumnMappings.Add("Composition", "Composition");
+                    bulkInsert.ColumnMappings.Add("MaterialNeeded", "MaterialNeeded");
+                    bulkInsert.ColumnMappings.Add("WaterMix", "WaterMix");
+                    bulkInsert.ColumnMappings.Add("Temperature", "Temperature");
+                    bulkInsert.ColumnMappings.Add("ThermalConductivity300", "ThermalConductivity300");
+                    bulkInsert.ColumnMappings.Add("ThermalConductivity700", "ThermalConductivity700");
+                    bulkInsert.ColumnMappings.Add("ThermalConductivity100", "ThermalConductivity100");
+
+
+                    await bulkInsert.WriteToServerAsync(table);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+
+            }
+
+        }
+
+
         public List<ProviderBricksDto> ListProviderBricks(DataTable table, int ProviderImportationId)
         {
             bool iniciarLectura = false;
@@ -322,7 +463,7 @@ namespace UNACEM.Service.Queries
                         catch (Exception ex)
                         {
 
-
+                            throw ex;
                         }
                     }
                 }
@@ -330,6 +471,107 @@ namespace UNACEM.Service.Queries
 
             return Lista;
         }
+
+        public List<ProviderInsulatingsDto> ListProviderInsulatings(DataTable table, int ProviderImportationId)
+        {
+            bool iniciarLectura = false;
+            List<ProviderInsulatingsDto> Lista = new List<ProviderInsulatingsDto>();
+            using (var reader = table.CreateDataReader())
+            {
+                while (reader.Read())
+                {
+                    var cab = reader[1] == null ? string.Empty : reader[1].ToString();
+                    if (cab.Trim().ToUpper() == "")
+                    {
+                        iniciarLectura = true;
+                        continue;
+                    }
+
+                    if (iniciarLectura)
+                    {
+                        try
+                        {
+                            var providerInsulatingsDto = new ProviderInsulatingsDto();
+                            providerInsulatingsDto.ProviderImportationId = ProviderImportationId;
+                            providerInsulatingsDto.Name = reader.GetString(0);
+                            providerInsulatingsDto.RecommendedZone = reader.GetString(1);
+                            providerInsulatingsDto.Composition = reader.GetString(2);
+                            providerInsulatingsDto.MaterialNeeded = Convert.ToDouble(reader.GetString(3));
+                            providerInsulatingsDto.WaterMix = reader.GetString(4);
+                            providerInsulatingsDto.Temperature = Convert.ToDouble(reader.GetDouble(5));
+                            providerInsulatingsDto.ThermalConductivity300 = Convert.ToDouble(reader.GetString(6));
+                            providerInsulatingsDto.ThermalConductivity700 = Convert.ToDouble(reader.GetString(7));
+                            providerInsulatingsDto.ThermalConductivity100 = Convert.ToDouble(reader.GetString(8));
+
+
+                            Lista.Add(providerInsulatingsDto);
+
+                        }
+                        catch (Exception ex)
+                        {
+
+                            throw ex;
+                        }
+                    }
+                }
+            }
+
+            return Lista;
+        }
+
+
+
+        public List<ProviderConcretesDto> ListProviderConcretes(DataTable table, int ProviderImportationId)
+        {
+            bool iniciarLectura = false;
+            List<ProviderConcretesDto> Lista = new List<ProviderConcretesDto>();
+            using (var reader = table.CreateDataReader())
+            {
+                while (reader.Read())
+                {
+                    var cab = reader[1] == null ? string.Empty : reader[1].ToString();
+                    if (cab.Trim().ToUpper() == "")
+                    {
+                        iniciarLectura = true;
+                        continue;
+                    }
+
+                    if (iniciarLectura)
+                    {
+                        try
+                        {
+                            var providerConcretesDto = new ProviderConcretesDto();
+                            providerConcretesDto.ProviderImportationId = ProviderImportationId;
+                            providerConcretesDto.Name = reader.GetString(0);
+                            providerConcretesDto.RecommendedZone = reader.GetString(1);
+                            providerConcretesDto.Composition = reader.GetString(2);
+                            providerConcretesDto.MaterialNeeded = Convert.ToDouble(reader.GetString(3));
+                            providerConcretesDto.WaterMix = reader.GetString(4);
+                         
+                            providerConcretesDto.Temperature = Convert.ToDouble(reader.GetDouble(5));
+                           // var a = reader.GetString(6);
+                            providerConcretesDto.ThermalConductivity300 = Convert.ToDouble(reader.GetString(6));
+                            providerConcretesDto.ThermalConductivity700 = Convert.ToDouble(reader.GetString(7));
+                            providerConcretesDto.ThermalConductivity100 = Convert.ToDouble(reader.GetString(8));
+
+
+                            Lista.Add(providerConcretesDto);
+
+                        }
+                        catch (Exception ex)
+                        {
+
+                            throw ex;
+                        }
+                    }
+                }
+            }
+
+            return Lista;
+        }
+
+
+
 
         public class ArticuloSaldo
         {

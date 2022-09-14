@@ -12,8 +12,8 @@ namespace UNACEM.Domain
     {
         public int Id { get; set; }
         
-        public int ProviderImportationsId { get; set; }
-        [ForeignKey("ProviderImportationsId")]
+        public int ProviderImportationId { get; set; }
+        [ForeignKey("ProviderImportationId")]
         public virtual ProviderImportations ProviderImportations { get; set; }
 
         public string Name { get; set; }
