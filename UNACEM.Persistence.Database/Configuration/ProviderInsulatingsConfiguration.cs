@@ -18,7 +18,9 @@ namespace UNACEM.Persistence.Database.Configuration
             entityBuilder.Property(x => x.Composition).HasColumnType("varchar").HasMaxLength(4000);
             entityBuilder.Property(x => x.WaterMix).HasColumnType("varchar").HasMaxLength(4000);
             //entityBuilder.Property(x => x.CreatedAt).IsRequired().HasColumnType("DateTime");
+            entityBuilder.Property(x => x.CreatedAt).HasColumnType("DateTime");
             entityBuilder.Property(x => x.UpdatedAt).HasColumnType("DateTime");
+            entityBuilder.Property(x => x.DeletedAt).HasColumnType("DateTime");
         }
     }
 }

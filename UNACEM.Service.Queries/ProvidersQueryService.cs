@@ -97,18 +97,6 @@ namespace UNACEM.Service.Queries
             try
             {
 
-                //var q = (from d in _context.Providers
-                //         join c in _context.ProviderImportations on d.ProviderId equals c.ProviderId
-                //         select new ProvidersDto
-                //         {
-                //             ProviderId = d.ProviderId,
-                //             Name = d.Name,
-                //             CreatedAt = c.CreatedAt
-                //         })
-
-                //         .OrderByDescending(d => d.ProviderId).GroupBy(x=> x.CreatedAt).ToList();
-
-
                 var collection = await _context.Providers.AsNoTracking().OrderBy(x => x.Id).GetPagedAsync(Start, Limit);
                 var providersresult = collection.MapTo<DataCollection<ProvidersDto>>();
 

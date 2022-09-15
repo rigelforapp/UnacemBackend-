@@ -19,9 +19,9 @@ namespace UNACEM.Persistence.Database.Configuration
             entityBuilder.Property(x => x.Porosity).IsRequired().HasMaxLength(100);
             entityBuilder.Property(x => x.Ccs).IsRequired().HasMaxLength(100);
             //entityBuilder.Property(x => x.CreatedBy).IsRequired().HasMaxLength(50);
-            //entityBuilder.Property(x => x.CreationDate).IsRequired().HasColumnType("DateTime");
-            //entityBuilder.Property(x => x.ModifiedBy).HasMaxLength(50);
-            //entityBuilder.Property(x => x.ModificationDate).HasColumnType("DateTime");
+            entityBuilder.Property(x => x.CreatedAt).HasColumnType("DateTime");
+            entityBuilder.Property(x => x.UpdatedAt).HasColumnType("DateTime");
+            entityBuilder.Property(x => x.DeletedAt).HasColumnType("DateTime");
         }
     }
 }

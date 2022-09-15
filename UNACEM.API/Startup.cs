@@ -45,6 +45,7 @@ namespace UNACEM.API
             services.AddTransient<IStretchsQueryService, StretchsQueryService>();
             services.AddTransient<IGalleryQueryService, GalleryQueryService>();
             services.AddTransient<IBudgetsQueryService, BudgetsQueryService>();
+            services.AddTransient<IResourcesQueryService, ResourcesQueryService>();
 
             services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "UNACEM.API", Version = "v1" });
