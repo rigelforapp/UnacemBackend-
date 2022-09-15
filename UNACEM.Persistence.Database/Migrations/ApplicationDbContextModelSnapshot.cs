@@ -243,27 +243,23 @@ namespace UNACEM.Persistence.Database.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime?>("CreatedAt")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("DateTime");
 
-                    b.Property<DateTime>("Date")
+                    b.Property<DateTime?>("Date")
                         .HasColumnType("DateTime");
 
                     b.Property<DateTime?>("DeletedAt")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("DateTime");
 
                     b.Property<string>("Description")
-                        .ValueGeneratedOnUpdateSometimes()
                         .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)")
-                        .HasColumnName("varchar");
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("Line")
-                        .ValueGeneratedOnUpdateSometimes()
                         .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)")
-                        .HasColumnName("varchar");
+                        .HasColumnType("nvarchar(255)");
 
-                    b.Property<double>("Total")
+                    b.Property<double?>("Total")
                         .HasColumnType("float");
 
                     b.Property<DateTime?>("UpdatedAt")
@@ -488,10 +484,10 @@ namespace UNACEM.Persistence.Database.Migrations
                         .HasColumnType("nvarchar(1000)");
 
                     b.Property<DateTime?>("CreatedAt")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("DateTime");
 
                     b.Property<DateTime?>("DeletedAt")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("DateTime");
 
                     b.Property<string>("Density")
                         .IsRequired()
@@ -526,7 +522,7 @@ namespace UNACEM.Persistence.Database.Migrations
                         .HasColumnType("decimal(5,2)");
 
                     b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("DateTime");
 
                     b.HasKey("Id");
 
@@ -548,10 +544,10 @@ namespace UNACEM.Persistence.Database.Migrations
                         .HasColumnType("varchar(4000)");
 
                     b.Property<DateTime?>("CreatedAt")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("DateTime");
 
                     b.Property<DateTime?>("DeletedAt")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("DateTime");
 
                     b.Property<double>("MaterialNeeded")
                         .HasColumnType("float");
@@ -646,10 +642,10 @@ namespace UNACEM.Persistence.Database.Migrations
                         .HasColumnType("varchar(4000)");
 
                     b.Property<DateTime?>("CreatedAt")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("DateTime");
 
                     b.Property<DateTime?>("DeletedAt")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("DateTime");
 
                     b.Property<double>("MaterialNeeded")
                         .HasColumnType("float");

@@ -13,10 +13,12 @@ namespace UNACEM.Persistence.Database.Configuration
         public BudgetsCiConfiguration(EntityTypeBuilder<UNACEM.Domain.BudgetsCi> entityBuilder)
         {
             entityBuilder.HasKey(x => x.Id);
-            entityBuilder.Property(x => x.Line).HasColumnName("varchar").HasMaxLength(255);
-            entityBuilder.Property(x => x.Description).HasColumnName("varchar").HasMaxLength(255);
+            entityBuilder.Property(x => x.Line).HasMaxLength(255);
+            entityBuilder.Property(x => x.Description).HasMaxLength(255);
             entityBuilder.Property(x => x.Date).HasColumnType("DateTime");
+            entityBuilder.Property(x => x.CreatedAt).HasColumnType("DateTime");
             entityBuilder.Property(x => x.UpdatedAt).HasColumnType("DateTime");
+            entityBuilder.Property(x => x.DeletedAt).HasColumnType("DateTime");
         }
     }
 }

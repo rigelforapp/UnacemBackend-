@@ -12,7 +12,5 @@ namespace UNACEM.Service.Queries.ViewModel.Response
     public class ResourcesResponse: ResponseBase
     {
         public List<object> Data { get; set; }
-        //public List<ProviderInsulatings> dataProviderInsulatings { get; set; }
-        //public List<ProviderConcretes> dataProviderConcretes { get; set; }
     }
 }
