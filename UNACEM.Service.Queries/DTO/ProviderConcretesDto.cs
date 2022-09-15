@@ -21,5 +21,6 @@ namespace UNACEM.Service.Queries.DTO
         public double ThermalConductivity300 { get; set; }
         public double ThermalConductivity700 { get; set; }
         public double ThermalConductivity100 { get; set; }
+        public DateTime CreatedAt { get; set; }
     }
 }

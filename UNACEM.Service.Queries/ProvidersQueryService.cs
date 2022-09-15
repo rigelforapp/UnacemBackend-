@@ -169,12 +169,12 @@ namespace UNACEM.Service.Queries
                     }
                     else if (nombreHoja == "concreto refractario")
                     {
-                        LstProviderConcretes = ListProviderConcretes(table, ProviderImportationId);
+                        LstProviderConcretes = await ListProviderConcretes(table, ProviderImportationId);
                         await BulkInsertProviderConcretes(LstProviderConcretes);
                     }
                     else if (nombreHoja == "concreto aislante")
                     {
-                        LstProviderInsulatings = ListProviderInsulatings(table, ProviderImportationId);
+                        LstProviderInsulatings = await ListProviderInsulatings(table, ProviderImportationId);
                         await BulkInsertProviderInsulatings(LstProviderInsulatings);
                     }
                     
@@ -252,6 +252,7 @@ namespace UNACEM.Service.Queries
             table.Columns.Add("ThermalConductivity300", typeof(decimal));
             table.Columns.Add("ThermalConductivity700", typeof(decimal));
             table.Columns.Add("ThermalConductivity100", typeof(decimal));
+            table.Columns.Add("CreatedAt", typeof(DateTime));
 
 
             foreach (var item in lstData)
@@ -267,7 +268,7 @@ namespace UNACEM.Service.Queries
                 row["ThermalConductivity300"] = item.ThermalConductivity300;
                 row["ThermalConductivity700"] = item.ThermalConductivity700;
                 row["ThermalConductivity100"] = item.ThermalConductivity100;
-               
+                row["CreatedAt"] = DateTime.Now;
 
                 table.Rows.Add(row);
             }
@@ -286,9 +287,9 @@ namespace UNACEM.Service.Queries
                     bulkInsert.ColumnMappings.Add("ThermalConductivity300", "ThermalConductivity300");
                     bulkInsert.ColumnMappings.Add("ThermalConductivity700", "ThermalConductivity700");
                     bulkInsert.ColumnMappings.Add("ThermalConductivity100", "ThermalConductivity100");
+                    bulkInsert.ColumnMappings.Add("CreatedAt", "CreatedAt");
 
-
-                  await  bulkInsert.WriteToServerAsync(table);
+                    await  bulkInsert.WriteToServerAsync(table);
                 }
             }
             catch (Exception ex)
@@ -314,7 +315,7 @@ namespace UNACEM.Service.Queries
             table.Columns.Add("ThermalConductivity300", typeof(double));
             table.Columns.Add("ThermalConductivity700", typeof(double));
             table.Columns.Add("ThermalConductivity100", typeof(double));
-
+            table.Columns.Add("CreatedAt", typeof(DateTime));
 
             foreach (var item in lstData)
             {
@@ -329,7 +330,7 @@ namespace UNACEM.Service.Queries
                 row["ThermalConductivity300"] = item.ThermalConductivity300;
                 row["ThermalConductivity700"] = item.ThermalConductivity700;
                 row["ThermalConductivity100"] = item.ThermalConductivity100;
-
+                row["CreatedAt"] = DateTime.Now;
                 table.Rows.Add(row);
             }
             try
@@ -347,7 +348,7 @@ namespace UNACEM.Service.Queries
                     bulkInsert.ColumnMappings.Add("ThermalConductivity300", "ThermalConductivity300");
                     bulkInsert.ColumnMappings.Add("ThermalConductivity700", "ThermalConductivity700");
                     bulkInsert.ColumnMappings.Add("ThermalConductivity100", "ThermalConductivity100");
-
+                    bulkInsert.ColumnMappings.Add("CreatedAt", "CreatedAt");
 
                     await bulkInsert.WriteToServerAsync(table);
                 }
@@ -376,6 +377,7 @@ namespace UNACEM.Service.Queries
             table.Columns.Add("ThermalConductivity300", typeof(double));
             table.Columns.Add("ThermalConductivity700", typeof(double));
             table.Columns.Add("ThermalConductivity100", typeof(double));
+            table.Columns.Add("CreatedAt", typeof(DateTime));
 
 
             foreach (var item in lstData)
@@ -391,7 +393,7 @@ namespace UNACEM.Service.Queries
                 row["ThermalConductivity300"] = item.ThermalConductivity300;
                 row["ThermalConductivity700"] = item.ThermalConductivity700;
                 row["ThermalConductivity100"] = item.ThermalConductivity100;
-
+                row["CreatedAt"] = DateTime.Now;
 
                 table.Rows.Add(row);
             }
@@ -410,6 +412,7 @@ namespace UNACEM.Service.Queries
                     bulkInsert.ColumnMappings.Add("ThermalConductivity300", "ThermalConductivity300");
                     bulkInsert.ColumnMappings.Add("ThermalConductivity700", "ThermalConductivity700");
                     bulkInsert.ColumnMappings.Add("ThermalConductivity100", "ThermalConductivity100");
+                    bulkInsert.ColumnMappings.Add("CreatedAt", "CreatedAt");
 
 
                     await bulkInsert.WriteToServerAsync(table);
@@ -427,7 +430,7 @@ namespace UNACEM.Service.Queries
         public async Task<List<ProviderBricksDto>> ListProviderBricks(DataTable table, int ProviderImportationId)
         {
             List<ProviderBricks> listaProviderBricks = new List<ProviderBricks>();
-            listaProviderBricks= _context.ProviderBricks.ToList();
+            listaProviderBricks= _context.ProviderBricks.Where(x => x.CreatedAt != null).ToList();
             bool iniciarLectura = false;
             List<ProviderBricksDto> Lista = new List<ProviderBricksDto>();
             using (var reader = table.CreateDataReader())
@@ -467,28 +470,24 @@ namespace UNACEM.Service.Queries
                                     ProviderBricks.DeletedAt = DateTime.Now;
 
                                     await _context.SaveChangesAsync();
-                                   
                                 }
                             }
                             Lista.Add(providerBricksDto);
-
-
-
                         }
                         catch (Exception ex)
                         {
-
                             throw ex;
                         }
                     }
                 }
             }
-
             return Lista;
         }
 
-        public List<ProviderInsulatingsDto> ListProviderInsulatings(DataTable table, int ProviderImportationId)
+        public async Task<List<ProviderInsulatingsDto>> ListProviderInsulatings(DataTable table, int ProviderImportationId)
         {
+            List<ProviderInsulatings> listaProviderInsulatings = new List<ProviderInsulatings>();
+            listaProviderInsulatings = _context.ProviderInsulatings.Where(x => x.CreatedAt != null).ToList();
             bool iniciarLectura = false;
             List<ProviderInsulatingsDto> Lista = new List<ProviderInsulatingsDto>();
             using (var reader = table.CreateDataReader())
@@ -518,6 +517,17 @@ namespace UNACEM.Service.Queries
                             providerInsulatingsDto.ThermalConductivity700 = Convert.ToDouble(reader.GetString(7));
                             providerInsulatingsDto.ThermalConductivity100 = Convert.ToDouble(reader.GetString(8));
 
+                            var existeProviderInsulatings = listaProviderInsulatings.Where(a => a.Name == providerInsulatingsDto.Name).FirstOrDefault();
+                            if (existeProviderInsulatings != null)
+                            {
+                                var ProviderInsulatings = _context.ProviderInsulatings.Where(a => a.Id == existeProviderInsulatings.Id).FirstOrDefault();
+                                if (ProviderInsulatings != null)
+                                {
+                                    ProviderInsulatings.DeletedAt = DateTime.Now;
+
+                                    await _context.SaveChangesAsync();
+                                }
+                            }
 
                             Lista.Add(providerInsulatingsDto);
 
@@ -536,8 +546,10 @@ namespace UNACEM.Service.Queries
 
 
 
-        public List<ProviderConcretesDto> ListProviderConcretes(DataTable table, int ProviderImportationId)
+        public async Task<List<ProviderConcretesDto>> ListProviderConcretes(DataTable table, int ProviderImportationId)
         {
+            List<ProviderConcretes> listaProviderConcretes = new List<ProviderConcretes>();
+            listaProviderConcretes = _context.ProviderConcretes.Where(x => x.CreatedAt != null).ToList();
             bool iniciarLectura = false;
             List<ProviderConcretesDto> Lista = new List<ProviderConcretesDto>();
             using (var reader = table.CreateDataReader())
@@ -561,14 +573,23 @@ namespace UNACEM.Service.Queries
                             providerConcretesDto.RecommendedZone = reader.GetString(1);
                             providerConcretesDto.Composition = reader.GetString(2);
                             providerConcretesDto.MaterialNeeded = Convert.ToDouble(reader.GetString(3));
-                            providerConcretesDto.WaterMix = reader.GetString(4);
-                         
+                            providerConcretesDto.WaterMix = reader.GetString(4);                         
                             providerConcretesDto.Temperature = Convert.ToDouble(reader.GetDouble(5));
-                           // var a = reader.GetString(6);
                             providerConcretesDto.ThermalConductivity300 = Convert.ToDouble(reader.GetString(6));
                             providerConcretesDto.ThermalConductivity700 = Convert.ToDouble(reader.GetString(7));
                             providerConcretesDto.ThermalConductivity100 = Convert.ToDouble(reader.GetString(8));
 
+                            var existeProviderConcretes = listaProviderConcretes.Where(a => a.Name == providerConcretesDto.Name).FirstOrDefault();
+                            if (existeProviderConcretes != null)
+                            {
+                                var ProviderInsulatings = _context.ProviderConcretes.Where(a => a.Id == existeProviderConcretes.Id).FirstOrDefault();
+                                if (ProviderInsulatings != null)
+                                {
+                                    ProviderInsulatings.DeletedAt = DateTime.Now;
+
+                                    await _context.SaveChangesAsync();
+                                }
+                            }
 
                             Lista.Add(providerConcretesDto);
 
