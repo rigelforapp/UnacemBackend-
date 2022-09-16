@@ -33,7 +33,19 @@ namespace UNACEM.API.Controllers
         [HttpDelete]
         public async Task<BudgetCiResponse> Delete(BudgetCiRequest budgetCiRequest)
         {
-            return  await _budgetCiQueryService.Delete(budgetCiRequest);
+            return await _budgetCiQueryService.Delete(budgetCiRequest);
+        }
+
+        [HttpGet]
+        public async Task<object> GetAll(int Start, int Limit)
+        {
+            return await _budgetCiQueryService.GetAll(Start, Limit);
+        }
+
+        [HttpGet("GetAllBudgetId")]
+        public async Task<object> GetAllBudgetId(int budgetCiId)
+        {
+            return await _budgetCiQueryService.GetAllBudgetId(budgetCiId);
         }
     }
 }

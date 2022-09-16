@@ -7,7 +7,7 @@ namespace UNACEM.Service.Queries.ViewModel.Request
     public class VersionRequest
     {
         public int Id { get; set; }
-        public int OvenId { get; set; }
+        public int? OvenId { get; set; }
         public string Name { get; set; }     
         //public DateTime Date_Ini { get; set; }
         //public DateTime Date_End { get; set; }
@@ -15,3 +15,4 @@ namespace UNACEM.Service.Queries.ViewModel.Request
         public DateTime DateEnd { get; set; }        
     }
 }
+
