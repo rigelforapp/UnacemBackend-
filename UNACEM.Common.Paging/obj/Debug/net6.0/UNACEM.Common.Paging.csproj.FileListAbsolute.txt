@@ -58,3 +58,18 @@ D:\proyectos\UNACEM\Code\UNACEM.Common.Paging\obj\Debug\net6.0\UNACEM.Common.Pag
 D:\proyectos\UNACEM\Code\UNACEM.Common.Paging\obj\Debug\net6.0\refint\UNACEM.Common.Paging.dll
 D:\proyectos\UNACEM\Code\UNACEM.Common.Paging\obj\Debug\net6.0\UNACEM.Common.Paging.pdb
 D:\proyectos\UNACEM\Code\UNACEM.Common.Paging\obj\Debug\net6.0\ref\UNACEM.Common.Paging.dll
+C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.Common.Paging\bin\Debug\net6.0\UNACEM.Common.Paging.deps.json
+C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.Common.Paging\bin\Debug\net6.0\UNACEM.Common.Paging.dll
+C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.Common.Paging\bin\Debug\net6.0\UNACEM.Common.Paging.pdb
+C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.Common.Paging\bin\Debug\net6.0\UNACEM.Common.Collection.dll
+C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.Common.Paging\bin\Debug\net6.0\UNACEM.Common.Collection.pdb
+C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.Common.Paging\obj\Debug\net6.0\UNACEM.Common.Paging.csproj.AssemblyReference.cache
+C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.Common.Paging\obj\Debug\net6.0\UNACEM.Common.Paging.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.Common.Paging\obj\Debug\net6.0\UNACEM.Common.Paging.AssemblyInfoInputs.cache
+C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.Common.Paging\obj\Debug\net6.0\UNACEM.Common.Paging.AssemblyInfo.cs
+C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.Common.Paging\obj\Debug\net6.0\UNACEM.Common.Paging.csproj.CoreCompileInputs.cache
+C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.Common.Paging\obj\Debug\net6.0\UNACEM.Common.Paging.csproj.CopyComplete
+C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.Common.Paging\obj\Debug\net6.0\UNACEM.Common.Paging.dll
+C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.Common.Paging\obj\Debug\net6.0\refint\UNACEM.Common.Paging.dll
+C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.Common.Paging\obj\Debug\net6.0\UNACEM.Common.Paging.pdb
+C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.Common.Paging\obj\Debug\net6.0\ref\UNACEM.Common.Paging.dll

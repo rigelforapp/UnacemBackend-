@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -75,11 +76,20 @@ namespace UNACEM.Service.Queries
                 result.Message = "Se realizó correctamente";
                 result.Data = (List<VersionDto>)versionresult.Items;
 
-                //foreach (var item in result.Data)
-                //{
-                //    item.DateIni = Convert.ToDateTime(item.DateIni.ToString("dd/MM/yyyy"));
-                //    item.DateEnd = Convert.ToDateTime(item.DateEnd.ToString("dd/MM/yyyy"));
-                //}
+                foreach (var item in result.Data)
+                {
+                    item.Stretchs = new List<Stretchs>();
+                    item.Stretchs = _context.Stretchs.Where(s => s.VersionId == item.Id).OrderBy( s=> s.PositionIni ).ToList();
+
+                    foreach (var stretch in item.Stretchs)
+                    {
+                        stretch.ProviderBricks = _context.ProviderBricks.Where(pb => pb.Id == stretch.ProviderBrickId).FirstOrDefault();                        
+                        stretch.ProviderBricks.ProviderImportations = _context.ProviderImportations.Where(pi => pi.Id == stretch.ProviderBricks.ProviderImportationId).FirstOrDefault();
+                        stretch.ProviderBricks.ProviderImportations.Providers = _context.Providers.Where(p => p.Id == stretch.ProviderBricks.ProviderImportations.ProviderId).FirstOrDefault();
+
+                        stretch.BrickFormats = _context.BrickFormats.Where(pb => pb.Id == stretch.BrickFormatId).FirstOrDefault();
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -97,14 +107,58 @@ namespace UNACEM.Service.Queries
 
             try
             {
-                var versions = _context.Versions.Where(v => v.Id == versionRequest.Id).FirstOrDefault();
+                var v = _context.Versions.Where(v => v.Id == versionRequest.Id).FirstOrDefault();
 
-                if (versions != null)
+                if (v != null)
                 {
-                    versions.OvenId = versionRequest.OvenId;
-                    versions.Name = versionRequest.Name;
-                    versions.DateIni = Convert.ToDateTime(versionRequest.DateIni);
-                    versions.DateEnd = Convert.ToDateTime(versionRequest.DateEnd);
+                    v.OvenId = versionRequest.OvenId;
+                    v.Name = versionRequest.Name;
+                    v.DateIni = Convert.ToDateTime(versionRequest.DateIni);
+                    v.DateEnd = Convert.ToDateTime(versionRequest.DateEnd);
+
+                    var stretchs = _context.Stretchs.Where(s => s.VersionId == v.Id).ToList();
+                    foreach (var s in stretchs)
+                    {
+                        s.DeletedAt = DateTime.Now;
+                        _context.Stretchs.Update(s);
+                    }
+
+                    if (versionRequest.Stretchs != null)
+                    {
+                        foreach (var s in versionRequest.Stretchs)
+                        {
+                            if (s.Id > 0)
+                            {
+                                // Update
+                                var oldS = _context.Stretchs.Where(s => s.Id == s.Id).FirstOrDefault();
+                                oldS.PositionIni = s.PositionIni;
+                                oldS.PositionEnd = s.PositionEnd;
+                                oldS.BrickFormatId = s.BrickFormatId;
+                                oldS.ProviderBrickId = s.ProviderBrickId;
+                                oldS.TextureId = s.TextureId;
+                                oldS.ColorId = s.ColorId;
+                                oldS.UpdatedAt = DateTime.Now;
+
+                                _context.Stretchs.Update(oldS);
+                            } else
+                            {
+                                // Create
+                                var newS = new Stretchs();
+                                newS.Id = s.Id;
+                                newS.VersionId = v.Id;
+                                newS.TextureId = s.TextureId;
+                                newS.ColorId = s.ColorId;
+                                newS.PositionIni = s.PositionIni;
+                                newS.PositionEnd = s.PositionEnd;
+                                newS.BrickFormatId = s.BrickFormatId;
+                                newS.ProviderBrickId = s.ProviderBrickId;
+                                newS.CreatedAt = DateTime.Now;
+
+                                _context.Stretchs.Add(newS);
+                            }
+                        }
+                    }
+
 
                     await _context.SaveChangesAsync();
                     result.Success = true;

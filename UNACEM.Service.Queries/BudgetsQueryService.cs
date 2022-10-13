@@ -43,15 +43,15 @@ namespace UNACEM.Service.Queries
                 await _context.AddAsync(budgets);
                 await _context.SaveChangesAsync();
 
-                int TyresImportationId = budgets.Id;
+                int budgetId = budgets.Id;
 
-                foreach (var item in budgetsRequest.BudgetStretches)
+                foreach (var item in budgetsRequest.budgetStretchs)
                 {
                     BudgetStretch budgetStretch = new BudgetStretch();
 
-                    budgetStretch.BudgetId = TyresImportationId;
+                    budgetStretch.BudgetId = budgetId;
                     budgetStretch.StretchId = item.StretchId;
-                    budgetStretch.BrickFormatId = item.BrickFormatId;
+                        
                     budgetStretch.BrickACost = item.BrickACost;
                     budgetStretch.BrickBCost = item.BrickBCost;
                     budgetStretch.WedgeAQuantity = item.WedgeAQuantity;

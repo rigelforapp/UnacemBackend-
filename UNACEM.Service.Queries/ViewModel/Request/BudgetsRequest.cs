@@ -11,6 +11,6 @@ namespace UNACEM.Service.Queries.ViewModel.Request
         public int Id { get; set; }
         public int VersionId { get; set; }
         public double TotalAmount { get; set; }
-        public List<BudgetStretchRequest> BudgetStretches { get; set; }
+        public List<BudgetStretchRequest> budgetStretchs { get; set; }
     }
 }

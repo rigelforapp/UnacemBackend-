@@ -25,23 +25,23 @@ namespace UNACEM.API.Controllers
         }
 
         [HttpPost]
-        public async Task<GalleryResponse> Create([FromForm] GalleryRequest galleryRequest, IFormFile File)
+        public async Task<GalleryResponse> Create([FromForm] GalleryRequest galleryRequest, IFormFile file)
         {
             byte[] bufferfoto;
 
-            if (File != null)
+            if (file != null)
             {
                 using (var ms = new MemoryStream())
                 {
-                    File.CopyTo(ms);
+                    file.CopyTo(ms);
                     var fileBytes = ms.ToArray();
                     string s = Convert.ToBase64String(fileBytes);
                     Stream stream = new MemoryStream(fileBytes);
                     BinaryReader lector = new BinaryReader(stream);
-                    bufferfoto = lector.ReadBytes((int)File.Length);
+                    bufferfoto = lector.ReadBytes((int)file.Length);
                     galleryRequest.Image = bufferfoto;
-                    galleryRequest.Type = File.ContentType;
-                    galleryRequest.Name = File.FileName;
+                    galleryRequest.Type = file.ContentType;
+                    galleryRequest.Name = file.FileName;
                 }
 
             }
@@ -49,9 +49,9 @@ namespace UNACEM.API.Controllers
         }
 
         [HttpGet]
-        public async Task<GalleryResponse> GetAll(int VersionId, int Start = Manager.VariableGlobal.Numero.Uno, int Limit = Manager.VariableGlobal.Numero.Diez)
+        public async Task<GalleryResponse> GetAll(int versionId, int start = Manager.VariableGlobal.Numero.Uno, int limit = Manager.VariableGlobal.Numero.Diez)
         {
-            return await _galleryQueryService.GetAll(VersionId, Start, Limit);
+            return await _galleryQueryService.GetAll(versionId, start, limit);
         }
 
         [HttpPut]

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using UNACEM.Domain;
 
 namespace UNACEM.Service.Queries.ViewModel.Request
 {
@@ -8,11 +9,11 @@ namespace UNACEM.Service.Queries.ViewModel.Request
     {
         public int Id { get; set; }
         public int? OvenId { get; set; }
-        public string Name { get; set; }     
-        //public DateTime Date_Ini { get; set; }
-        //public DateTime Date_End { get; set; }
+        public string Name { get; set; }
         public DateTime DateIni { get; set; }
-        public DateTime DateEnd { get; set; }        
+        public DateTime DateEnd { get; set; }       
+        
+        public List<Stretchs> Stretchs { get; set; } = new List<Stretchs>();
     }
 }
 

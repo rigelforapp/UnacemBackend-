@@ -7,10 +7,10 @@ namespace UNACEM.Service.Queries.ViewModel.Request
     public class OvensRequest
     {
         public int Id { get; set; }
-        public int HeadquarterId { get; set; }
+        public string Headquarter { get; set; }
         public int UserId { get; set; }
         public string Name { get; set; }
-        public decimal Large { get; set; }
+        public int Large { get; set; }
         public int Diameter { get; set; }
         public List<TyresRequest> Tyres { get; set; }
 

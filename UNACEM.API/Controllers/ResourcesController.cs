@@ -20,9 +20,9 @@ namespace UNACEM.API.Controllers
             _resourcesQueryService = resourcesQueryService;
         }
         [HttpGet]
-        public async Task<IActionResult> GetAll(string type)
+        public async Task<IActionResult> GetAll(string Type, int ProviderId)
         {
-           var  response = await _resourcesQueryService.GetAll(type);
+           var  response = await _resourcesQueryService.GetAll(Type, ProviderId );
             return Ok(response);
         }
 

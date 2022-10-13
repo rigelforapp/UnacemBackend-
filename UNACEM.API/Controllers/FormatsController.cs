@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using UNACEM.Common.Configuration;
@@ -19,11 +21,31 @@ namespace UNACEM.API.Controllers
         {
             _formatsQueryService = formatsQueryService;
         }
-        [HttpGet]
 
+        [HttpGet]
         public async Task<BrickFormatsResponse> GetAllFormats(int Diameter, int Start = Manager.VariableGlobal.Numero.Uno, int Limit = Manager.VariableGlobal.Numero.Diez)
         {
             return await _formatsQueryService.GetAll(Diameter, Start, Limit);
+        }
+
+        [HttpPost("UploadFile")]
+        public async Task<BrickFormatsResponse> UploadFile(IFormFile File)
+        {
+            var ProvidersResponse = new BrickFormatsResponse();
+            //var files = file;
+            if (File != null)
+            {
+                using (var ms = new MemoryStream())
+                {
+                    File.CopyTo(ms);
+                    var fileBytes = ms.ToArray();
+                    string s = Convert.ToBase64String(fileBytes);
+                    Stream stream = new MemoryStream(fileBytes);
+                    ProvidersResponse = await _formatsQueryService.Upload(stream);
+                }
+            }
+
+            return ProvidersResponse;
         }
     }
 }

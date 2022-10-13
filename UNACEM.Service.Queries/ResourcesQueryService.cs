@@ -17,7 +17,7 @@ namespace UNACEM.Service.Queries
 {
     public interface IResourcesQueryService
     {
-        Task<ResourcesResponse> GetAll(string type);
+        Task<ResourcesResponse> GetAll(string Type, int ProviderId);
     }
 
     public class ResourcesQueryService : IResourcesQueryService
@@ -29,29 +29,36 @@ namespace UNACEM.Service.Queries
             _context = context;
         }
 
-        public async Task<ResourcesResponse> GetAll(string type)
+        public async Task<ResourcesResponse> GetAll(string Type, int ProviderId)
         {
             ResourcesResponse result = new ResourcesResponse();
           
             try
             {
              
-                if (type.ToUpper() == "brick".ToUpper())
+                if (Type.ToUpper() == "brick".ToUpper())
                 {
+                    var providerBricks = (from ProviderBricks in _context.Set<ProviderBricks>()
+                                join ProviderImportations in _context.Set<ProviderImportations>()
+                                    on ProviderBricks.ProviderImportationId equals ProviderImportations.Id
+                                join Providers in _context.Set<Providers>()
+                                    on ProviderImportations.ProviderId equals Providers.Id
+                                where(Providers.Id == ProviderId)
+                                select ProviderBricks ).ToList<Object>();
 
-                    var collection = _context.ProviderBricks.Where(x => x.CreatedAt != null).Cast<object>().ToList();
+                    //var collection = _context.ProviderBricks.Where(x => x.DeletedAt != null).Cast<object>().ToList();
                  
-                    result.Data = collection;
+                    result.Data = providerBricks;
                 }
-                else if (type.ToUpper() == "insulating".ToUpper())
+                else if (Type.ToUpper() == "insulating".ToUpper())
                 {
-                    var collection = _context.ProviderInsulatings.Where(x => x.CreatedAt != null).Cast<object>().ToList();
+                    var collection = _context.ProviderInsulatings.Where(x => x.DeletedAt != null).Cast<object>().ToList();
                     result.Data = collection;
 
                 }
-                else if (type.ToUpper() == "concrete".ToUpper())
+                else if (Type.ToUpper() == "concrete".ToUpper())
                 {
-                    var collection = _context.ProviderConcretes.Where(x => x.CreatedAt != null).Cast<object>().ToList();
+                    var collection = _context.ProviderConcretes.Where(x => x.DeletedAt != null).Cast<object>().ToList();
 
 
                     result.Data = collection;

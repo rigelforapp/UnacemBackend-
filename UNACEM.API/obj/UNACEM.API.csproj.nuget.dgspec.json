@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\proyectos\\UNACEM\\Code\\UNACEM.API\\UNACEM.API.csproj": {}
+    "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.API\\UNACEM.API.csproj": {}
   },
   "projects": {
-    "D:\\proyectos\\UNACEM\\Code\\UNACEM.API\\UNACEM.API.csproj": {
+    "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.API\\UNACEM.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\proyectos\\UNACEM\\Code\\UNACEM.API\\UNACEM.API.csproj",
+        "projectUniqueName": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.API\\UNACEM.API.csproj",
         "projectName": "UNACEM.API",
-        "projectPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.API\\UNACEM.API.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.API\\obj\\",
+        "projectPath": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.API\\UNACEM.API.csproj",
+        "packagesPath": "C:\\Users\\Paolo Muñoz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Paolo Muñoz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,14 +32,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common\\UNACEM.Common.csproj": {
-                "projectPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common\\UNACEM.Common.csproj"
+              "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Common\\UNACEM.Common.csproj": {
+                "projectPath": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Common\\UNACEM.Common.csproj"
               },
-              "D:\\proyectos\\UNACEM\\Code\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj": {
-                "projectPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj"
+              "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj": {
+                "projectPath": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj"
               },
-              "D:\\proyectos\\UNACEM\\Code\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj": {
-                "projectPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj"
+              "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj": {
+                "projectPath": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj"
               }
             }
           }
@@ -54,11 +54,15 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.5, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[6.0.5, )"
             },
             "Microsoft.Extensions.Options": {
               "target": "Package",
@@ -88,24 +92,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj": {
+    "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj",
+        "projectUniqueName": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj",
         "projectName": "UNACEM.Common.Collection",
-        "projectPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Collection\\obj\\",
+        "projectPath": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj",
+        "packagesPath": "C:\\Users\\Paolo Muñoz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Common.Collection\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Paolo Muñoz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -147,24 +151,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj": {
+    "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj",
+        "projectUniqueName": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj",
         "projectName": "UNACEM.Common.Mapping",
-        "projectPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Mapping\\obj\\",
+        "projectPath": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj",
+        "packagesPath": "C:\\Users\\Paolo Muñoz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Common.Mapping\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Paolo Muñoz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -212,24 +216,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj": {
+    "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj",
+        "projectUniqueName": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj",
         "projectName": "UNACEM.Common.Paging",
-        "projectPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Paging\\obj\\",
+        "projectPath": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj",
+        "packagesPath": "C:\\Users\\Paolo Muñoz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Common.Paging\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Paolo Muñoz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -244,8 +248,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj": {
-                "projectPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj"
+              "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj": {
+                "projectPath": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj"
               }
             }
           }
@@ -281,24 +285,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common\\UNACEM.Common.csproj": {
+    "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Common\\UNACEM.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common\\UNACEM.Common.csproj",
+        "projectUniqueName": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Common\\UNACEM.Common.csproj",
         "projectName": "UNACEM.Common",
-        "projectPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common\\UNACEM.Common.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common\\obj\\",
+        "projectPath": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Common\\UNACEM.Common.csproj",
+        "packagesPath": "C:\\Users\\Paolo Muñoz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Paolo Muñoz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -340,24 +344,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\proyectos\\UNACEM\\Code\\UNACEM.Domain\\UNACEM.Domain.csproj": {
+    "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Domain\\UNACEM.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Domain\\UNACEM.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Domain\\UNACEM.Domain.csproj",
         "projectName": "UNACEM.Domain",
-        "projectPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Domain\\UNACEM.Domain.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Domain\\obj\\",
+        "projectPath": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Domain\\UNACEM.Domain.csproj",
+        "packagesPath": "C:\\Users\\Paolo Muñoz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Paolo Muñoz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -399,24 +403,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\proyectos\\UNACEM\\Code\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj": {
+    "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj",
+        "projectUniqueName": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj",
         "projectName": "UNACEM.Persistence.Database",
-        "projectPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Persistence.Database\\obj\\",
+        "projectPath": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj",
+        "packagesPath": "C:\\Users\\Paolo Muñoz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Persistence.Database\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Paolo Muñoz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -431,8 +435,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\proyectos\\UNACEM\\Code\\UNACEM.Domain\\UNACEM.Domain.csproj": {
-                "projectPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Domain\\UNACEM.Domain.csproj"
+              "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Domain\\UNACEM.Domain.csproj": {
+                "projectPath": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Domain\\UNACEM.Domain.csproj"
               }
             }
           }
@@ -476,24 +480,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\proyectos\\UNACEM\\Code\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj": {
+    "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj",
+        "projectUniqueName": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj",
         "projectName": "UNACEM.Service.Queries",
-        "projectPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Service.Queries\\obj\\",
+        "projectPath": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj",
+        "packagesPath": "C:\\Users\\Paolo Muñoz\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Service.Queries\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Paolo Muñoz\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -508,17 +512,17 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj": {
-                "projectPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj"
+              "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj": {
+                "projectPath": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj"
               },
-              "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj": {
-                "projectPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj"
+              "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj": {
+                "projectPath": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj"
               },
-              "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj": {
-                "projectPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj"
+              "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj": {
+                "projectPath": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj"
               },
-              "D:\\proyectos\\UNACEM\\Code\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj": {
-                "projectPath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj"
+              "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj": {
+                "projectPath": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj"
               }
             }
           }
@@ -562,7 +566,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -26,7 +26,7 @@ namespace UNACEM.Service.Queries
         Task<ProvidersResponse> Create(ProvidersRequest providersRequest);
         Task<ProvidersResponse> Update(ProvidersRequest providersRequest);
         Task<ProvidersResponse> GetAll(int Start, int Limit);
-        Task<ProvidersResponse> Upload(Stream stream, ProvidersRequest providersRequest);
+        Task<ProvidersResponse> Upload(Stream stream, int ProviderId);
      }
 
     public class ProvidersQueryService : IProvidersQueryService
@@ -100,15 +100,22 @@ namespace UNACEM.Service.Queries
                 var collection = await _context.Providers.AsNoTracking().OrderBy(x => x.Id).GetPagedAsync(Start, Limit);
                 var providersresult = collection.MapTo<DataCollection<ProvidersDto>>();
 
-                foreach (var item in providersresult.Items)
+                /*foreach (var item in providersresult.Items)
                 {
                     item.LastImportationDate = string.Empty;
-                    var ProviderImportations= _context.ProviderImportations.Where(x => x.ProviderId == item.Id).OrderByDescending(c => c.CreatedAt).FirstOrDefault();
+                    var ProviderImportations = _context.ProviderImportations.Where(x => x.ProviderId == item.Id).OrderByDescending(c => c.CreatedAt);
+                    //var ProviderImportations= _context.ProviderImportations.Where(x => x.ProviderId == item.Id).OrderByDescending(c => c.CreatedAt).FirstOrDefault();
                     if (ProviderImportations!=null)
                     {
-                        item.LastImportationDate = Convert.ToDateTime(ProviderImportations.CreatedAt).ToString("dd/MM/yyyy HH:mm");
+                        //item.LastImportationDate = Convert.ToDateTime(ProviderImportations.CreatedAt).ToString("dd/MM/yyyy HH:mm");
                     }
+                }*/
+
+                foreach (var p in providersresult.Items)
+                {
+
                 }
+
                 result.Success = true;
                 result.Message = "Se realizó satisfactoriamente";
                 result.Data = (List<ProvidersDto>)providersresult.Items;
@@ -123,7 +130,7 @@ namespace UNACEM.Service.Queries
 
             return result;
         }
-        public async Task<ProvidersResponse> Upload(Stream stream, ProvidersRequest providersRequest)
+        public async Task<ProvidersResponse> Upload(Stream stream, int ProviderId)
         {
             List<ProviderBricksDto> LstProviderBricks = new List<ProviderBricksDto>();
             List<ProviderInsulatingsDto> LstProviderInsulatings = new List<ProviderInsulatingsDto>();
@@ -138,8 +145,10 @@ namespace UNACEM.Service.Queries
                     //using (TransactionScope tx = new TransactionScope())
                     //{
                       //  await SomeAsyncMethod();
-                ProviderImportations.ProviderId = providersRequest.Id;
-                ProviderImportations.CreatedBy = providersRequest.CreatedBy;
+                ProviderImportations.ProviderId = ProviderId;
+                //@change: Update after implement token auth.
+                //ProviderImportations.CreatedBy = providersRequest.CreatedBy;
+                //ProviderImportations.CreatedBy = 1;
                 await _context.AddAsync(ProviderImportations);
                 await _context.SaveChangesAsync();
 
@@ -444,10 +453,20 @@ namespace UNACEM.Service.Queries
                             providerBricksDto.Composition = reader.GetString(2);
                             providerBricksDto.Density = reader.GetString(3);
                             providerBricksDto.Porosity = reader.GetString(4);
-                            providerBricksDto.Ccs = reader.GetDouble(5).ToString();
-                            providerBricksDto.ThermalConductivity300 = Convert.ToDecimal(reader.GetString(6));
+                            providerBricksDto.Ccs = reader.GetString(5);
+
+                            var ThermalConductivity300Val = reader.GetValue(6).ToString();
+                            providerBricksDto.ThermalConductivity300 = ThermalConductivity300Val != "" ? Convert.ToDecimal(ThermalConductivity300Val) : -1;
+
+                            var ThermalConductivity700Val = reader.GetValue(7).ToString();
+                            providerBricksDto.ThermalConductivity700 = ThermalConductivity700Val != "" ? Convert.ToDecimal(ThermalConductivity700Val) : -1;
+
+                            var ThermalConductivity100Val = reader.GetValue(8).ToString();
+                            providerBricksDto.ThermalConductivity100 = ThermalConductivity100Val != "" ? Convert.ToDecimal(ThermalConductivity100Val) : -1;
+
+                            /*providerBricksDto.ThermalConductivity300 = Convert.ToDecimal(reader.GetString(6));
                             providerBricksDto.ThermalConductivity700 = Convert.ToDecimal(reader.GetString(7));
-                            providerBricksDto.ThermalConductivity100 = Convert.ToDecimal(reader.GetString(8));
+                            providerBricksDto.ThermalConductivity100 = Convert.ToDecimal(reader.GetString(8));*/
 
                             var existeproviderBricks = listaProviderBricks.Where(a => a.Name == providerBricksDto.Name).FirstOrDefault();
                             if (existeproviderBricks!=null)
@@ -501,9 +520,19 @@ namespace UNACEM.Service.Queries
                             providerInsulatingsDto.MaterialNeeded = Convert.ToDouble(reader.GetString(3));
                             providerInsulatingsDto.WaterMix = reader.GetString(4);
                             providerInsulatingsDto.Temperature = Convert.ToDouble(reader.GetDouble(5));
-                            providerInsulatingsDto.ThermalConductivity300 = Convert.ToDouble(reader.GetString(6));
+
+                            var ThermalConductivity300Val = reader.GetValue(6).ToString();
+                            providerInsulatingsDto.ThermalConductivity300 = ThermalConductivity300Val != "" ? Convert.ToDouble(ThermalConductivity300Val) : -1;
+
+                            var ThermalConductivity700Val = reader.GetValue(7).ToString();
+                            providerInsulatingsDto.ThermalConductivity700 = ThermalConductivity700Val != "" ? Convert.ToDouble(ThermalConductivity700Val) : -1;
+
+                            var ThermalConductivity100Val = reader.GetValue(8).ToString();
+                            providerInsulatingsDto.ThermalConductivity100 = ThermalConductivity100Val != "" ? Convert.ToDouble(ThermalConductivity100Val) : -1;
+
+                            /*providerInsulatingsDto.ThermalConductivity300 = Convert.ToDouble(reader.GetString(6));
                             providerInsulatingsDto.ThermalConductivity700 = Convert.ToDouble(reader.GetString(7));
-                            providerInsulatingsDto.ThermalConductivity100 = Convert.ToDouble(reader.GetString(8));
+                            providerInsulatingsDto.ThermalConductivity100 = Convert.ToDouble(reader.GetString(8));*/
 
                             var existeProviderInsulatings = listaProviderInsulatings.Where(a => a.Name == providerInsulatingsDto.Name).FirstOrDefault();
                             if (existeProviderInsulatings != null)
@@ -562,10 +591,16 @@ namespace UNACEM.Service.Queries
                             providerConcretesDto.Composition = reader.GetString(2);
                             providerConcretesDto.MaterialNeeded = Convert.ToDouble(reader.GetString(3));
                             providerConcretesDto.WaterMix = reader.GetString(4);                         
-                            providerConcretesDto.Temperature = Convert.ToDouble(reader.GetDouble(5));
-                            providerConcretesDto.ThermalConductivity300 = Convert.ToDouble(reader.GetString(6));
-                            providerConcretesDto.ThermalConductivity700 = Convert.ToDouble(reader.GetString(7));
-                            providerConcretesDto.ThermalConductivity100 = Convert.ToDouble(reader.GetString(8));
+                            providerConcretesDto.Temperature = Convert.ToDouble(reader.GetString(5));
+                            
+                            var ThermalConductivity300Val = reader.GetValue(6).ToString();
+                            providerConcretesDto.ThermalConductivity300 = ThermalConductivity300Val != "" ? Convert.ToDouble(ThermalConductivity300Val) : -1;
+
+                            var ThermalConductivity700Val = reader.GetValue(7).ToString();
+                            providerConcretesDto.ThermalConductivity700 = ThermalConductivity700Val != "" ? Convert.ToDouble(ThermalConductivity700Val) : -1;
+
+                            var ThermalConductivity100Val = reader.GetValue(8).ToString();
+                            providerConcretesDto.ThermalConductivity100 = ThermalConductivity100Val != "" ? Convert.ToDouble(ThermalConductivity100Val) : -1;
 
                             var existeProviderConcretes = listaProviderConcretes.Where(a => a.Name == providerConcretesDto.Name).FirstOrDefault();
                             if (existeProviderConcretes != null)

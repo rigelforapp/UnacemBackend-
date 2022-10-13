@@ -44,8 +44,8 @@ namespace UNACEM.Service.Queries
             {
                 Ovens ovens = new Ovens();
                 // await SomeAsyncMethod();
-                ovens.HeadquarterId = ovensRequest.HeadquarterId;
-                ovens.UserId = ovensRequest.UserId;
+                ovens.Headquarter = ovensRequest.Headquarter;
+                ovens.UserId = 2;
                 ovens.Name = ovensRequest.Name;
                 ovens.Large = ovensRequest.Large;
                 ovens.Diameter = ovensRequest.Diameter;
@@ -94,34 +94,46 @@ namespace UNACEM.Service.Queries
             try
             {
                 var collection = await _context.Ovens.AsNoTracking().OrderBy(x => x.Id).GetPagedAsync(Start, Limit);
+
+                //var collection = (from Ovens in _context.Set<Ovens>() select Ovens).ToList<Object>();
+
                 var ovensresult = collection.MapTo<DataCollection<OvensDto>>();
 
                 #region Calculamos la cantidad de versiones
 
-                foreach (var ovens in ovensresult.Items)
+                foreach (var oven in ovensresult.Items)
                 {
                   
-                    var ovenstemporal = _context.Versions.Where(x => x.OvenId == ovens.Id).OrderByDescending(c => c.DateEnd).FirstOrDefault();
+                    var ovenstemporal = _context.Versions.Where(x => x.OvenId == oven.Id).OrderByDescending(c => c.DateEnd).FirstOrDefault();
                     if (ovenstemporal != null)
                     {
-                        var QuantityVersions = _context.Versions.Where(a => a.OvenId == ovens.Id).ToList().Count();
-                        ovens.QuantityVersions = QuantityVersions;
-                        ovens.LastDateEnd = Convert.ToDateTime(ovenstemporal.DateEnd).ToString("dd/MM/yyyy");
+                        var QuantityVersions = _context.Versions.Where(a => a.OvenId == oven.Id).ToList().Count();
+                        oven.QuantityVersions = QuantityVersions;
+                        oven.LastDateEnd = Convert.ToDateTime(ovenstemporal.DateEnd).ToString("dd/MM/yyyy");
 
                         #region Calculamos la cantidad de presupuestos
                         int cantidad = 0;
               
-                        foreach (var version in _context.Versions.Where(a => a.OvenId == ovens.Id).ToList())
+                        foreach (var version in _context.Versions.Where(a => a.OvenId == oven.Id).ToList())
                         {
                             var QuantityBudgets = _context.Budgets.Where(a => a.VersionId == version.Id).ToList().Count();
-                            cantidad = QuantityBudgets+cantidad;
-                            ovens.QuantityBudgets = cantidad;
+                            cantidad += QuantityBudgets;
+                            oven.QuantityBudgets = cantidad;
                         }
                         #endregion
-
+                    }
+                    else
+                    {
+                        oven.QuantityVersions = 0;
+                        oven.QuantityBudgets = 0;
+                        oven.LastDateEnd = null;
+                        oven.tyres = new List<Tyres>();
                     }
 
+                    #region Tyres
+                    oven.tyres = _context.Tyres.Where(t => t.OvenId == oven.Id).Where(t => t.DeletedAt == null).ToList();
 
+                    #endregion
                 }
 
 
@@ -147,48 +159,52 @@ namespace UNACEM.Service.Queries
             
             try
             {
-                var ovens = _context.Ovens.Where(a => a.Id == ovensRequest.Id).FirstOrDefault();
-                if (ovens != null)
+                var oven = _context.Ovens.Where(a => a.Id == ovensRequest.Id).FirstOrDefault();
+                if (oven != null)
                 {
-                    ovens.HeadquarterId = ovensRequest.HeadquarterId;
-                    ovens.UserId = ovensRequest.UserId;
-                    ovens.Name = ovensRequest.Name;
-                    ovens.Large = ovensRequest.Large;
-                    ovens.Diameter = ovensRequest.Diameter;
-                    //ovens.UpdatedBy = ovensRequest.UpdatedBy;
+                    oven.Headquarter = ovensRequest.Headquarter;
+                    oven.Name = ovensRequest.Name;
+                    oven.Large = ovensRequest.Large;
+                    oven.Diameter = ovensRequest.Diameter;
 
                     await _context.SaveChangesAsync();
 
+                    var tyresToDelete = _context.Tyres.Where(t => t.OvenId == oven.Id).ToList();
+                    foreach (var t in tyresToDelete)
+                    {
+                        t.DeletedAt = DateTime.Now;
+                        _context.Tyres.Update(t);
+                    }
+
                     if ( ovensRequest.Tyres.Count > 0)
                     {
-                        Tyres tyres = new Tyres();
+                        Tyres tyre = new Tyres();
                         foreach (var item in ovensRequest.Tyres)
                         {
-                           
-                            tyres = _context.Tyres.Where(t => t.Id == item.Id).FirstOrDefault();
 
-                            if(tyres == null)
+                            tyre = _context.Tyres.Where(t => t.Id == item.Id).FirstOrDefault();
+
+                            if(tyre == null)
                             {
-                                tyres = new Tyres();
-                                
-                                tyres.OvenId = ovensRequest.Id;
-                                tyres.ColorId = item.ColorId;
-                                tyres.TextureId = item.TextureId;
-                                tyres.Position = item.Position;
-                                //tyres.CreatedBy = ovensRequest.CreatedBy;
+                                tyre = new Tyres();
 
-                                await _context.AddAsync(tyres);
+                                tyre.OvenId = ovensRequest.Id;
+                                tyre.ColorId = item.ColorId;
+                                tyre.TextureId = item.TextureId;
+                                tyre.Position = item.Position;                                
+
+                                await _context.AddAsync(tyre);
                                 await _context.SaveChangesAsync();
                                 
                             }
                             else
                             {
-                                tyres.ColorId = item.ColorId;
-                                tyres.OvenId = ovensRequest.Id;
-                                tyres.TextureId = item.TextureId;
-                                tyres.Position = item.Position;
-                                //tyres.CreatedBy = ovensRequest.CreatedBy;
-                            
+                                tyre.ColorId = item.ColorId;
+                                tyre.OvenId = ovensRequest.Id;
+                                tyre.TextureId = item.TextureId;
+                                tyre.Position = item.Position;
+                                tyre.DeletedAt = null;
+
                                 await _context.SaveChangesAsync();
                             }
                         }

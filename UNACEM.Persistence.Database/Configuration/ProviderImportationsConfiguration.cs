@@ -9,9 +9,9 @@ namespace UNACEM.Persistence.Database.Configuration
         {
             entityBuilder.HasKey(x => x.Id);
     
-            entityBuilder.Property(x => x.CreatedBy).IsRequired().HasMaxLength(50);
+            //entityBuilder.Property(x => x.CreatedBy);
             entityBuilder.Property(x => x.CreatedAt).IsRequired().HasColumnType("DateTime");
-            entityBuilder.Property(x => x.UpdatedBy).HasMaxLength(50);
+            //entityBuilder.Property(x => x.UpdatedBy);
             entityBuilder.Property(x => x.UpdatedAt).HasColumnType("DateTime");
         }
     }

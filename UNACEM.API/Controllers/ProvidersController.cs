@@ -41,7 +41,7 @@ namespace UNACEM.API.Controllers
         }
 
         [HttpPost("UploadFile")]
-        public async Task<ProvidersResponse> UploadFile([FromForm] ProvidersRequest providersRequest,IFormFile File )
+        public async Task<ProvidersResponse> UploadFile([FromForm] int ProviderId,IFormFile File )
         {
             var ProvidersResponse = new ProvidersResponse();
             //var files = file;
@@ -53,12 +53,9 @@ namespace UNACEM.API.Controllers
                     var fileBytes = ms.ToArray();
                     string s = Convert.ToBase64String(fileBytes);
                     Stream stream = new MemoryStream(fileBytes);
-                    ProvidersResponse = await _providersQueryService.Upload(stream, providersRequest);
-
+                    ProvidersResponse = await _providersQueryService.Upload(stream, ProviderId);
                 }
-
             }
-        
 
             return ProvidersResponse;
         }

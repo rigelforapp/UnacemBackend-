@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ILJp9sspcVGyJLhc+QobGsDvGDNB56awfBxJFiB6rm/bTYEjQI7EAqYqQ6GhWgEPkNToyQBzPyEFBI5qiu55pw==",
+  "dgSpecHash": "LvexTAfccyp6MKR2PefYgGVH97aCGCS0s1qfpljZa5npy3EhVj/pGe7GrF+p9sPoiyaIYBmx94EiN7GyazSa0g==",
   "success": true,
-  "projectFilePath": "D:\\proyectos\\UNACEM\\Code\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj",
+  "projectFilePath": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\ASUS\\.nuget\\packages\\system.text.json\\5.0.1\\system.text.json.5.0.1.nupkg.sha512"
+    "C:\\Users\\Paolo Muñoz\\.nuget\\packages\\system.text.json\\5.0.1\\system.text.json.5.0.1.nupkg.sha512"
   ],
   "logs": []
 }

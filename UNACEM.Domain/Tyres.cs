@@ -15,8 +15,6 @@ namespace UNACEM.Domain
         public virtual Ovens Ovens { get; set; }
 
         public int ColorId { get; set; }
-        [ForeignKey("ColorId")] 
-        public virtual Color Color { get; set; }
 
         public int TextureId { get; set; }
 

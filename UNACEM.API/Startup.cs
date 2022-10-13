@@ -117,7 +117,7 @@ namespace UNACEM.API
         {
         
 
-            dataContext.Database.Migrate();
+            //dataContext.Database.Migrate();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
