@@ -8,11 +8,11 @@ using UNACEM.Domain.Interfaces;
 
 namespace UNACEM.Domain
 {
-    public class BudgetCiCurrency : AuditFields, IAuditFields
+    public class BudgetCICurrency : AuditFields, IAuditFields
     {
         public int Id { get; set; }
-        public int BudgetCiId { get; set; }
-        [ForeignKey("BudgetCiId")]
+        public int BudgetCIId { get; set; }
+        [ForeignKey("BudgetCIId")]
         public virtual BudgetsCi BudgetsCi { get; set; }
         public string Name { get; set; }
         public string Symbol { get; set; }

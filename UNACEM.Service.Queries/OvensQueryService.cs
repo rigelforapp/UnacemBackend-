@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -20,9 +21,9 @@ namespace UNACEM.Service.Queries
     public interface IOvensQueryService
     {
         #region Interfaces
-        Task<OvensResponse> Create(OvensRequest ovensRequest);
-        Task<OvensResponse> Update(OvensRequest ovensRequest);
-        Task<OvensResponse> GetAll(int Start, int Limit);
+        Task<OvensResponse> Create(OvensRequest ovensRequest, Users user);
+        Task<OvensResponse> Update(OvensRequest ovensRequest, Users user);
+        Task<OvensResponse> GetAll(int Start, int Limit, Users user);
         #endregion
 
     }
@@ -36,7 +37,7 @@ namespace UNACEM.Service.Queries
             _context = context;
         }
 
-        public async Task<OvensResponse> Create(OvensRequest ovensRequest)
+        public async Task<OvensResponse> Create(OvensRequest ovensRequest, Users user)
         {
             OvensResponse result = new OvensResponse();
 
@@ -45,12 +46,13 @@ namespace UNACEM.Service.Queries
                 Ovens ovens = new Ovens();
                 // await SomeAsyncMethod();
                 ovens.Headquarter = ovensRequest.Headquarter;
-                ovens.UserId = 2;
+                ovens.UserId = user.Id;
                 ovens.Name = ovensRequest.Name;
                 ovens.Large = ovensRequest.Large;
                 ovens.Diameter = ovensRequest.Diameter;
 
-                await _context.AddAsync(ovens);
+                //await _context.AddAsync(ovens);
+                _context.Ovens.Add(ovens);
                 await _context.SaveChangesAsync();
                 int TyresImportationId = ovens.Id;
 
@@ -87,7 +89,7 @@ namespace UNACEM.Service.Queries
             await Task.Delay(1000);
         }
 
-        public async Task<OvensResponse> GetAll(int Start, int Limit)
+        public async Task<OvensResponse> GetAll(int Start, int Limit, Users user)
         {
             OvensResponse result = new OvensResponse();
             
@@ -103,32 +105,21 @@ namespace UNACEM.Service.Queries
 
                 foreach (var oven in ovensresult.Items)
                 {
-                  
+
+                    oven.QuantityVersions = 0;
+                    oven.QuantityBudgets = 0;
+                    oven.LastDateEnd = null;
+                    oven.tyres = new List<Tyres>();
+
                     var ovenstemporal = _context.Versions.Where(x => x.OvenId == oven.Id).OrderByDescending(c => c.DateEnd).FirstOrDefault();
                     if (ovenstemporal != null)
                     {
                         var QuantityVersions = _context.Versions.Where(a => a.OvenId == oven.Id).ToList().Count();
                         oven.QuantityVersions = QuantityVersions;
-                        oven.LastDateEnd = Convert.ToDateTime(ovenstemporal.DateEnd).ToString("dd/MM/yyyy");
+                        oven.LastDateEnd = Convert.ToDateTime(ovenstemporal.DateEnd).ToString("yyyy-MM-dd");
+                    }
 
-                        #region Calculamos la cantidad de presupuestos
-                        int cantidad = 0;
-              
-                        foreach (var version in _context.Versions.Where(a => a.OvenId == oven.Id).ToList())
-                        {
-                            var QuantityBudgets = _context.Budgets.Where(a => a.VersionId == version.Id).ToList().Count();
-                            cantidad += QuantityBudgets;
-                            oven.QuantityBudgets = cantidad;
-                        }
-                        #endregion
-                    }
-                    else
-                    {
-                        oven.QuantityVersions = 0;
-                        oven.QuantityBudgets = 0;
-                        oven.LastDateEnd = null;
-                        oven.tyres = new List<Tyres>();
-                    }
+
 
                     #region Tyres
                     oven.tyres = _context.Tyres.Where(t => t.OvenId == oven.Id).Where(t => t.DeletedAt == null).ToList();
@@ -153,7 +144,7 @@ namespace UNACEM.Service.Queries
             return result;
         }
 
-        public async Task<OvensResponse> Update(OvensRequest ovensRequest)
+        public async Task<OvensResponse> Update(OvensRequest ovensRequest, Users user)
         {
             OvensResponse result = new OvensResponse();
             

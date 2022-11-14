@@ -4,8 +4,8 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project>
   <PropertyGroup>
-    <_PublishTargetUrl>D:\Proyectos Externos\BackEnd\UNACEM.API\bin\Release\net6.0\publish\</_PublishTargetUrl>
-    <History>True|2022-08-29T19:31:11.1569370Z;True|2022-08-29T13:12:30.2622454-05:00;True|2022-08-29T13:11:41.9297658-05:00;True|2022-08-29T12:02:50.8704590-05:00;True|2022-08-29T12:02:41.4577904-05:00;True|2022-08-29T11:55:50.9956675-05:00;True|2022-08-29T11:53:25.2755538-05:00;True|2022-08-29T10:27:24.2113017-05:00;</History>
+    <_PublishTargetUrl>C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.API\bin\Release\net6.0\publish\</_PublishTargetUrl>
+    <History>True|2022-11-06T22:22:11.4957290Z;True|2022-11-06T17:08:22.7954594-05:00;True|2022-11-04T14:50:39.2759916-05:00;True|2022-08-29T14:31:11.1569370-05:00;True|2022-08-29T13:12:30.2622454-05:00;True|2022-08-29T13:11:41.9297658-05:00;True|2022-08-29T12:02:50.8704590-05:00;True|2022-08-29T12:02:41.4577904-05:00;True|2022-08-29T11:55:50.9956675-05:00;True|2022-08-29T11:53:25.2755538-05:00;True|2022-08-29T10:27:24.2113017-05:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>

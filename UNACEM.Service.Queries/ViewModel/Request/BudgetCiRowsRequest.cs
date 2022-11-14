@@ -17,6 +17,8 @@ namespace UNACEM.Service.Queries.ViewModel.Request
         public decimal Area { get; set; }
         public double ThicknessC { get; set; }
         public double ThicknessI { get; set; }
+        public double materialRequirementC { get; set; }
+        public double materialRequirementI { get; set; }
         public int? ProviderInsulatingId { get; set; }
         public int? ProviderConcretesId { get; set; }
         public double CostC { get; set; }

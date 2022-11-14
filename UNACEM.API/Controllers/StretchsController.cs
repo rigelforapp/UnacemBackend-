@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using UNACEM.API.Authorization;
 using UNACEM.Common.Configuration;
 using UNACEM.Service.Queries;
 using UNACEM.Service.Queries.ViewModel;
@@ -14,7 +15,8 @@ namespace UNACEM.API.Controllers
 {
     //[Route("api/[controller]")]
     [ApiController]
-    [Route("Ovens/Versions/Stretchs")]
+    [Route("ovens/versions/stretchs")]
+    [Auth]
     public class StretchsController : ControllerBase
     {
         private readonly IStretchsQueryService _stretchsQueryService;
@@ -31,9 +33,9 @@ namespace UNACEM.API.Controllers
         }
 
         [HttpGet]
-        public async Task<StretchsResponse> GetAll(int VersionId, int Start = Manager.VariableGlobal.Numero.Uno, int Limit = Manager.VariableGlobal.Numero.Diez)
+        public async Task<StretchsResponse> GetAll(int versionId, int start = Manager.VariableGlobal.Numero.Uno, int limit = Manager.VariableGlobal.Numero.Diez)
         {
-            return await _stretchsQueryService.GetAll(VersionId, Start, Limit);
+            return await _stretchsQueryService.GetAll(versionId, start, limit);
         }
 
         [HttpPut]

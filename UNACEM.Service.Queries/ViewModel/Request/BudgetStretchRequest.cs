@@ -20,5 +20,9 @@ namespace UNACEM.Service.Queries.ViewModel.Request
         public double WedgeACost { get; set; }
         public double WedgeBCost { get; set; }
         public double TotalAmount { get; set; }
+        public int BrickLNormal { get; set; }
+        public int positionIni { get; set; }
+        public int positionEnd { get; set; }
+        public int? ProviderBrickId { get; set; }
     }
 }

@@ -29,12 +29,17 @@ namespace UNACEM.Service.Queries
         {
             _context = context;
         }
-        public async Task<BrickFormatsResponse> GetAll(int Diameter, int Start, int Limit)
+        public async Task<BrickFormatsResponse> GetAll(int diameter, int start, int limit)
         {
             var result = new BrickFormatsResponse();
             try
             {
-                var collection = await _context.BrickFormats.AsNoTracking().Where(a=>a.Diameter== Diameter).OrderByDescending(x => x.Id).GetPagedAsync(Start, Limit);
+                var collection = await _context.BrickFormats.AsNoTracking().Where(a => a.Diameter == diameter && a.DeletedAt == null).OrderByDescending(x => x.Id).GetPagedAsync(start, limit); ;
+                if (diameter==0)
+                {
+                    collection = await _context.BrickFormats.AsNoTracking().Where(a => a.DeletedAt == null).OrderByDescending(x => x.Id).GetPagedAsync(start, limit);
+                }
+
                 var providersresult = collection.MapTo<DataCollection<BrickFormatsDto>>();
 
                 result.Success = true;
@@ -111,24 +116,55 @@ namespace UNACEM.Service.Queries
                                         continue;
                                     }
                                     else {
-                                        var brickPairs  = listBrickpairs[iCol];
 
-                                        var brickPair   = brickPairs.Split(":");
-                                        var brickPairQ  = brickPairQuantity.Split(":");
+                                        var brickPairQ = brickPairQuantity.Split(":");
 
-                                        if (brickPairQuantity!="")
+                                        var brickPairsString  = listBrickpairs[iCol];
+                                        var brickPairs = brickPairsString.Split(':');
+
+                                        if (brickPairs.Length > 2)
                                         {
-                                            var brickFormat = new BrickFormats();
-                                            brickFormat.Group = brickGroup;
-                                            brickFormat.BrickA = brickPair[0];
-                                            brickFormat.BrickB = brickPair[1];
-                                            brickFormat.QuantityA = int.Parse(brickPairQ[0]);
-                                            brickFormat.QuantityB = int.Parse(brickPairQ[1]);
-                                            brickFormat.Diameter = diameter;
+                                            var newBrickPairsString = "";
+                                            foreach (var bp in brickPairs)
+                                            {
+                                                var part = bp;
+                                                if (bp.Length>3)
+                                                {
+                                                    part = bp.Substring(0, 3) + "-" + bp.Substring(3, 3);
+                                                }
 
-                                            await _context.AddAsync(brickFormat);
-                                            await _context.SaveChangesAsync();
+                                                newBrickPairsString += part + ":";
+                                            }
+
+                                            newBrickPairsString = newBrickPairsString.Substring(0, newBrickPairsString.Length - 1);
+
+                                            brickPairs = newBrickPairsString.Split('-');
                                         }
+                                        else
+                                        {
+                                            brickPairs = brickPairsString.Split('\n');
+                                        }
+
+                                        foreach (var bp in brickPairs)
+                                        {
+                                            var brickPair = bp.Split(":");
+
+                                            if (brickPairQuantity != "")
+                                            {
+                                                var brickFormat = new BrickFormats();
+                                                brickFormat.Group = brickGroup;
+                                                brickFormat.BrickA = brickPair[0];
+                                                brickFormat.BrickB = brickPair[1];
+                                                brickFormat.QuantityA = int.Parse(brickPairQ[0]);
+                                                brickFormat.QuantityB = int.Parse(brickPairQ[1]);   
+                                                brickFormat.Diameter = diameter;
+
+                                                await _context.AddAsync(brickFormat);
+                                                await _context.SaveChangesAsync();
+                                            }
+                                        }
+
+                                        
                                         
                                     }
                                 }

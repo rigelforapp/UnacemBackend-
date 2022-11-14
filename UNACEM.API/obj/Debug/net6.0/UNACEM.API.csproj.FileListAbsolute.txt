@@ -375,3 +375,6 @@ C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.API\obj\D
 C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.API\obj\Debug\net6.0\UNACEM.API.genruntimeconfig.cache
 C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.API\obj\Debug\net6.0\ref\UNACEM.API.dll
 C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.API\bin\Debug\net6.0\RestSharp.dll
+C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.API\bin\Debug\net6.0\Newtonsoft.Json.dll

@@ -17,10 +17,10 @@ namespace UNACEM.Service.Queries
 {
     public interface ICurrencyQueryService
     {
-        Task<CurrencyResponse> Create(BudgetCiCurrencyRequest budgetCiCurrencyRequest);
-        Task<CurrencyResponse> Update(BudgetCiCurrencyRequest budgetCiCurrencyRequest);
-        Task<CurrencyResponse> Delete(BudgetCiCurrencyRequest budgetCiCurrencyRequest);
-        Task<CurrencyResponse> GetAll(BudgetCiCurrencyRequest budgetCiCurrencyRequest);
+        Task<CurrencyResponse> Create(CurrencyRequest budgetCiCurrencyRequest);
+        Task<CurrencyResponse> Update(CurrencyRequest budgetCiCurrencyRequest);
+        Task<CurrencyResponse> Delete(CurrencyRequest budgetCiCurrencyRequest);
+        Task<CurrencyResponse> GetAll(string type = "budget", int entityId = 0);
     }
 
     public class CurrencyQueryService : ICurrencyQueryService
@@ -32,20 +32,34 @@ namespace UNACEM.Service.Queries
             _context = context;
         }
 
-        public async Task<CurrencyResponse> Create(BudgetCiCurrencyRequest budgetCiCurrencyRequest)
+        public async Task<CurrencyResponse> Create(CurrencyRequest request)
         {
             CurrencyResponse result = new CurrencyResponse();
 
             try
             {
-                await _context.AddAsync(new BudgetCiCurrency()
+                if (request.Type == "budget")
                 {
-                    BudgetCiId = budgetCiCurrencyRequest.BudgetCiId,
-                    Name = budgetCiCurrencyRequest.Name,
-                    Symbol = budgetCiCurrencyRequest.Symbol,
-                    Equivalence = budgetCiCurrencyRequest.Equivalence,
+                    await _context.AddAsync(new BudgetCurrency()
+                    {
+                        BudgetId = request.EntityId,
+                        Name = request.Name,
+                        Symbol = request.Symbol,
+                        Equivalence = request.Equivalence,
 
-                });
+                    });
+                }
+                else {
+                    await _context.AddAsync(new BudgetCICurrency()
+                    {
+                        BudgetCIId = request.EntityId,
+                        Name = request.Name,
+                        Symbol = request.Symbol,
+                        Equivalence = request.Equivalence,
+
+                    });
+                }
+                
 
                 await _context.SaveChangesAsync();
                 result.Success = true;
@@ -61,13 +75,13 @@ namespace UNACEM.Service.Queries
             return result;
         }
 
-        public async Task<CurrencyResponse> Delete(BudgetCiCurrencyRequest budgetCiCurrencyRequest)
+        public async Task<CurrencyResponse> Delete(CurrencyRequest budgetCiCurrencyRequest)
         {
             CurrencyResponse result = new CurrencyResponse();
 
             try
             {
-                var budgetCiCurrency = _context.BudgetCiCurrency.Where(b => b.Id == budgetCiCurrencyRequest.Id).FirstOrDefault();
+                var budgetCiCurrency = _context.BudgetCICurrency.Where(b => b.Id == budgetCiCurrencyRequest.Id).FirstOrDefault();
 
                 if (budgetCiCurrency != null)
                 {
@@ -95,13 +109,21 @@ namespace UNACEM.Service.Queries
             return result;
         }
 
-        public async Task<CurrencyResponse> GetAll(BudgetCiCurrencyRequest budgetCiCurrencyRequest)
+        public async Task<CurrencyResponse> GetAll(string type = "budget", int entityId = 0)
         {
             CurrencyResponse result = new CurrencyResponse();
 
             try
             {
-                var collection = _context.BudgetCiCurrency.Where(x => x.BudgetCiId == budgetCiCurrencyRequest.BudgetCiId && x.DeletedAt == null).Cast<object>().ToList();
+                var collection = new List<object>();
+                if (type == "budget")
+                {
+                    collection = _context.BudgetCurrency.Where(x => x.BudgetId == entityId && x.DeletedAt == null).Cast<object>().ToList();
+                }
+                else {
+                    collection = _context.BudgetCICurrency.Where(x => x.BudgetCIId == entityId && x.DeletedAt == null).Cast<object>().ToList();
+                }
+
                 result.Data = collection;
                 
                 //var budgetCiCurrency = collection.MapTo<DataCollection<BudgetCiCurrencyDto>>();
@@ -120,20 +142,20 @@ namespace UNACEM.Service.Queries
             return result;
         }
 
-        public async Task<CurrencyResponse> Update(BudgetCiCurrencyRequest budgetCiCurrencyRequest)
+        public async Task<CurrencyResponse> Update(CurrencyRequest request)
         {
             CurrencyResponse result = new CurrencyResponse();
 
             try
             {
-                var budgetCiCurrency = _context.BudgetCiCurrency.Where(b => b.Id == budgetCiCurrencyRequest.Id).FirstOrDefault();
+                var budgetCiCurrency = _context.BudgetCICurrency.Where(b => b.Id == request.Id).FirstOrDefault();
 
                 if (budgetCiCurrency != null)
                 {
-                    budgetCiCurrency.BudgetCiId = budgetCiCurrencyRequest.BudgetCiId;
-                    budgetCiCurrency.Name = budgetCiCurrencyRequest.Name;
-                    budgetCiCurrency.Symbol = budgetCiCurrencyRequest.Symbol;
-                    budgetCiCurrency.Equivalence = budgetCiCurrencyRequest.Equivalence;
+                    budgetCiCurrency.BudgetCIId = request.EntityId;
+                    budgetCiCurrency.Name = request.Name;
+                    budgetCiCurrency.Symbol = request.Symbol;
+                    budgetCiCurrency.Equivalence = request.Equivalence;
 
                     await _context.SaveChangesAsync();
                     result.Success = true;

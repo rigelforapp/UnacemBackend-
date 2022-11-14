@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using UNACEM.API.Authorization;
 using UNACEM.Common.Configuration;
 using UNACEM.Service.Queries;
 using UNACEM.Service.Queries.ViewModel.Request;
@@ -14,7 +15,8 @@ namespace UNACEM.API.Controllers
 {
     //[Route("api/[controller]")]
     [ApiController]
-    [Route("Gallery")]
+    [Route("ovens/versions/gallery")]
+    [Auth]
     public class GalleryController : ControllerBase
     {
         private readonly IGalleryQueryService _galleryQueryService;

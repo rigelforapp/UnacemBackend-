@@ -14,5 +14,7 @@ namespace UNACEM.Domain
         public string Description { get; set; }
         public DateTime? Date { get; set; }
         public double? Total { get; set; }
+        public List<BudgetCiRows> BudgetCIRows { get; set; }
+        public int UserId { get; set; }
     }
 }

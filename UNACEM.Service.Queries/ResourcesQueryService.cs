@@ -43,25 +43,37 @@ namespace UNACEM.Service.Queries
                                     on ProviderBricks.ProviderImportationId equals ProviderImportations.Id
                                 join Providers in _context.Set<Providers>()
                                     on ProviderImportations.ProviderId equals Providers.Id
-                                where(Providers.Id == ProviderId)
+                                where(Providers.Id == ProviderId) where (ProviderBricks.DeletedAt == null)
                                 select ProviderBricks ).ToList<Object>();
-
-                    //var collection = _context.ProviderBricks.Where(x => x.DeletedAt != null).Cast<object>().ToList();
                  
                     result.Data = providerBricks;
                 }
                 else if (Type.ToUpper() == "insulating".ToUpper())
                 {
-                    var collection = _context.ProviderInsulatings.Where(x => x.DeletedAt != null).Cast<object>().ToList();
-                    result.Data = collection;
+                    var list = (from ProviderInsulatings in _context.Set<ProviderInsulatings>()
+                                               join ProviderImportations in _context.Set<ProviderImportations>()
+                                                   on ProviderInsulatings.ProviderImportationId equals ProviderImportations.Id
+                                               join Providers in _context.Set<Providers>()
+                                                   on ProviderImportations.ProviderId equals Providers.Id
+                                               where (Providers.Id == ProviderId)
+                                               where (ProviderInsulatings.DeletedAt == null)
+                                               select ProviderInsulatings).ToList<Object>();
+
+                    result.Data = list;
 
                 }
                 else if (Type.ToUpper() == "concrete".ToUpper())
                 {
-                    var collection = _context.ProviderConcretes.Where(x => x.DeletedAt != null).Cast<object>().ToList();
+                    var list = (from ProviderConcretes in _context.Set<ProviderConcretes>()
+                                               join ProviderImportations in _context.Set<ProviderImportations>()
+                                                   on ProviderConcretes.ProviderImportationId equals ProviderImportations.Id
+                                               join Providers in _context.Set<Providers>()
+                                                   on ProviderImportations.ProviderId equals Providers.Id
+                                               where (Providers.Id == ProviderId)
+                                               where (ProviderConcretes.DeletedAt == null)
+                                               select ProviderConcretes).ToList<Object>();
 
-
-                    result.Data = collection;
+                    result.Data = list;
                 }
                 result.Success = true;
                 result.Message = "Se realizó satisfactoriamente";

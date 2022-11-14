@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace UNACEM.Persistence.Database.Configuration
 {
-    public class BudgetCiCurrencyConfiguration
+    public class BudgetCICurrencyConfiguration
     {
-        public BudgetCiCurrencyConfiguration(EntityTypeBuilder<UNACEM.Domain.BudgetCiCurrency> entityBuilder)
+        public BudgetCICurrencyConfiguration(EntityTypeBuilder<UNACEM.Domain.BudgetCICurrency> entityBuilder)
         {
             entityBuilder.HasKey(x => x.Id);
             entityBuilder.Property(x => x.Name).HasColumnType("varchar").HasMaxLength(500);

@@ -34,9 +34,12 @@ namespace UNACEM.Persistence.Database
         public DbSet<UNACEM.Domain.Gallery> Gallery { get; set; }
         public DbSet<UNACEM.Domain.ProviderInsulatings> ProviderInsulatings { get; set; }
         public DbSet<UNACEM.Domain.ProviderConcretes> ProviderConcretes { get; set; }
-        public DbSet<UNACEM.Domain.BudgetCiCurrency> BudgetCiCurrency{ get; set; }
+        public DbSet<UNACEM.Domain.BudgetCICurrency> BudgetCICurrency{ get; set; }
         public DbSet<UNACEM.Domain.BudgetsCi> BudgetsCi { get; set; }
         public DbSet<UNACEM.Domain.BudgetCiRows> BudgetCiRows { get; set; }
+        public DbSet<UNACEM.Domain.Tickness> Tickness { get; set; }
+        public DbSet<UNACEM.Domain.TicknessVersions> TicknessVersions { get; set; }
+        public DbSet<UNACEM.Domain.TicknessVersionRegisters> TicknessVersionRegisters { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -63,10 +66,12 @@ namespace UNACEM.Persistence.Database
             new GalleryConfiguration(modelBuilder.Entity<UNACEM.Domain.Gallery>());
             new ProviderConcretesConfiguration(modelBuilder.Entity<UNACEM.Domain.ProviderConcretes>());
             new ProviderInsulatingsConfiguration(modelBuilder.Entity<UNACEM.Domain.ProviderInsulatings>());
-            new BudgetCiCurrencyConfiguration(modelBuilder.Entity<UNACEM.Domain.BudgetCiCurrency>());
+            new BudgetCICurrencyConfiguration(modelBuilder.Entity<UNACEM.Domain.BudgetCICurrency>());
             new BudgetsCiConfiguration(modelBuilder.Entity<UNACEM.Domain.BudgetsCi>());
             new BudgetCiRowsConfiguration(modelBuilder.Entity<UNACEM.Domain.BudgetCiRows>());
-
+            new TicknessConfiguration(modelBuilder.Entity<UNACEM.Domain.Tickness>());
+            new TicknessVersionConfiguration(modelBuilder.Entity<UNACEM.Domain.TicknessVersions>());
+            new TicknessVersionRegisterConfiguration(modelBuilder.Entity<UNACEM.Domain.TicknessVersionRegisters>());
         }
 
 

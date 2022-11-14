@@ -20,14 +20,16 @@ namespace UNACEM.Domain
         [Column(TypeName = "decimal(5, 2)")]
         public decimal Area { get; set; }
         public double ThicknessC { get; set; }
-        public double ThicknessI { get; set; }
+        public double ThicknessI { get; set; }        
+        public double materialRequirementC { get; set; }
+        public double materialRequirementI { get; set; }
 
         public int? ProviderInsulatingId { get; set; }
         [ForeignKey("ProviderInsulatingId")]
         public virtual ProviderInsulatings ProviderInsulatings { get; set; }
 
-        public int? ProviderConcretesId { get; set; }
-        [ForeignKey("ProviderConcretesId")]
+        public int? ProviderConcreteId { get; set; }
+        [ForeignKey("ProviderConcreteId")]
         public virtual ProviderConcretes ProviderConcretes { get; set; }
 
         public double CostC { get; set; }

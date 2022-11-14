@@ -16,12 +16,9 @@ namespace UNACEM.Domain
         public string Density { get; set; }
         public string Porosity { get; set; }
         public string Ccs { get; set; }
-        [Column(TypeName = "decimal(5, 2)")]
-        public decimal ThermalConductivity300 { get; set; }
-        [Column(TypeName = "decimal(5, 2)")]
-        public decimal ThermalConductivity700 { get; set; }
-        [Column(TypeName = "decimal(5, 2)")] 
-        public decimal ThermalConductivity100 { get; set; }
+        public string ThermalConductivity300 { get; set; }
+        public string ThermalConductivity700 { get; set; }
+        public string ThermalConductivity100 { get; set; }
 
     }
 }

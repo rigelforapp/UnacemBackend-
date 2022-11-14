@@ -7,6 +7,7 @@ C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.API\obj\R
 C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.API\obj\Release\net6.0\PubTmp\Out\EPPlus.dll
 C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.API\obj\Release\net6.0\PubTmp\Out\ExcelDataReader.dll
 C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.API\obj\Release\net6.0\PubTmp\Out\ExcelDataReader.DataSet.dll
+C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.API\obj\Release\net6.0\PubTmp\Out\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.API\obj\Release\net6.0\PubTmp\Out\Microsoft.Data.SqlClient.dll
 C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.API\obj\Release\net6.0\PubTmp\Out\Microsoft.EntityFrameworkCore.dll
 C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.API\obj\Release\net6.0\PubTmp\Out\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -21,6 +22,8 @@ C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.API\obj\R
 C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.API\obj\Release\net6.0\PubTmp\Out\Microsoft.IdentityModel.Tokens.dll
 C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.API\obj\Release\net6.0\PubTmp\Out\Microsoft.OpenApi.dll
 C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.API\obj\Release\net6.0\PubTmp\Out\Microsoft.Win32.SystemEvents.dll
+C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.API\obj\Release\net6.0\PubTmp\Out\Newtonsoft.Json.dll
+C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.API\obj\Release\net6.0\PubTmp\Out\RestSharp.dll
 C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.API\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.API\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.API\obj\Release\net6.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll

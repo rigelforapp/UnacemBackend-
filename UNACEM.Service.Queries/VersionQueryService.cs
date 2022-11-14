@@ -43,11 +43,28 @@ namespace UNACEM.Service.Queries
 
                 version.OvenId = versionRequest.OvenId;
                 version.Name = versionRequest.Name;
-                //version.DateIni = Convert.ToDateTime(versionRequest.DateIni);
-                //version.DateEnd = Convert.ToDateTime(versionRequest.DateEnd);
                 version.DateIni =versionRequest.DateIni;
                 version.DateEnd =versionRequest.DateEnd;
                 await _context.AddAsync(version);
+                await _context.SaveChangesAsync();
+
+                foreach (var s in versionRequest.Stretchs)
+                {
+                    
+                    // Create
+                    var newS = new Stretchs();
+                    newS.VersionId = version.Id;
+                    newS.TextureId = s.TextureId;
+                    newS.ColorId = s.ColorId;
+                    newS.PositionIni = s.PositionIni;
+                    newS.PositionEnd = s.PositionEnd;
+                    newS.BrickFormatId = s.BrickFormatId;
+                    newS.ProviderBrickId = s.ProviderBrickId;
+                    newS.CreatedAt = DateTime.Now;
+
+                    _context.Stretchs.Add(newS);
+                }
+
                 await _context.SaveChangesAsync();
 
                 result.Success = true;

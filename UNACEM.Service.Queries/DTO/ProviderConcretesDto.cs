@@ -15,12 +15,11 @@ namespace UNACEM.Service.Queries.DTO
         public string Name { get; set; }
         public string RecommendedZone { get; set; }
         public string Composition { get; set; }
-        public double MaterialNeeded { get; set; }
+        public string MaterialNeeded { get; set; }
         public string WaterMix { get; set; }
-        public double Temperature { get; set; }
-        public double ThermalConductivity300 { get; set; }
-        public double ThermalConductivity700 { get; set; }
-        public double ThermalConductivity100 { get; set; }
-        public DateTime CreatedAt { get; set; }
+        public string Temperature { get; set; }
+        public string ThermalConductivity300 { get; set; }
+        public string ThermalConductivity700 { get; set; }
+        public string ThermalConductivity100 { get; set; }
     }
 }

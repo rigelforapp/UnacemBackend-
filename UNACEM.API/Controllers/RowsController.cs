@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using UNACEM.API.Authorization;
 using UNACEM.Service.Queries;
 using UNACEM.Service.Queries.ViewModel.Request;
 using UNACEM.Service.Queries.ViewModel.Response;
@@ -8,7 +9,8 @@ using UNACEM.Service.Queries.ViewModel.Response;
 namespace UNACEM.API.Controllers
 {
     [ApiController]
-    [Route("budgetCI/Row")]
+    [Route("budget-ci/row")]
+    [Auth]
     public class RowsController : ControllerBase
     {
         private readonly IRowsQueryService _rowsQueryService;

@@ -39,7 +39,7 @@ namespace UNACEM.Service.Queries
                     ThicknessC = budgetCiRowsRequest.ThicknessC,
                     ThicknessI = budgetCiRowsRequest.ThicknessI,
                     ProviderInsulatingId = budgetCiRowsRequest.ProviderInsulatingId,
-                    ProviderConcretesId = budgetCiRowsRequest.ProviderConcretesId,
+                    ProviderConcreteId = budgetCiRowsRequest.ProviderConcretesId,
                     CostC = budgetCiRowsRequest.CostC,
                     CostI = budgetCiRowsRequest.CostI,
                     Total = budgetCiRowsRequest.Total,
@@ -110,7 +110,7 @@ namespace UNACEM.Service.Queries
                     budgetCiRows.ThicknessC = budgetCiRowsRequest.ThicknessC;
                     budgetCiRows.ThicknessI = budgetCiRowsRequest.ThicknessI;
                     budgetCiRows.ProviderInsulatingId = budgetCiRowsRequest.ProviderInsulatingId;
-                    budgetCiRows.ProviderConcretesId = budgetCiRowsRequest.ProviderConcretesId;
+                    budgetCiRows.ProviderConcreteId = budgetCiRowsRequest.ProviderConcretesId;
                     budgetCiRows.CostC = budgetCiRowsRequest.CostC;
                     budgetCiRows.CostI = budgetCiRowsRequest.CostI;
                     budgetCiRows.Total = budgetCiRowsRequest.Total;

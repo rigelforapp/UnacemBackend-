@@ -7,7 +7,7 @@ using UNACEM.Domain;
 
 namespace UNACEM.Service.Queries.DTO
 {
-    public class BudgetCiDto
+    public class BudgetCiDto : AuditFields
     {
         public int Id { get; set; }
         public string Line { get; set; }
@@ -18,10 +18,5 @@ namespace UNACEM.Service.Queries.DTO
         public List<BudgetCiRowsDto> Rows { get; set; }
         public List<BudgetCiCurrencyDto> Currencies { get; set; }
 
-       public BudgetCiDto() {
-            Rows = new List<BudgetCiRowsDto>();
-            Currencies= new List<BudgetCiCurrencyDto>();
-
-        }
     }
 }

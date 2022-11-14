@@ -15,20 +15,17 @@ namespace UNACEM.Service.Queries.DTO
         public decimal Area { get; set; }
         public double ThicknessC { get; set; }
         public double ThicknessI { get; set; }
+        public double materialRequirementC { get; set; }
+        public double materialRequirementI { get; set; }
+
         public int? ProviderInsulatingId { get; set; }
-        public int? ProviderConcretesId { get; set; }
+        public int? ProviderConcreteId { get; set; }
         public double CostC { get; set; }
         public double CostI { get; set; }
         public double Total { get; set; }
 
-        public ProviderInsulatingsDto ProviderInsulatings { get; set; }
-        public ProviderConcretesDto ProviderConcretes{ get; set; }
-
-        public BudgetCiRowsDto()
-        {
-            ProviderInsulatings = new ProviderInsulatingsDto();
-            ProviderConcretes = new ProviderConcretesDto();
-        }
+        public ProviderInsulatingsDto Insulating { get; set; }
+        public ProviderConcretesDto Concrete{ get; set; }
 
     }
 }

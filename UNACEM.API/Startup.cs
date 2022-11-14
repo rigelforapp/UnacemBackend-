@@ -16,6 +16,12 @@ using UNACEM.Service.Queries;
 using UNACEM.Service.Queries.ViewModel;
 using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Mvc.Formatters;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using UNACEM.API.Helpers;
+using UNACEM.API.Authorization;
 
 namespace UNACEM.API
 {
@@ -38,6 +44,9 @@ namespace UNACEM.API
                      )
                  );
 
+            //services.AddSingleton<IAuthorizationPolicyProvider, >();
+            //services.AddSingleton<IAuthorizationHandler, A2AuthorizePermissionHandler>();
+
             services.AddTransient<IFormatsQueryService, FormatsQueryService>();
             services.AddTransient<IOvensQueryService, OvensQueryService>();
             services.AddTransient<IProvidersQueryService, ProvidersQueryService>();
@@ -49,6 +58,9 @@ namespace UNACEM.API
             services.AddTransient<ICurrencyQueryService, CurrencyQueryService>();
             services.AddTransient<IRowsQueryService, RowsQueryService>();
             services.AddTransient<IBudgetCiQueryService, BudgetCiQueryService>();
+            services.AddTransient<ITicknessQueryService, TicknessQueryService>();
+            services.AddTransient<ITicknessVersionQueryService, TicknessVersionQueryService>();
+            services.AddTransient<IAuthQueryService, AuthQueryService>();
 
             services.AddSwaggerGen(c => {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "UNACEM.API", Version = "v1" });
@@ -110,12 +122,35 @@ namespace UNACEM.API
 
             });
             services.AddControllers();
+
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(o =>
+            {
+                o.TokenValidationParameters = new TokenValidationParameters
+                {
+                    IssuerSigningKey = new SymmetricSecurityKey
+                    (Encoding.UTF8.GetBytes(Configuration["Key"])),
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = false
+                };
+            });
+
+
+            services.AddAuthorization();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env , ApplicationDbContext dataContext)
         {
-        
+            app.UseMiddleware<JwtMiddleware>();
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             //dataContext.Database.Migrate();
             if (env.IsDevelopment())
@@ -125,7 +160,7 @@ namespace UNACEM.API
             app.UseDeveloperExceptionPage();
             app.UseRouting();
 
-            app.UseAuthorization();
+            
 
             app.UseCors(x => x
                    .AllowAnyMethod()
@@ -140,6 +175,7 @@ namespace UNACEM.API
             {
                 endpoints.MapControllers();
             });
+
         }
     }
 }
