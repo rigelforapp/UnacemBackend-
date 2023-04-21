@@ -17,8 +17,8 @@ namespace UNACEM.Domain
         public virtual BrickFormats BrickFormats { get; set; }
 
         public int BrickLNormal { get; set; }
-        public int positionIni { get; set; }
-        public int positionEnd { get; set; }
+        public double positionIni { get; set; }
+        public double positionEnd { get; set; }
         public int? ProviderBrickId { get; set; }
         public double TotalAmount { get; set; }
         public double WedgeAQuantity { get; set; }

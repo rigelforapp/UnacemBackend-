@@ -94,12 +94,16 @@ namespace UNACEM.Service.Queries
 
                 if(gallery != null)
                 {
-                    gallery.VersionId = galleryRequest.VersionId;
-                    gallery.Type = galleryRequest.Type;
-                    gallery.Name = galleryRequest.Name;
                     gallery.Title = galleryRequest.Title;
-                    gallery.Image = galleryRequest.Image;
                     gallery.Description = galleryRequest.Description;
+                    gallery.VersionId = galleryRequest.VersionId;
+
+                    if (galleryRequest.Image != null)
+                    {
+                        gallery.Image = galleryRequest.Image;
+                        gallery.Type = galleryRequest.Type;
+                        gallery.Name = galleryRequest.Name;
+                    }
 
                     await _context.SaveChangesAsync();
                     result.Success = true;

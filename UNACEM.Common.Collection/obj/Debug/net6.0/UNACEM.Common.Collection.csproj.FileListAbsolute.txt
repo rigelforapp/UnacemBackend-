@@ -58,3 +58,15 @@ C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.Common.Co
 C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.Common.Collection\obj\Debug\net6.0\refint\UNACEM.Common.Collection.dll
 C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.Common.Collection\obj\Debug\net6.0\UNACEM.Common.Collection.pdb
 C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.Common.Collection\obj\Debug\net6.0\ref\UNACEM.Common.Collection.dll
+C:\Users\Paolo Muñoz\Documents\GitHub\UnacemBackend-\UNACEM.Common.Collection\bin\Debug\net6.0\UNACEM.Common.Collection.deps.json
+C:\Users\Paolo Muñoz\Documents\GitHub\UnacemBackend-\UNACEM.Common.Collection\bin\Debug\net6.0\UNACEM.Common.Collection.dll
+C:\Users\Paolo Muñoz\Documents\GitHub\UnacemBackend-\UNACEM.Common.Collection\bin\Debug\net6.0\UNACEM.Common.Collection.pdb
+C:\Users\Paolo Muñoz\Documents\GitHub\UnacemBackend-\UNACEM.Common.Collection\obj\Debug\net6.0\UNACEM.Common.Collection.csproj.AssemblyReference.cache
+C:\Users\Paolo Muñoz\Documents\GitHub\UnacemBackend-\UNACEM.Common.Collection\obj\Debug\net6.0\UNACEM.Common.Collection.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Paolo Muñoz\Documents\GitHub\UnacemBackend-\UNACEM.Common.Collection\obj\Debug\net6.0\UNACEM.Common.Collection.AssemblyInfoInputs.cache
+C:\Users\Paolo Muñoz\Documents\GitHub\UnacemBackend-\UNACEM.Common.Collection\obj\Debug\net6.0\UNACEM.Common.Collection.AssemblyInfo.cs
+C:\Users\Paolo Muñoz\Documents\GitHub\UnacemBackend-\UNACEM.Common.Collection\obj\Debug\net6.0\UNACEM.Common.Collection.csproj.CoreCompileInputs.cache
+C:\Users\Paolo Muñoz\Documents\GitHub\UnacemBackend-\UNACEM.Common.Collection\obj\Debug\net6.0\UNACEM.Common.Collection.dll
+C:\Users\Paolo Muñoz\Documents\GitHub\UnacemBackend-\UNACEM.Common.Collection\obj\Debug\net6.0\refint\UNACEM.Common.Collection.dll
+C:\Users\Paolo Muñoz\Documents\GitHub\UnacemBackend-\UNACEM.Common.Collection\obj\Debug\net6.0\UNACEM.Common.Collection.pdb
+C:\Users\Paolo Muñoz\Documents\GitHub\UnacemBackend-\UNACEM.Common.Collection\obj\Debug\net6.0\ref\UNACEM.Common.Collection.dll

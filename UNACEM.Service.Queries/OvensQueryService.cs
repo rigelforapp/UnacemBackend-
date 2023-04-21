@@ -95,7 +95,7 @@ namespace UNACEM.Service.Queries
             
             try
             {
-                var collection = await _context.Ovens.AsNoTracking().OrderBy(x => x.Id).GetPagedAsync(Start, Limit);
+                var collection = await _context.Ovens.AsNoTracking().Where(x=>x.DeletedAt == null).OrderBy(x => x.Id).GetPagedAsync(Start, Limit);
 
                 //var collection = (from Ovens in _context.Set<Ovens>() select Ovens).ToList<Object>();
 
@@ -153,63 +153,70 @@ namespace UNACEM.Service.Queries
                 var oven = _context.Ovens.Where(a => a.Id == ovensRequest.Id).FirstOrDefault();
                 if (oven != null)
                 {
-                    oven.Headquarter = ovensRequest.Headquarter;
-                    oven.Name = ovensRequest.Name;
-                    oven.Large = ovensRequest.Large;
-                    oven.Diameter = ovensRequest.Diameter;
-
-                    await _context.SaveChangesAsync();
-
-                    var tyresToDelete = _context.Tyres.Where(t => t.OvenId == oven.Id).ToList();
-                    foreach (var t in tyresToDelete)
+                    if (ovensRequest.deleted)
                     {
-                        t.DeletedAt = DateTime.Now;
-                        _context.Tyres.Update(t);
+                        oven.DeletedAt = DateTime.Now;
+                        await _context.SaveChangesAsync();
                     }
+                    else {
+                        oven.Headquarter = ovensRequest.Headquarter;
+                        oven.Name = ovensRequest.Name;
+                        oven.Large = ovensRequest.Large;
+                        oven.Diameter = ovensRequest.Diameter;
 
-                    if ( ovensRequest.Tyres.Count > 0)
-                    {
-                        Tyres tyre = new Tyres();
-                        foreach (var item in ovensRequest.Tyres)
+                        await _context.SaveChangesAsync();
+
+                        var tyresToDelete = _context.Tyres.Where(t => t.OvenId == oven.Id).ToList();
+                        foreach (var t in tyresToDelete)
                         {
-
-                            tyre = _context.Tyres.Where(t => t.Id == item.Id).FirstOrDefault();
-
-                            if(tyre == null)
-                            {
-                                tyre = new Tyres();
-
-                                tyre.OvenId = ovensRequest.Id;
-                                tyre.ColorId = item.ColorId;
-                                tyre.TextureId = item.TextureId;
-                                tyre.Position = item.Position;                                
-
-                                await _context.AddAsync(tyre);
-                                await _context.SaveChangesAsync();
-                                
-                            }
-                            else
-                            {
-                                tyre.ColorId = item.ColorId;
-                                tyre.OvenId = ovensRequest.Id;
-                                tyre.TextureId = item.TextureId;
-                                tyre.Position = item.Position;
-                                tyre.DeletedAt = null;
-
-                                await _context.SaveChangesAsync();
-                            }
+                            t.DeletedAt = DateTime.Now;
+                            _context.Tyres.Update(t);
                         }
 
-                        result.Success = true;
-                        result.Message = "Se realizó correctamente";                        
-                    }
-                    else
-                    {               
-                        var list = _context.Tyres.Where(a => a.OvenId == ovensRequest.Id).ToList();
-                        _context.Tyres.RemoveRange(list);
-                        _context.SaveChanges();
-                        result.Message = "Se elimino el regitro de Tyres";
-                    }                    
+                        if (ovensRequest.Tyres.Count > 0)
+                        {
+                            Tyres tyre = new Tyres();
+                            foreach (var item in ovensRequest.Tyres)
+                            {
+
+                                tyre = _context.Tyres.Where(t => t.Id == item.Id).FirstOrDefault();
+
+                                if (tyre == null)
+                                {
+                                    tyre = new Tyres();
+
+                                    tyre.OvenId = ovensRequest.Id;
+                                    tyre.ColorId = item.ColorId;
+                                    tyre.TextureId = item.TextureId;
+                                    tyre.Position = item.Position;
+
+                                    await _context.AddAsync(tyre);
+                                    await _context.SaveChangesAsync();
+
+                                }
+                                else
+                                {
+                                    tyre.ColorId = item.ColorId;
+                                    tyre.OvenId = ovensRequest.Id;
+                                    tyre.TextureId = item.TextureId;
+                                    tyre.Position = item.Position;
+                                    tyre.DeletedAt = null;
+
+                                    await _context.SaveChangesAsync();
+                                }
+                            }
+
+                            result.Success = true;
+                            result.Message = "Se realizó correctamente";
+                        }
+                        else
+                        {
+                            var list = _context.Tyres.Where(a => a.OvenId == ovensRequest.Id).ToList();
+                            _context.Tyres.RemoveRange(list);
+                            _context.SaveChanges();
+                            result.Message = "Se elimino el regitro de Tyres";
+                        }
+                    }                
                 }
                 else
                 {

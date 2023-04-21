@@ -15,6 +15,6 @@ namespace UNACEM.Service.Queries.ViewModel.Request
         public int OvenDiameter { get; set; }
         public string Description { get; set; }
         public bool? deleted { get; set; }
-        public List<CurrencyRequest> currencies { get; set; }
+        public List<CurrencyRequest> Currencies { get; set; }
     }
 }

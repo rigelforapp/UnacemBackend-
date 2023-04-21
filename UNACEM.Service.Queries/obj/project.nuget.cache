@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4RQ7B6fI3jolPOAb9hqghDKO1bZzFvCWHDSbluBc56yZ0iI8UZ18nsNZyPYuMyBurj7uCIoT1dRFjJS76hRT7A==",
+  "dgSpecHash": "33l18kKritk2YmCgBEgmjpWfJseHlXe31D7VAdO+TEIhzfkzWIy2MCNAMK1HkF0x8mCx6VnSkmyK+C6yalZjUw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj",
+  "projectFilePath": "C:\\Users\\Paolo Muñoz\\Documents\\GitHub\\UnacemBackend-\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Paolo Muñoz\\.nuget\\packages\\epplus\\5.3.0\\epplus.5.3.0.nupkg.sha512",
     "C:\\Users\\Paolo Muñoz\\.nuget\\packages\\exceldatareader\\3.6.0\\exceldatareader.3.6.0.nupkg.sha512",

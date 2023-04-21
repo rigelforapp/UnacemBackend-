@@ -133,6 +133,10 @@ namespace UNACEM.Service.Queries
                     v.DateIni = Convert.ToDateTime(versionRequest.DateIni);
                     v.DateEnd = Convert.ToDateTime(versionRequest.DateEnd);
 
+                    _context.Versions.Update(v);
+
+                    await _context.SaveChangesAsync();
+
                     var stretchs = _context.Stretchs.Where(s => s.VersionId == v.Id).ToList();
                     foreach (var s in stretchs)
                     {
@@ -140,39 +144,40 @@ namespace UNACEM.Service.Queries
                         _context.Stretchs.Update(s);
                     }
 
+                    await _context.SaveChangesAsync();
+
                     if (versionRequest.Stretchs != null)
                     {
                         foreach (var s in versionRequest.Stretchs)
                         {
-                            if (s.Id > 0)
-                            {
-                                // Update
-                                var oldS = _context.Stretchs.Where(s => s.Id == s.Id).FirstOrDefault();
-                                oldS.PositionIni = s.PositionIni;
-                                oldS.PositionEnd = s.PositionEnd;
-                                oldS.BrickFormatId = s.BrickFormatId;
-                                oldS.ProviderBrickId = s.ProviderBrickId;
-                                oldS.TextureId = s.TextureId;
-                                oldS.ColorId = s.ColorId;
-                                oldS.UpdatedAt = DateTime.Now;
 
-                                _context.Stretchs.Update(oldS);
-                            } else
-                            {
-                                // Create
-                                var newS = new Stretchs();
-                                newS.Id = s.Id;
-                                newS.VersionId = v.Id;
-                                newS.TextureId = s.TextureId;
-                                newS.ColorId = s.ColorId;
-                                newS.PositionIni = s.PositionIni;
-                                newS.PositionEnd = s.PositionEnd;
-                                newS.BrickFormatId = s.BrickFormatId;
-                                newS.ProviderBrickId = s.ProviderBrickId;
-                                newS.CreatedAt = DateTime.Now;
+                            var stretch = new Stretchs();
 
-                                _context.Stretchs.Add(newS);
+                            if (s.Id != null)
+                            {
+                                stretch = _context.Stretchs.Where(stretch => stretch.Id == s.Id).FirstOrDefault();
+                                stretch.DeletedAt = null;
                             }
+
+                            stretch.PositionIni = s.PositionIni;
+                            stretch.PositionEnd = s.PositionEnd;
+                            stretch.BrickFormatId = s.BrickFormatId;
+                            stretch.ProviderBrickId = s.ProviderBrickId;
+                            stretch.TextureId = s.TextureId;
+                            stretch.ColorId = s.ColorId;
+                            stretch.UpdatedAt = DateTime.Now;
+
+                            if (s.Id != null)
+                            {
+                                _context.Stretchs.Update(stretch);
+                            }
+                            else
+                            {
+                                stretch.CreatedAt = DateTime.Now;
+                                _context.Stretchs.Add(stretch);
+                            }
+
+                            await _context.SaveChangesAsync();
                         }
                     }
 

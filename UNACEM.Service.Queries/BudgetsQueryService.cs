@@ -95,6 +95,45 @@ namespace UNACEM.Service.Queries
                     await _context.SaveChangesAsync();
                 }
 
+                // Currencies
+
+                var currencies = _context.BudgetCurrency.Where(x => x.BudgetId == br.Id && x.DeletedAt == null).ToList();
+
+                foreach (var c in currencies)
+                {
+                    c.DeletedAt = DateTime.Now;
+                    _context.BudgetCurrency.Update(c);
+                }
+
+                await _context.SaveChangesAsync();
+
+                foreach (var cRequest in br.Currencies)
+                {
+                    var c = new BudgetCurrency();
+
+                    if (cRequest.Id > 0)
+                    {
+                        c = this._context.BudgetCurrency.Where( c => c.Id == cRequest.Id).First();
+                        c.DeletedAt = null;
+                    }
+
+                    c.BudgetId = b.Id;
+                    c.Name = cRequest.Name;
+                    c.Symbol = cRequest.Symbol;
+                    c.Equivalence = cRequest.Equivalence;
+
+                    if (cRequest.Id > 0)
+                    {
+                        _context.Update(c);
+                    }
+                    else
+                    {
+                        await _context.AddAsync(c);
+                    }
+                }
+
+                await _context.SaveChangesAsync();
+
                 result.Success = true;
                 result.Message = "Se realizó satisfactoriamente";
 
@@ -149,7 +188,7 @@ namespace UNACEM.Service.Queries
                     await _context.SaveChangesAsync();
                 }
 
-                foreach (var cR in br.currencies)
+                foreach (var cR in br.Currencies)
                 {
                     var c = new BudgetCurrency();
                     c.BudgetId = budgetId;
@@ -184,6 +223,7 @@ namespace UNACEM.Service.Queries
             {
                 var collection = await _context.Budgets.AsNoTracking().Where(b => b.UserId == user.Id).Where(b => b.DeletedAt == null).GetPagedAsync(Start, Limit);
                 var budgetsresult = collection.MapTo<DataCollection<BudgetsDto>>();
+                var list = (List<BudgetsDto>)budgetsresult.Items;
 
                 foreach (var b in (List<BudgetsDto>)budgetsresult.Items)
                 {
@@ -204,6 +244,13 @@ namespace UNACEM.Service.Queries
                                      where (ProviderBricks.DeletedAt != null)
                                      select ProviderBricks).ToList<ProviderBricks>();
                     }
+                }
+
+                foreach (var budget in list)
+                {
+                    var currencies = await _context.BudgetCurrency.Where(x => x.BudgetId == budget.Id && x.DeletedAt == null).GetPagedAsync(Start, Limit);
+                    var currenciesDto = currencies.MapTo<DataCollection<BudgetCurrencyDto>>();
+                    budget.Currencies = (List<BudgetCurrencyDto>)currenciesDto.Items;
                 }
 
                 result.Success = true;

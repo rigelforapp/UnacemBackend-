@@ -22,5 +22,7 @@ namespace UNACEM.Service.Queries.DTO
         public DateTime? UpdatedAt { get; set; }
 
         public DateTime? DeletedAt { get; set; }
+
+        public List<BudgetCurrencyDto> Currencies { get; set; }
     }
 }

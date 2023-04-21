@@ -12,9 +12,10 @@ namespace UNACEM.Service.Queries.ViewModel.Response
             this.Success = true;
         }
 
+        public object Data { get; set; }
         public bool Success { get; set; }
         public string Message { get; set; }
-        public string Details { get; set; }
+        public string Details { get { return ""; } set { } }
         public List<string> Messages { get; set; }
     }
 }

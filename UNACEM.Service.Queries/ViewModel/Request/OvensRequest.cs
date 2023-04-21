@@ -12,6 +12,7 @@ namespace UNACEM.Service.Queries.ViewModel.Request
         public string Name { get; set; }
         public int Large { get; set; }
         public int Diameter { get; set; }
+        public bool deleted { get; set; }
         public List<TyresRequest> Tyres { get; set; }
 
         public OvensRequest()

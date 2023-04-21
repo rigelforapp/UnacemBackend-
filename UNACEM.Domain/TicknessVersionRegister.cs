@@ -12,7 +12,7 @@ namespace UNACEM.Domain
         public int Id { get; set; }
         public int TicknessVersionId { get; set; }
         public int Position { get; set; }
-        public int Value { get; set; }
+        public double Value { get; set; }
 
     }
 }

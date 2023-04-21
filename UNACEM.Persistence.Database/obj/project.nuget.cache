@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VKqWWzzOJyPWrKitmMeH+lmW/NV+qugbIxPvvPuoNEb/elLz7fSUy4gPlMkBIdhznhrN0qrHn9JDhK5kRbk+lA==",
+  "dgSpecHash": "hEK2M2lYVXXawpVuH3cOF0QcKu5Jy0Dw9nilPAeVbAoPzEjA6fLAMi1NcMcauUF1Olxzid+SHMXxVJ4KHq/xLg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj",
+  "projectFilePath": "C:\\Users\\Paolo Muñoz\\Documents\\GitHub\\UnacemBackend-\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Paolo Muñoz\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.10\\microsoft.aspnetcore.authentication.jwtbearer.6.0.10.nupkg.sha512",
     "C:\\Users\\Paolo Muñoz\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

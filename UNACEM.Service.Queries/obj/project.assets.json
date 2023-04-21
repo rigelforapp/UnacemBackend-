@@ -6285,11 +6285,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj",
+      "projectUniqueName": "C:\\Users\\Paolo Muñoz\\Documents\\GitHub\\UnacemBackend-\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj",
       "projectName": "UNACEM.Service.Queries",
-      "projectPath": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj",
+      "projectPath": "C:\\Users\\Paolo Muñoz\\Documents\\GitHub\\UnacemBackend-\\UNACEM.Service.Queries\\UNACEM.Service.Queries.csproj",
       "packagesPath": "C:\\Users\\Paolo Muñoz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Service.Queries\\obj\\",
+      "outputPath": "C:\\Users\\Paolo Muñoz\\Documents\\GitHub\\UnacemBackend-\\UNACEM.Service.Queries\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -6310,17 +6310,17 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj": {
-              "projectPath": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj"
+            "C:\\Users\\Paolo Muñoz\\Documents\\GitHub\\UnacemBackend-\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj": {
+              "projectPath": "C:\\Users\\Paolo Muñoz\\Documents\\GitHub\\UnacemBackend-\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj"
             },
-            "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj": {
-              "projectPath": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj"
+            "C:\\Users\\Paolo Muñoz\\Documents\\GitHub\\UnacemBackend-\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj": {
+              "projectPath": "C:\\Users\\Paolo Muñoz\\Documents\\GitHub\\UnacemBackend-\\UNACEM.Common.Mapping\\UNACEM.Common.Mapping.csproj"
             },
-            "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj": {
-              "projectPath": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj"
+            "C:\\Users\\Paolo Muñoz\\Documents\\GitHub\\UnacemBackend-\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj": {
+              "projectPath": "C:\\Users\\Paolo Muñoz\\Documents\\GitHub\\UnacemBackend-\\UNACEM.Common.Paging\\UNACEM.Common.Paging.csproj"
             },
-            "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj": {
-              "projectPath": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj"
+            "C:\\Users\\Paolo Muñoz\\Documents\\GitHub\\UnacemBackend-\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj": {
+              "projectPath": "C:\\Users\\Paolo Muñoz\\Documents\\GitHub\\UnacemBackend-\\UNACEM.Persistence.Database\\UNACEM.Persistence.Database.csproj"
             }
           }
         }
@@ -6376,7 +6376,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.408\\RuntimeIdentifierGraph.json"
       }
     }
   }

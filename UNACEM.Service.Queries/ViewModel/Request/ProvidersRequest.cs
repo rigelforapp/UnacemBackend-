@@ -9,5 +9,6 @@ namespace UNACEM.Service.Queries.ViewModel.Request
         public int Id { get; set; }
         public string Name { get; set; }
         public string CreatedBy { get; set; }
+        public bool Deleted { get; set; }
     }
 }

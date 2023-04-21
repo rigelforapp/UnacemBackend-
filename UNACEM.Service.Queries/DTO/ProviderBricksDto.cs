@@ -14,8 +14,8 @@ namespace UNACEM.Service.Queries.DTO
         public string Density { get; set; }
         public string Porosity { get; set; }
         public string Ccs { get; set; }
-        public decimal ThermalConductivity300 { get; set; }
-        public decimal ThermalConductivity700 { get; set; }
-        public decimal ThermalConductivity100 { get; set; }
+        public string ThermalConductivity300 { get; set; }
+        public string ThermalConductivity700 { get; set; }
+        public string ThermalConductivity100 { get; set; }
     }
 }

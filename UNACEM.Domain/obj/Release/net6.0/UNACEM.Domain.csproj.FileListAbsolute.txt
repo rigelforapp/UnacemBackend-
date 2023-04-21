@@ -46,3 +46,15 @@ C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.Domain\ob
 C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.Domain\obj\Release\net6.0\refint\UNACEM.Domain.dll
 C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.Domain\obj\Release\net6.0\UNACEM.Domain.pdb
 C:\Users\Paolo Muñoz\Documents\actividades\UnacemBackend--main\UNACEM.Domain\obj\Release\net6.0\ref\UNACEM.Domain.dll
+C:\Users\Paolo Muñoz\Documents\GitHub\UnacemBackend-\UNACEM.Domain\bin\Release\net6.0\UNACEM.Domain.deps.json
+C:\Users\Paolo Muñoz\Documents\GitHub\UnacemBackend-\UNACEM.Domain\bin\Release\net6.0\UNACEM.Domain.dll
+C:\Users\Paolo Muñoz\Documents\GitHub\UnacemBackend-\UNACEM.Domain\bin\Release\net6.0\UNACEM.Domain.pdb
+C:\Users\Paolo Muñoz\Documents\GitHub\UnacemBackend-\UNACEM.Domain\obj\Release\net6.0\UNACEM.Domain.csproj.AssemblyReference.cache
+C:\Users\Paolo Muñoz\Documents\GitHub\UnacemBackend-\UNACEM.Domain\obj\Release\net6.0\UNACEM.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Paolo Muñoz\Documents\GitHub\UnacemBackend-\UNACEM.Domain\obj\Release\net6.0\UNACEM.Domain.AssemblyInfoInputs.cache
+C:\Users\Paolo Muñoz\Documents\GitHub\UnacemBackend-\UNACEM.Domain\obj\Release\net6.0\UNACEM.Domain.AssemblyInfo.cs
+C:\Users\Paolo Muñoz\Documents\GitHub\UnacemBackend-\UNACEM.Domain\obj\Release\net6.0\UNACEM.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Paolo Muñoz\Documents\GitHub\UnacemBackend-\UNACEM.Domain\obj\Release\net6.0\UNACEM.Domain.dll
+C:\Users\Paolo Muñoz\Documents\GitHub\UnacemBackend-\UNACEM.Domain\obj\Release\net6.0\refint\UNACEM.Domain.dll
+C:\Users\Paolo Muñoz\Documents\GitHub\UnacemBackend-\UNACEM.Domain\obj\Release\net6.0\UNACEM.Domain.pdb
+C:\Users\Paolo Muñoz\Documents\GitHub\UnacemBackend-\UNACEM.Domain\obj\Release\net6.0\ref\UNACEM.Domain.dll

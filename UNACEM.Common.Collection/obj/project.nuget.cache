@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KHA/oCmP1LjQBubhivDR9ujux9aOsCQ5z34q6peh3jnpYckon+vzmGqGaIFXqPCeokdgkRbTys7stcUTrebIsw==",
+  "dgSpecHash": "iWcZA+fq1gcQyOXCj+GtVrls5bYyzDyMtIQ46djQqP4bewyac71Lm5y9YwRDLSe1SKpjZgLlpAj2zx6i1aYkBw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Paolo Muñoz\\Documents\\actividades\\UnacemBackend--main\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj",
+  "projectFilePath": "C:\\Users\\Paolo Muñoz\\Documents\\GitHub\\UnacemBackend-\\UNACEM.Common.Collection\\UNACEM.Common.Collection.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Paolo Muñoz\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.10\\microsoft.aspnetcore.authentication.jwtbearer.6.0.10.nupkg.sha512",
     "C:\\Users\\Paolo Muñoz\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

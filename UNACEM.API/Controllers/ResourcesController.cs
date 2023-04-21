@@ -28,5 +28,13 @@ namespace UNACEM.API.Controllers
             return Ok(response);
         }
 
+        [HttpGet]
+        [Route("is-used")]
+        public async Task<IActionResult> IsUsed(int providerId)
+        {
+            var response = await _resourcesQueryService.IsUsed(providerId);
+            return Ok(response);
+        }
+
     }
 }

@@ -30,7 +30,7 @@ namespace UNACEM.Service.Queries
             _context = context;
         }
         public async Task<BrickFormatsResponse> GetAll(int diameter, int start, int limit)
-        {
+        {            
             var result = new BrickFormatsResponse();
             try
             {
@@ -61,12 +61,11 @@ namespace UNACEM.Service.Queries
         public async Task<BrickFormatsResponse> Upload(Stream stream)
         {
             BrickFormatsResponse result = new BrickFormatsResponse();
-            DataTableCollection hojasExcel = Execute(stream);
-
-            
 
             try
-            {
+            {   
+                DataTableCollection hojasExcel = Execute(stream);
+
                 var brickGroup = "vdz";
 
                 for (int i = 0; i < hojasExcel.Count; i++)

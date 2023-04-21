@@ -1,33 +1,27 @@
-﻿using System;
-using System.Text;
-using UNACEM.Common.Collection;
-using UNACEM.Common.Mapping;
-using UNACEM.Common.Paging;
+﻿using ExcelDataReader;
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using UNACEM.Domain;
 using UNACEM.Persistence.Database;
+using UNACEM.Service.Queries.DTO;
 using UNACEM.Service.Queries.ViewModel.Request;
 using UNACEM.Service.Queries.ViewModel.Response;
-using System.Linq;
-using Microsoft.EntityFrameworkCore;
-using UNACEM.Service.Queries.DTO;
-using System.Collections.Generic;
-using System.IO;
-using System.Data;
-using ExcelDataReader;
-using Microsoft.Data.SqlClient;
-using System.Transactions;
-using System.Xml.Linq;
 
 namespace UNACEM.Service.Queries
 {
     public interface IProvidersQueryService
     {
         Task<ProvidersResponse> Create(ProvidersRequest providersRequest);
-        Task<ProvidersResponse> Update(ProvidersRequest providersRequest);
+        Task<ProvidersResponse> Update(ProvidersRequest providersRequest, Users user);
         Task<ProvidersResponse> GetAll(int Start, int Limit);
         Task<ProvidersResponse> Upload(Stream stream, int ProviderId, Users user);
-     }
+    }
 
     public class ProvidersQueryService : IProvidersQueryService
     {
@@ -61,7 +55,7 @@ namespace UNACEM.Service.Queries
             }
             return result;
         }
-        public async Task<ProvidersResponse> Update(ProvidersRequest providersRequest)
+        public async Task<ProvidersResponse> Update(ProvidersRequest providersRequest, Users user)
         {
             ProvidersResponse result = new ProvidersResponse();
             try
@@ -70,6 +64,13 @@ namespace UNACEM.Service.Queries
                 if (providers != null)
                 {
                     providers.Name = providersRequest.Name;
+
+                    if (providersRequest.Deleted && user.IsAdmin == true)
+                    {
+                        providers.DeletedAt = providersRequest.Deleted ? DateTime.Now : null;
+                    }
+                    
+
                     await _context.SaveChangesAsync();
                     result.Success = true;
                     result.Message = "Se realizó satisfactoriamente";
@@ -135,14 +136,15 @@ namespace UNACEM.Service.Queries
             List<ProviderConcretesDto> LstProviderConcretes = new List<ProviderConcretesDto>();
 
             ProvidersResponse result = new ProvidersResponse();
-            DataTableCollection hojas_excel = Execute(stream);
             var ProviderImportations = new ProviderImportations();
 
             try
             {
-                    //using (TransactionScope tx = new TransactionScope())
-                    //{
-                      //  await SomeAsyncMethod();
+                DataTableCollection hojas_excel = Execute(stream);
+                
+                //using (TransactionScope tx = new TransactionScope())
+                //{
+                //  await SomeAsyncMethod();
                 ProviderImportations.ProviderId = ProviderId;
                 //@change: Update after implement token auth.
                 ProviderImportations.CreatedBy = user.Id;
@@ -153,11 +155,11 @@ namespace UNACEM.Service.Queries
 
                 for (int i = 0; i < hojas_excel.Count; i++)
                 {
-                    string nombreHoja = hojas_excel[i].TableName;              
+                    string nombreHoja = hojas_excel[i].TableName;
 
                     DataTable table = hojas_excel[i];
                     if (nombreHoja == "ladrillos")
-                    {                              
+                    {
                         LstProviderBricks = await ListProviderBricks(table, ProviderImportationId);
                         await BulkInsert(LstProviderBricks);
                     }
@@ -171,12 +173,12 @@ namespace UNACEM.Service.Queries
                         LstProviderInsulatings = await ListProviderInsulatings(table, ProviderImportationId);
                         await BulkInsertProviderInsulatings(LstProviderInsulatings);
                     }
-                    
+
                 }
                 result.Success = true;
                 result.Message = "Se realizó satisfactoriamente";
-                       // tx.Complete();
-                   // }                                    
+                // tx.Complete();
+                // }                                    
             }
             catch (Exception ex)
             {
@@ -186,9 +188,9 @@ namespace UNACEM.Service.Queries
                 result.Message = "Error al consultar";
                 result.Details = ex.Message + " || " + ex.StackTrace;
 
-            }                    
+            }
 
-            return  result;
+            return result;
         }
         private async Task SomeAsyncMethod()
         {
@@ -200,7 +202,7 @@ namespace UNACEM.Service.Queries
             System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
             using (IExcelDataReader excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream))
             {
-                
+
 
                 result = excelReader.AsDataSet(new ExcelDataSetConfiguration()
                 {
@@ -283,7 +285,7 @@ namespace UNACEM.Service.Queries
                     bulkInsert.ColumnMappings.Add("ThermalConductivity100", "ThermalConductivity100");
                     bulkInsert.ColumnMappings.Add("CreatedAt", "CreatedAt");
 
-                    await  bulkInsert.WriteToServerAsync(table);
+                    await bulkInsert.WriteToServerAsync(table);
                 }
             }
             catch (Exception ex)
@@ -291,7 +293,7 @@ namespace UNACEM.Service.Queries
                 throw ex;
 
             }
-            
+
         }
 
         public async Task BulkInsertProviderInsulatings(List<ProviderInsulatingsDto> lstData)
@@ -424,49 +426,44 @@ namespace UNACEM.Service.Queries
         public async Task<List<ProviderBricksDto>> ListProviderBricks(DataTable table, int ProviderImportationId)
         {
             List<ProviderBricks> listaProviderBricks = new List<ProviderBricks>();
-            listaProviderBricks= _context.ProviderBricks.Where(x => x.CreatedAt != null).ToList();
+            listaProviderBricks = _context.ProviderBricks.Where(x => x.CreatedAt != null).ToList();
             bool iniciarLectura = false;
             List<ProviderBricksDto> Lista = new List<ProviderBricksDto>();
+
+            int indexCol = 5;
+            int indexRow = 1;
+
             using (var reader = table.CreateDataReader())
             {
                 while (reader.Read())
                 {
-                    var cab = reader[1] == null ? string.Empty : reader[1].ToString();
-                    if (cab.Trim().ToUpper() == "")
-                    {
-                        iniciarLectura = true;
-                        continue;
-                    }
 
-                    if (iniciarLectura)
+                    if (indexRow >= 4)
                     {
                         try
                         {
 
+                            var name = reader.GetValue(indexCol - 1).ToString();
+                            if (name == "")
+                            {
+                                continue;
+                            }
+
                             var providerBricksDto = new ProviderBricksDto();
                             providerBricksDto.ProviderImportationId = ProviderImportationId;
-                            providerBricksDto.Name = reader.GetValue(0).ToString();
-                            providerBricksDto.RecommendedZone = reader.GetValue(1).ToString();
-                            providerBricksDto.Composition = reader.GetValue(2).ToString();
-                            providerBricksDto.Density = reader.GetValue(3).ToString();
-                            providerBricksDto.Porosity = reader.GetValue(4).ToString();
-                            providerBricksDto.Ccs = reader.GetValue(5).ToString();
+                            providerBricksDto.Name = reader.GetValue(indexCol - 1).ToString();
+                            providerBricksDto.RecommendedZone = reader.GetValue(indexCol).ToString();
+                            providerBricksDto.Composition = reader.GetValue(indexCol+1).ToString();
+                            providerBricksDto.Density = reader.GetValue(indexCol+2).ToString();
+                            providerBricksDto.Porosity = reader.GetValue(indexCol+3).ToString();
+                            providerBricksDto.Ccs = reader.GetValue(indexCol+4).ToString();
 
-                            var ThermalConductivity300Val = reader.GetValue(6).ToString();
-                            providerBricksDto.ThermalConductivity300 = ThermalConductivity300Val != "" ? Convert.ToDecimal(ThermalConductivity300Val) : -1;
-
-                            var ThermalConductivity700Val = reader.GetValue(7).ToString();
-                            providerBricksDto.ThermalConductivity700 = ThermalConductivity700Val != "" ? Convert.ToDecimal(ThermalConductivity700Val) : -1;
-
-                            var ThermalConductivity100Val = reader.GetValue(8).ToString();
-                            providerBricksDto.ThermalConductivity100 = ThermalConductivity100Val != "" ? Convert.ToDecimal(ThermalConductivity100Val) : -1;
-
-                            /*providerBricksDto.ThermalConductivity300 = Convert.ToDecimal(reader.GetString(6));
-                            providerBricksDto.ThermalConductivity700 = Convert.ToDecimal(reader.GetString(7));
-                            providerBricksDto.ThermalConductivity100 = Convert.ToDecimal(reader.GetString(8));*/
+                            providerBricksDto.ThermalConductivity300 = reader.GetValue(indexCol+5).ToString();
+                            providerBricksDto.ThermalConductivity700 = reader.GetValue(indexCol+6).ToString();
+                            providerBricksDto.ThermalConductivity100 = reader.GetValue(indexCol + 7).ToString();
 
                             var existeproviderBricks = listaProviderBricks.Where(a => a.Name == providerBricksDto.Name).FirstOrDefault();
-                            if (existeproviderBricks!=null)
+                            if (existeproviderBricks != null)
                             {
                                 var ProviderBricks = _context.ProviderBricks.Where(a => a.Id == existeproviderBricks.Id).FirstOrDefault();
                                 if (ProviderBricks != null)
@@ -483,6 +480,8 @@ namespace UNACEM.Service.Queries
                             throw ex;
                         }
                     }
+
+                    indexRow++;
                 }
             }
             return Lista;
@@ -494,33 +493,36 @@ namespace UNACEM.Service.Queries
             listaProviderInsulatings = _context.ProviderInsulatings.Where(x => x.CreatedAt != null).ToList();
             bool iniciarLectura = false;
             List<ProviderInsulatingsDto> Lista = new List<ProviderInsulatingsDto>();
+
+            int indexCol = 5;
+            int indexRow = 1;
+
             using (var reader = table.CreateDataReader())
             {
                 while (reader.Read())
                 {
-                    var cab = reader[1] == null ? string.Empty : reader[1].ToString();
-                    if (cab.Trim().ToUpper() == "")
-                    {
-                        iniciarLectura = true;
-                        continue;
-                    }
-
-                    if (iniciarLectura)
+                    if (indexRow>=5)
                     {
                         try
                         {
+                            var name = reader.GetValue(indexCol - 1).ToString();
+                            if (name == "")
+                            {
+                                continue;
+                            }
+
                             var providerInsulatingsDto = new ProviderInsulatingsDto();
                             providerInsulatingsDto.ProviderImportationId = ProviderImportationId;
-                            providerInsulatingsDto.Name = reader.GetString(0);
-                            providerInsulatingsDto.RecommendedZone = reader.GetString(1);
-                            providerInsulatingsDto.Composition = reader.GetString(2);
-                            providerInsulatingsDto.MaterialNeeded = reader.GetString(3);
-                            providerInsulatingsDto.WaterMix = reader.GetString(4);
-                            providerInsulatingsDto.Temperature = reader.GetString(5);
+                            providerInsulatingsDto.Name = reader.GetValue(indexCol-1).ToString();
+                            providerInsulatingsDto.RecommendedZone = reader.GetValue(indexCol).ToString();
+                            providerInsulatingsDto.Composition = reader.GetValue(indexCol+1).ToString();
+                            providerInsulatingsDto.MaterialNeeded = reader.GetValue(indexCol+2).ToString();
+                            providerInsulatingsDto.WaterMix = reader.GetValue(indexCol+3).ToString();
+                            providerInsulatingsDto.Temperature = reader.GetValue(indexCol+4).ToString();
 
-                            providerInsulatingsDto.ThermalConductivity300 = reader.GetValue(6).ToString();
-                            providerInsulatingsDto.ThermalConductivity700 = reader.GetValue(7).ToString();
-                            providerInsulatingsDto.ThermalConductivity100 = reader.GetValue(8).ToString();
+                            providerInsulatingsDto.ThermalConductivity300 = reader.GetValue(indexCol+5).ToString();
+                            providerInsulatingsDto.ThermalConductivity700 = reader.GetValue(indexCol+6).ToString();
+                            providerInsulatingsDto.ThermalConductivity100 = reader.GetValue(indexCol+7).ToString();
 
                             var existeProviderInsulatings = listaProviderInsulatings.Where(a => a.Name == providerInsulatingsDto.Name).FirstOrDefault();
                             if (existeProviderInsulatings != null)
@@ -543,13 +545,13 @@ namespace UNACEM.Service.Queries
                             throw ex;
                         }
                     }
+                    
+                    indexRow++;
                 }
             }
 
             return Lista;
         }
-
-
 
         public async Task<List<ProviderConcretesDto>> ListProviderConcretes(DataTable table, int ProviderImportationId)
         {
@@ -557,37 +559,41 @@ namespace UNACEM.Service.Queries
             listaProviderConcretes = _context.ProviderConcretes.Where(x => x.CreatedAt != null).ToList();
             bool iniciarLectura = false;
             List<ProviderConcretesDto> Lista = new List<ProviderConcretesDto>();
+
+            int indexCol = 5;
+            int indexRow = 1;
+
             using (var reader = table.CreateDataReader())
             {
                 while (reader.Read())
                 {
-                    var cab = reader[1] == null ? string.Empty : reader[1].ToString();
-                    if (cab.Trim().ToUpper() == "")
-                    {
-                        iniciarLectura = true;
-                        continue;
-                    }
 
-                    if (iniciarLectura)
+                    if (indexRow >= 6)
                     {
                         try
                         {
+                            var name = reader.GetValue(indexCol - 1).ToString();
+                            if (name == "")
+                            {
+                                continue;
+                            }
+
                             var providerConcretesDto = new ProviderConcretesDto();
                             providerConcretesDto.ProviderImportationId = ProviderImportationId;
-                            providerConcretesDto.Name = reader.GetString(0);
-                            providerConcretesDto.RecommendedZone = reader.GetString(1);
-                            providerConcretesDto.Composition = reader.GetString(2);
-                            providerConcretesDto.MaterialNeeded = reader.GetValue(3).ToString();
-                            providerConcretesDto.WaterMix = reader.GetString(4);                         
-                            providerConcretesDto.Temperature =reader.GetString(5);
-                            
-                            var ThermalConductivity300Val = reader.GetValue(6).ToString();
+                            providerConcretesDto.Name = reader.GetValue(indexCol-1).ToString();
+                            providerConcretesDto.RecommendedZone = reader.GetValue(indexCol).ToString();
+                            providerConcretesDto.Composition = reader.GetValue(indexCol+1).ToString();
+                            providerConcretesDto.MaterialNeeded = reader.GetValue(indexCol+2).ToString();
+                            providerConcretesDto.WaterMix = reader.GetValue(indexCol+3).ToString();
+                            providerConcretesDto.Temperature = reader.GetValue(indexCol+4).ToString();
+
+                            var ThermalConductivity300Val = reader.GetValue(indexCol+5).ToString();
                             providerConcretesDto.ThermalConductivity300 = ThermalConductivity300Val;
 
-                            var ThermalConductivity700Val = reader.GetValue(7).ToString();
+                            var ThermalConductivity700Val = reader.GetValue(indexCol+6).ToString();
                             providerConcretesDto.ThermalConductivity700 = ThermalConductivity700Val;
 
-                            var ThermalConductivity100Val = reader.GetValue(8).ToString();
+                            var ThermalConductivity100Val = reader.GetValue(indexCol+7).ToString();
                             providerConcretesDto.ThermalConductivity100 = ThermalConductivity100Val;
 
                             var existeProviderConcretes = listaProviderConcretes.Where(a => a.Name == providerConcretesDto.Name).FirstOrDefault();
@@ -611,8 +617,12 @@ namespace UNACEM.Service.Queries
                             throw ex;
                         }
                     }
+
+                    indexRow++;
                 }
             }
+
+            
 
             return Lista;
         }

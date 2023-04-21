@@ -34,7 +34,7 @@ namespace UNACEM.API.Controllers
         [HttpPut]
         public async Task<ProvidersResponse> Update(ProvidersRequest providersRequest)
         {
-            return await _providersQueryService.Update(providersRequest);
+            return await _providersQueryService.Update(providersRequest, (Users)HttpContext.Items["User"]);
         }
 
         [HttpGet]

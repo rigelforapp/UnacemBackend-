@@ -67,9 +67,10 @@ namespace UNACEM.Service.Queries
                 foreach (var rowRequest in budgetCiRequest.Rows)
                 {
                     var row = new BudgetCiRows();
+                    row.Zone = rowRequest.Zone;
                     row.Area = rowRequest.Area;
                     row.ProviderConcreteId = rowRequest.ProviderConcreteId;
-                    row.ProviderInsulatingId = rowRequest.ProviderInsulatingId;
+                    row.ProviderInsulatingId = rowRequest.ProviderInsulatingId == 0 ? null : rowRequest.ProviderInsulatingId;
                     row.BudgetCiId = budgetCi.Id;
                     row.CostC = rowRequest.CostC;
                     row.CostI = rowRequest.CostI;
@@ -164,7 +165,7 @@ namespace UNACEM.Service.Queries
                         row.Concrete = ConcreteDto;
 
                         var insulating = _context.ProviderInsulatings.Where(pc => pc.Id == row.ProviderInsulatingId).FirstOrDefault();
-                        var InsulatingDto = concrete.MapTo<ProviderInsulatingsDto>();
+                        var InsulatingDto = insulating.MapTo<ProviderInsulatingsDto>();
                         row.Insulating = InsulatingDto;
                     }
                 }
@@ -245,8 +246,9 @@ namespace UNACEM.Service.Queries
                         }
 
                         row.Area = rowRequest.Area;
+                        row.Zone = rowRequest.Zone;
                         row.ProviderConcreteId = rowRequest.ProviderConcreteId;
-                        row.ProviderInsulatingId = rowRequest.ProviderInsulatingId;
+                        row.ProviderInsulatingId = rowRequest.ProviderInsulatingId == 0 ? null : rowRequest.ProviderInsulatingId;
                         row.BudgetCiId = budgetCi.Id;
                         row.CostC = rowRequest.CostC;
                         row.CostI = rowRequest.CostI;
@@ -282,7 +284,8 @@ namespace UNACEM.Service.Queries
 
                         if (cRequest.Id > 0)
                         {
-                            c.Id = cRequest.Id;
+                            c = this._context.BudgetCICurrency.Where(c => c.Id == cRequest.Id).First();
+                            c.DeletedAt = null;
                         }
 
                         c.BudgetCIId = budgetCi.Id;
