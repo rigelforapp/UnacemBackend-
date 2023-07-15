@@ -150,39 +150,50 @@ namespace UNACEM.Service.Queries
                     {
                         foreach (var s in versionRequest.Stretchs)
                         {
-
-                            var stretch = new Stretchs();
-
-                            if (s.Id != null)
+                            using (var transaction = _context.Database.BeginTransaction())
                             {
-                                stretch = _context.Stretchs.Where(stretch => stretch.Id == s.Id).FirstOrDefault();
-                                stretch.DeletedAt = null;
-                            }
+                                try
+                                {
+                                    var stretch = new Stretchs();
 
-                            stretch.PositionIni = s.PositionIni;
-                            stretch.PositionEnd = s.PositionEnd;
-                            stretch.BrickFormatId = s.BrickFormatId;
-                            stretch.ProviderBrickId = s.ProviderBrickId;
-                            stretch.TextureId = s.TextureId;
-                            stretch.ColorId = s.ColorId;
-                            stretch.UpdatedAt = DateTime.Now;
+                                    if (s.Id != null)
+                                    {
+                                        stretch = _context.Stretchs.Where(stretch => stretch.Id == s.Id).FirstOrDefault();
+                                        stretch.DeletedAt = null;
+                                    }
 
-                            if (s.Id != null)
-                            {
-                                _context.Stretchs.Update(stretch);
-                            }
-                            else
-                            {
-                                stretch.CreatedAt = DateTime.Now;
-                                _context.Stretchs.Add(stretch);
-                            }
+                                    stretch.PositionIni = s.PositionIni;
+                                    stretch.PositionEnd = s.PositionEnd;
+                                    stretch.BrickFormatId = s.BrickFormatId;
+                                    stretch.ProviderBrickId = s.ProviderBrickId;
+                                    stretch.TextureId = s.TextureId;
+                                    stretch.ColorId = s.ColorId;
+                                    stretch.UpdatedAt = DateTime.Now;
+                                    stretch.VersionId = v.Id;
 
-                            await _context.SaveChangesAsync();
+                                    if (s.Id != null)
+                                    {
+                                        _context.Stretchs.Update(stretch);
+                                    }
+                                    else
+                                    {
+                                        stretch.CreatedAt = DateTime.Now;
+                                        _context.Stretchs.Add(stretch);
+                                    }
+
+                                    await _context.SaveChangesAsync();
+
+                                    transaction.Commit();
+                                }
+                                catch (Exception ex)
+                                {
+                                    transaction.Rollback();
+                                    throw ex;
+                                }
+                            }
                         }
                     }
 
-
-                    await _context.SaveChangesAsync();
                     result.Success = true;
                     result.Message = "Se realizó satisfactoriamente";
                 }
@@ -196,5 +207,6 @@ namespace UNACEM.Service.Queries
 
             return result;
         }
+
     }
 }
